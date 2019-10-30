@@ -35,7 +35,7 @@ async def get_Overview(Query_Overview: str) -> str:
         SKILL = "技巧值:" + res[11]
         ACCURACY = "准度:" + res[15]
         # 存进列表
-        res1 = ["\n游戏ID:" + zhanji, SCORE_MIN, KD_RATIO, WIN_PERCENT, KILLS_GAME, KILLS_MIN, INFANTRY_KPM, INFANTRY_KD,
+        res1 = ["\n游戏ID:" + Query_Overview, SCORE_MIN, KD_RATIO, WIN_PERCENT, KILLS_GAME, KILLS_MIN, INFANTRY_KPM, INFANTRY_KD,
                 VEHICLE_KILLS, VEHICLE_KPM, SKILL, ACCURACY]
         # 去逗号
         res2 = (' \n'.join(res1))
