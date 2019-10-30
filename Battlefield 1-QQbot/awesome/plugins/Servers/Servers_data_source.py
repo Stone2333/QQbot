@@ -1,0 +1,53 @@
+import requests
+from lxml import etree
+import re
+
+
+async def get_Servers(chafuwuqi: str) -> str:
+    Server = {'ZBW': '4548409440277', 'zbw': '4548409440277'}
+    if chafuwuqi in Server:
+        # Server = {'ZBW': '4548409440277', 'zbw': '4548409440277', '711': '4549052410528', 'FAZE': '4617118720211',
+        #           'XD233-1#': '4460849620490', 'XD233-2#': '4576102980226', 'QWQ': '4621146300215',
+        #           'QVQ': '4471243610926', '0V0': '4649704670029', 'FRM5-1#': '4639825910955', 'FRM5-2#': '4570182580087',
+        #           'FRM5-3#': '4624140460607', '404-1#': '4462319260673', '404-2#': '4505664220683',
+        #           '404-3#': '4545127080330', 'CDN': '4614832770811', 'HENT': '4607940010117', 'KGB-1#': '4629077150013',
+        #           'KGB-2#': '4623779700501'}
+        try:
+            base_url = "https://battlefieldtracker.com/bf1/servers/pc/" + Server[chafuwuqi]
+            # url = base_url.format(url1)
+            headers = {
+                "User-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
+            }
+            # proxies = {
+            #     'http': 'username:password@125.123.122.178:9999',
+            # }
+            response = requests.get(base_url, headers=headers)
+            htmlContent = response.content.decode("utf-8")
+            pattern = '<div class="quick-info">.*?<span class="value">(.*?)<small>(.*?)</small>'
+            # 服务器人数
+            html = re.findall(pattern, htmlContent, re.S)
+            for val in html:
+                name1 = val
+            Prayers = (''.join(name1))
+            xpath = etree.HTML(htmlContent)
+            Name = xpath.xpath('/html/body/div[1]/div[1]/div[3]/div[1]/div[2]/h1/span[1]/text()')[0]
+            Map = xpath.xpath('/html/body/div[1]/div[1]/div[3]/div[1]/div[2]/div/div[3]/span[2]/text()')[0]
+            Maplist = {'Ballroom Blitz': '流血宴厅', 'Argonne Forest': '阿尔贡森林', 'Fao Fortress': '法欧堡', 'Suez': '苏伊士',
+                       'St Quentin Scar': '圣康坦的伤痕', 'Sinai Desert': '西奈沙漠', 'Amiens': '亚眠', 'Monte Grappa': '格拉巴山',
+                       "Empire's Edge": '帝国边境', 'Passchendaele': '帕斯尚尔', 'Caporetto': '波雷托', 'River Somme': '索姆河',
+                       "Razor's Edge": '剃刀边缘', 'London Calling': '伦敦的呼唤', 'Heligoland Bight': '黑尔戈兰湾', 'Zeebrugge': '泽布吕赫',
+                       'Cape Helles': '海丽丝岬', 'Achi Baba': '阿奇巴巴', 'Lupkow Pass': '武普库夫山口', 'Brusilov Keep': '勃鲁西洛夫关口',
+                       'Gali cia': '加利西亚', 'Albion': '阿尔比恩', 'Tsaritsyn': '察里津', 'Volga River': '窝瓦河', 'Rupture': '决裂',
+                       'Soissons': '苏瓦松', 'Verdun Heights': '凡尔登高地', 'Fort De Vaux': '法乌克斯要塞', 'Prise de Tahure': '攻占托尔',
+                       'Nivelle Nights': '尼维尔之夜', "Giant's Shadow": '庞然暗影'}
+            c = ['\n服务器名称:' + Name, '\n地图:' + Maplist[Map], '\n服务器人数:' + Prayers]
+            a = (''.join(c))
+            return a
+        except:
+            # b = '\n服务器未注册、服务器不存在或网络问题\n可查询服务器列表：\nZBW，711，FAZE，XD233-1#，XD233-2#，FRM5-1#，FRM5-2#，FRM5-3#，QWQ，QVQ,0V0，404-1#，404-2#，404-3#，CDN,KGB-1#,KGB-2#\n查询格式：\n【查服务器】+空格+列表'
+            b = '网络问题，未查询到服务器信息，请稍后重试'
+            return b
+    else:
+        a = "服务器未注册,请联系管理员"
+        return a
+    # return f'{chafuwuqi}最近战绩如下xxx'
