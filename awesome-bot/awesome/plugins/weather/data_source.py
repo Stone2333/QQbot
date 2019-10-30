@@ -268,11 +268,3 @@ async def get_zaiju(zaiju: str) -> str:
     except:
         c = 'ID错误或网络问题，请稍后重试'
         return c
-
-    # 这里简单返回一个字符串
-    # 实际应用中，这里应该调用返回真实数据的天气 API，并拼接成天气预报内容
-    # return f'{chazaiju}最近战绩如下xxx'
-
-#
-# async def get_weather_of_city(city: str) -> str:
-#     return f'{city}天气如下xxx'
