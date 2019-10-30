@@ -6,3 +6,5 @@ NoneBot 是一个基于 酷Q 的 Python 异步 QQ 机器人框架，它会对 QQ
 NoneBot 在其底层与 酷Q 交互的部分使用 python-aiocqhttp 库，后者是 CoolQ HTTP API 插件 的一个 Python 异步 SDK，在 Quart 的基础上封装了与 CoolQ HTTP API 插件的网络交互。
 
 得益于 Python 的 asyncio 机制，NoneBot 处理消息的吞吐量有了很大的保障，再配合 CoolQ HTTP API 插件可选的 WebSocket 通信方式（也是最建议的通信方式），NoneBot 的性能可以达到 HTTP 通信方式的两倍以上，相较于传统同步 I/O 的 HTTP 通信，更是有质的飞跃。
+
+使用爬虫对BF1数据统计网站进行爬取解析
