@@ -110,8 +110,7 @@ def Select_Recent_Sessions(name):
 
 
 if __name__ == "__main__":
-    pass
-#     Select_Server("ZBW")
+    Select_Server("ZBW")
 #     Select_User()
 #     Select_Overview("BF_StoneGOGOGO")
 #     Select_Weapons("BF_StoneGOGOGO")

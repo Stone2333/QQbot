@@ -199,7 +199,6 @@ def get_Overview(Query_Overview: str) -> str:
         # 存进列表
         # res1 = [Query_Overview, SCORE_MIN, KD_RATIO, WIN_PERCENT, KILLS_GAME, KILLS_MIN, INFANTRY_KPM, INFANTRY_KD,VEHICLE_KILLS, VEHICLE_KPM, SKILL, ACCURACY]
         # print(res1)
-        # 去逗号
         Mysql_Insert.Insert_overview(Query_Overview, SCORE_MIN, KD_RATIO, WIN_PERCENT, KILLS_GAME, KILLS_MIN, INFANTRY_KPM, INFANTRY_KD, VEHICLE_KILLS, VEHICLE_KPM, SKILL, ACCURACY)
     except:
         str1 = 'ID错误或网络问题，请稍后重试'
@@ -207,8 +206,7 @@ def get_Overview(Query_Overview: str) -> str:
 
 
 if __name__=="__main__":
-    pass
-    # get_Overview("BF_StoneGOGOGO")
+    get_Overview("BF_StoneGOGOGO")
     # get_Weapons("BF_StoneGOGOGO")
     # get_Vehicles("BF_StoneGOGOGO")
     # get_Recent_Sessions("BF_StoneGOGOGO")
