@@ -2,11 +2,13 @@ from nonebot import on_command, CommandSession
 from nonebot import on_natural_language, NLPSession, IntentCommand
 from jieba import posseg
 from .Overview_data_source import *
+import Mysql_Insert
 
 # 当用户输入关键字没有输入值时则提示
 @on_command('Overview', aliases=('战绩', '查战绩'), only_to_me=False)
 async def Overview(session: CommandSession):
     Query_Overview = session.get('Query_Overview', prompt='你想查询战绩的ID是多少？')
+    # await Mysql_Insert.Insert_user(Query_Overview)
     a = "查询中请稍候"
     await session.send(a)
     Overview_report = await get_Overview(Query_Overview)

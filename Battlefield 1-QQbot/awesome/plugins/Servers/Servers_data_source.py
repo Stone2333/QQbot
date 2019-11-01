@@ -3,9 +3,9 @@ from lxml import etree
 import re
 
 
-async def get_Servers(chafuwuqi: str) -> str:
+async def get_Servers(Quer_Servers: str) -> str:
     Server = {'ZBW': '4548409440277', 'zbw': '4548409440277'}
-    if chafuwuqi in Server:
+    if Quer_Servers in Server:
         # Server = {'ZBW': '4548409440277', 'zbw': '4548409440277', '711': '4549052410528', 'FAZE': '4617118720211',
         #           'XD233-1#': '4460849620490', 'XD233-2#': '4576102980226', 'QWQ': '4621146300215',
         #           'QVQ': '4471243610926', '0V0': '4649704670029', 'FRM5-1#': '4639825910955', 'FRM5-2#': '4570182580087',
@@ -50,4 +50,3 @@ async def get_Servers(chafuwuqi: str) -> str:
     else:
         a = "服务器未注册,请联系管理员"
         return a
-    # return f'{chafuwuqi}最近战绩如下xxx'

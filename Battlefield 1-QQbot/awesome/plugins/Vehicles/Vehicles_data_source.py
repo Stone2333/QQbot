@@ -51,13 +51,12 @@ async def get_Vehicles(Query_Vehicles: str) -> str:
         name = Namelist[name_2]
         name1 = Namelist[name1_2]
         name2 = Namelist[name2_2]
-        d = [name, kills,kpm,Destroyed,name1,kills1, kpm1,Destroyed1,name2,kills2,kpm2,Destroyed2,]
+        d = ["\n载具名称:" + name, "击杀:" + kills, "KPM:" + kpm, "击毁载具:" + Destroyed,
+             "载具名称:" + name1, "击杀:" + kills1, "KPM:" + kpm1, "击毁载具:" + Destroyed1,
+             "载具名称:" + name2, "击杀:" + kills2, "KPM:" + kpm2, "击毁载具:" + Destroyed2,
+             ]
         res2 = (' \n'.join(d))
         return res2
     except:
         c = 'ID错误或网络问题，请稍后重试'
         return c
-
-    # 这里简单返回一个字符串
-    # 实际应用中，这里应该调用返回真实数据的天气 API，并拼接成天气预报内容
-    # return f'{chazaiju}最近战绩如下xxx'

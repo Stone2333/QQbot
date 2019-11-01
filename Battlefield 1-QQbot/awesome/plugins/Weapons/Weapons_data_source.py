@@ -2,9 +2,9 @@ import requests
 from lxml import etree
 import re
 
-async def get_Weapons(wuqi: str) -> str:
+async def get_Weapons(Query_Weapons: str) -> str:
     base_url = "https://battlefieldtracker.com/bf1/profile/pc/{}/weapons"
-    url = base_url.format(wuqi)
+    url = base_url.format(Query_Weapons)
     headers = {
         "User-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
     }
@@ -42,10 +42,12 @@ async def get_Weapons(wuqi: str) -> str:
         Accuracy2 = xpath.xpath("//td[@class='stat detailed'][3]/div[@class='value']/text()")[f]
         Headshots2 = xpath.xpath("//tbody/tr/td[@class='stat'][1]/text()")[e]
 
-        c = [name,kills,+ kpm, Accuracy,Headshots,name1,kills1,kpm1,Accuracy1,+ Headshots1,name2,kills2,kpm2,Accuracy2,+Headshots2,]
+        c = ["\n武器名称:" + name, "击杀:" + kills, "Kpm:" + kpm, "准度:" + Accuracy, "爆头击杀:" + Headshots,
+             "武器名称:" + name1, "击杀:" + kills1, "Kpm:" + kpm1, "准度:" + Accuracy1, "爆头击杀:" + Headshots1,
+             "武器名称:" + name2, "击杀:" + kills2, "Kpm:" + kpm2, "准度:" + Accuracy2, "爆头击杀:" + Headshots2,
+             ]
         res2 = (' \n'.join(c))
         return res2
     except:
         a = 'ID错误或网络问题，请稍后重试'
         return a
-    # return f'{Weapons}武器数据如下xxx'

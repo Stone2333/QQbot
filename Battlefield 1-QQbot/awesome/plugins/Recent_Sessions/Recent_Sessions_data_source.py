@@ -55,13 +55,12 @@ async def get_Recent_Sessions(Quer_Recent_Sessions: str) -> str:
         except:
             TimePlayed3 = ''
 
-        c = [SPM1,Kd1,KPM1,TimePlayed1,SPM2,Kd2,KPM2,TimePlayed2,SPM3, Kd3, KPM3, TimePlayed3]
+        c = ["\n最近战绩:", "SPM:" + SPM1, "KD:" + Kd1, "Kpm:" + KPM1, "游戏时间:" + TimePlayed1,
+             "\nSPM:" + SPM2, "KD:" + Kd2, "Kpm:" + KPM2, "游戏时间:" + TimePlayed2,
+             "\nSPM:" + SPM3, "KD:" + Kd3, "Kpm:" + KPM3, "游戏时间:" + TimePlayed3
+             ]
         res2 = (' \n'.join(c))
         return res2
     except:
         a = '无法查询到最近战绩'
         return a
-
-    # 这里简单返回一个字符串
-    # 实际应用中，这里应该调用返回真实数据的天气 API，并拼接成天气预报内容
-    # return f'{zuijinzhanji}最近战绩如下xxx'
