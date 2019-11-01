@@ -185,28 +185,29 @@ def get_Overview(Query_Overview: str) -> str:
     try:
         # BTRSCORE = "BTR分数:" + res[0]
         # BTR_MIN = "BTR/分钟:" + res[1]
-        SCORE_MIN = "分数/分钟:" + res[2]
-        KD_RATIO = "K/D比:" + res[3]
-        WIN_PERCENT = "胜率:" + res[4]
-        KILLS_GAME = "场均击杀:" + res[5]
-        KILLS_MIN = "杀敌/分钟:" + res[6]
-        INFANTRY_KPM = "步兵KPM:" + res[7]
-        INFANTRY_KD = "步兵KD:" + res[8]
-        VEHICLE_KILLS = "载具击杀:" + res[9]
-        VEHICLE_KPM = "载具KPM:" + res[10]
-        SKILL = "技巧值:" + res[11]
-        ACCURACY = "准度:" + res[15]
+        SCORE_MIN = res[2]
+        KD_RATIO = res[3]
+        WIN_PERCENT = res[4]
+        KILLS_GAME = res[5]
+        KILLS_MIN = res[6]
+        INFANTRY_KPM = res[7]
+        INFANTRY_KD = res[8]
+        VEHICLE_KILLS = res[9]
+        VEHICLE_KPM = res[10]
+        SKILL = res[11]
+        ACCURACY = res[15]
         # 存进列表
         # res1 = [Query_Overview, SCORE_MIN, KD_RATIO, WIN_PERCENT, KILLS_GAME, KILLS_MIN, INFANTRY_KPM, INFANTRY_KD,VEHICLE_KILLS, VEHICLE_KPM, SKILL, ACCURACY]
+        # print(res1)
         # 去逗号
-        Mysql_Insert.Insert_overview(Query_Overview, SCORE_MIN, KD_RATIO, WIN_PERCENT, KILLS_GAME, KILLS_MIN, INFANTRY_KPM,INFANTRY_KD, VEHICLE_KILLS, VEHICLE_KPM, SKILL, ACCURACY)
+        Mysql_Insert.Insert_overview(Query_Overview, SCORE_MIN, KD_RATIO, WIN_PERCENT, KILLS_GAME, KILLS_MIN, INFANTRY_KPM, INFANTRY_KD, VEHICLE_KILLS, VEHICLE_KPM, SKILL, ACCURACY)
     except:
         str1 = 'ID错误或网络问题，请稍后重试'
         return str1
 
 
 if __name__=="__main__":
-    get_Overview("bf_stonegogogo")
-    # get_Weapons("bf_stonegogogo")
-    # get_Vehicles("bf_stonegogogo")
-    # get_Recent_Sessions("bf_stonegogogo")
+    get_Overview("BF_StoneGOGOGO")
+    # get_Weapons("BF_StoneGOGOGO")
+    # get_Vehicles("BF_StoneGOGOGO")
+    # get_Recent_Sessions("BF_StoneGOGOGO")
