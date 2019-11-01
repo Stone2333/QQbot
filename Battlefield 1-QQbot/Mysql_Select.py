@@ -37,6 +37,7 @@ def Select_User():
     print(b)
     cursor.close()
     db.close()
+    return b
 
 def Select_Overview(name):
     db = pymysql.connect(
@@ -53,6 +54,7 @@ def Select_Overview(name):
     print(b)
     cursor.close()
     db.close()
+    return b
 
 def Select_Vehicles(name):
     db = pymysql.connect(
@@ -69,6 +71,7 @@ def Select_Vehicles(name):
     print(b)
     cursor.close()
     db.close()
+    return b
 
 def Select_Weapons(name):
     db = pymysql.connect(
@@ -85,6 +88,7 @@ def Select_Weapons(name):
     print(b)
     cursor.close()
     db.close()
+    return b
 
 def Select_Recent_Sessions(name):
     db = pymysql.connect(
@@ -101,14 +105,15 @@ def Select_Recent_Sessions(name):
     print(b)
     cursor.close()
     db.close()
-
+    return b
 
 
 
 if __name__ == "__main__":
-    Select_Server("ZBW")
-    Select_User()
-    Select_Overview("BF_StoneGOGOGO")
-    Select_Weapons("BF_StoneGOGOGO")
-    Select_Vehicles("BF_StoneGOGOGO")
-    Select_Recent_Sessions("BF_StoneGOGOGO")
+    pass
+#     Select_Server("ZBW")
+#     Select_User()
+#     Select_Overview("BF_StoneGOGOGO")
+#     Select_Weapons("BF_StoneGOGOGO")
+#     Select_Vehicles("BF_StoneGOGOGO")
+#     Select_Recent_Sessions("BF_StoneGOGOGO")
