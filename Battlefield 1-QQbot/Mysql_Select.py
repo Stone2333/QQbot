@@ -20,7 +20,7 @@ def Select_Server(ServerName):
     return Server_content_list
 
 
-def Select_User():
+def Select_All_User():
     db = pymysql.connect(
         host="127.0.0.1",
         user="root",
@@ -32,11 +32,29 @@ def Select_User():
     sql = 'SELECT username FROM `user`'
     cursor.execute(sql)
     db.commit()
-    User_content = cursor.fetchall()
+    All_User_content = cursor.fetchall()
     # 讲遍历出的内容拼接成列表
-    User_content_list = []
-    for (row,) in User_content:
-        User_content_list.append(row)
+    All_User_content_list = []
+    for (row,) in All_User_content:
+        All_User_content_list.append(row)
+    print(All_User_content_list)
+    cursor.close()
+    db.close()
+    return All_User_content_list
+
+
+def Select_User(username):
+    db = pymysql.connect(
+        host="127.0.0.1",
+        user="root",
+        password="123456",
+        db="bf1")
+    cursor = db.cursor()
+    sql = 'SELECT username FROM `user` where username="{}"'.format(username)
+    cursor.execute(sql)
+    db.commit()
+    User_content = cursor.fetchall()
+    User_content_list = list(User_content[0])
     print(User_content_list)
     cursor.close()
     db.close()
@@ -117,8 +135,9 @@ def Select_Recent_Sessions(name):
 
 if __name__ == "__main__":
     # Select_Server("ZBW")
-    Select_User()
-#     Select_Overview("BF_StoneGOGOGO")
-#     Select_Weapons("BF_StoneGOGOGO")
-#     Select_Vehicles("BF_StoneGOGOGO")
-#     Select_Recent_Sessions("BF_StoneGOGOGO")
+    Select_User("BF_StoneGOGOGO")
+    # Select_All_User()
+    # Select_Overview("BF_StoneGOGOGO")
+    # Select_Weapons("BF_StoneGOGOGO")
+    # Select_Vehicles("BF_StoneGOGOGO")
+    # Select_Recent_Sessions("BF_StoneGOGOGO")

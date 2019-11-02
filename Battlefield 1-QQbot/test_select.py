@@ -1,7 +1,9 @@
 import Mysql_Select
 
 
-name = Mysql_Select.Select_User()
+all_name = Mysql_Select.Select_All_User()
+
+name = Mysql_Select.Select_User("BF_StoneGOGOGO")
 
 server = Mysql_Select.Select_Server("ZBW")
 
