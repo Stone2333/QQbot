@@ -7,8 +7,8 @@ from .Recent_Sessions_data_source import *
 @on_command('Recent_Sessions', aliases=('最近', '最近战绩', '查最近战绩'), only_to_me=False)
 async def Recent_Sessions(session: CommandSession):
     Quer_Recent_Sessions = session.get('Quer_Recent_Sessions', prompt='你想查询最近战绩的ID是多少？')
-    a = "查询中稍等片刻"
-    await session.send(a)
+    prompt = "查询中稍等片刻"
+    await session.send(prompt)
     Recent_Sessions_report = await get_Recent_Sessions(Quer_Recent_Sessions)
     await session.send(Recent_Sessions_report, at_sender=True)
 

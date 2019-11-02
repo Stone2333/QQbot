@@ -7,8 +7,8 @@ from .Vehicles_data_source import *
 @on_command('Vehicles', aliases=('载具', '查载具'),only_to_me=False)
 async def Vehicles(session: CommandSession):
     Query_Vehicles = session.get('Query_Vehicles', prompt='你想查询载具的ID是多少？')
-    a = "查询中稍等片刻"
-    await session.send(a)
+    prompt = "查询中稍等片刻"
+    await session.send(prompt)
     Vehicles_report = await get_Vehicles(Query_Vehicles)
     await session.send(Vehicles_report, at_sender=True)
 

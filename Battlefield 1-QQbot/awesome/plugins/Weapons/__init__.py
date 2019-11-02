@@ -6,8 +6,8 @@ from .Weapons_data_source import *
 @on_command('Weapons', aliases=('武器', '查武器'),only_to_me=False)
 async def Weapons(session: CommandSession):
     Query_Weapons = session.get('Query_Weapons', prompt='你想查询武器的ID是多少？')
-    a = "查询中请稍候"
-    await session.send(a)
+    prompt = "查询中请稍候"
+    await session.send(prompt)
     Weapons_report = await get_Weapons(Query_Weapons)
     await session.send(Weapons_report, at_sender=True)
 

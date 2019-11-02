@@ -6,8 +6,8 @@ from .Servers_data_source import *
 @on_command('Servers', aliases=('服务器', '查服务器'),only_to_me=False)
 async def Servers(session: CommandSession):
     Quer_Servers = session.get('Quer_Servers', prompt='你想查询服务器名称是多少？')
-    a = "查询中稍等片刻"
-    await session.send(a)
+    prompt = "查询中稍等片刻"
+    await session.send(prompt)
     Servers_report = await get_Servers(Quer_Servers)
     await session.send(Servers_report, at_sender=True)
 
