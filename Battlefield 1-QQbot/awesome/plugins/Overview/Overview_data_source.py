@@ -3,22 +3,20 @@ from lxml import etree
 import re
 
 async def get_Overview(Query_Overview: str) -> str:
-    # 爬取html
-    base_url = "https://battlefieldtracker.com/bf1/search?platform=pc&name="
-    url = base_url + Query_Overview
+    url = "https://battlefieldtracker.com/bf1/search?platform=pc&name="
+    url_join = url + Query_Overview
     headers = {
         "User-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
     }
     # proxies = {
     #     'http': 'username:password@125.123.122.178:9999',
     # }
-    response = requests.get(url, headers=headers)
-
+    response = requests.get(url_join, headers=headers)
     html = response.content.decode("utf-8")
     # 过滤html
     pattern = '"Field":.*?,"Value":(.*?)\},\{'
     string = re.findall(pattern, html, re.S)
-    # 查列表赋值给对象
+    # 正则过滤后string转换成列表
     res = list(string)
     try:
         # BTRSCORE = "BTR分数:" + res[0]
@@ -35,12 +33,11 @@ async def get_Overview(Query_Overview: str) -> str:
         SKILL = "技巧值:" + res[11]
         ACCURACY = "准度:" + res[15]
         # 存进列表
-        res1 = ["\n游戏ID:" + Query_Overview, SCORE_MIN, KD_RATIO, WIN_PERCENT, KILLS_GAME, KILLS_MIN, INFANTRY_KPM, INFANTRY_KD,
+        Overview_list = ["\n游戏ID:" + Query_Overview, SCORE_MIN, KD_RATIO, WIN_PERCENT, KILLS_GAME, KILLS_MIN, INFANTRY_KPM, INFANTRY_KD,
                 VEHICLE_KILLS, VEHICLE_KPM, SKILL, ACCURACY]
         # 去逗号
-        res2 = (' \n'.join(res1))
-        return res2
+        Overview_str = (' \n'.join(Overview_list))
+        return Overview_str
     except:
-        str1 = 'ID错误或网络问题，请稍后重试'
-        return str1
-    # return f'{zhanji}战绩如下xxx'
+        error = 'ID错误或网络问题，请稍后重试'
+        return error

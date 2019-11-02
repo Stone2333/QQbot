@@ -3,17 +3,16 @@ from lxml import etree
 import re
 
 async def get_Weapons(Query_Weapons: str) -> str:
-    base_url = "https://battlefieldtracker.com/bf1/profile/pc/{}/weapons"
-    url = base_url.format(Query_Weapons)
+    url = "https://battlefieldtracker.com/bf1/profile/pc/{}/weapons"
+    url_join = url.format(Query_Weapons)
     headers = {
         "User-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
     }
     # proxies = {
     #     'http': 'username:password@125.123.122.178:9999',
     # }
-    response = requests.get(url, headers=headers)
+    response = requests.get(url_join, headers=headers)
     htmlContent = response.content.decode("utf-8")
-    # 2.将html解析成一个xpath对象
     xpath = etree.HTML(htmlContent)
     # 过滤网页
     a = 11
@@ -42,12 +41,12 @@ async def get_Weapons(Query_Weapons: str) -> str:
         Accuracy2 = xpath.xpath("//td[@class='stat detailed'][3]/div[@class='value']/text()")[f]
         Headshots2 = xpath.xpath("//tbody/tr/td[@class='stat'][1]/text()")[e]
 
-        c = ["\n武器名称:" + name, "击杀:" + kills, "Kpm:" + kpm, "准度:" + Accuracy, "爆头击杀:" + Headshots,
+        Weapons_list = ["\n武器名称:" + name, "击杀:" + kills, "Kpm:" + kpm, "准度:" + Accuracy, "爆头击杀:" + Headshots,
              "武器名称:" + name1, "击杀:" + kills1, "Kpm:" + kpm1, "准度:" + Accuracy1, "爆头击杀:" + Headshots1,
              "武器名称:" + name2, "击杀:" + kills2, "Kpm:" + kpm2, "准度:" + Accuracy2, "爆头击杀:" + Headshots2,
              ]
-        res2 = (' \n'.join(c))
-        return res2
+        Weapons_str = (' \n'.join(Weapons_list))
+        return Weapons_str
     except:
-        a = 'ID错误或网络问题，请稍后重试'
-        return a
+        error = 'ID错误或网络问题，请稍后重试'
+        return error

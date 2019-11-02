@@ -4,20 +4,17 @@ import re
 
 
 async def get_Vehicles(Query_Vehicles: str) -> str:
-    base_url = "https://battlefieldtracker.com/bf1/profile/pc/{}/vehicles"
-    url = base_url.format(Query_Vehicles)
+    url = "https://battlefieldtracker.com/bf1/profile/pc/{}/vehicles"
+    url_join = url.format(Query_Vehicles)
     headers = {
         "User-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
     }
     # proxies = {
     #     'http': 'username:password@125.123.122.178:9999',
     # }
-    response = requests.get(url, headers=headers)
+    response = requests.get(url_join, headers=headers)
     htmlContent = response.content.decode("utf-8")
-    # 2.将html解析成一个xpath对象
     xpath = etree.HTML(htmlContent)
-    # 3.使用xpath对象中的xpath方法查出每个数据的标签
-    # data = xpath.xpath(".//div[@class='class']")
     # 从每个数据标签中找出载具的信息
     a = 0
     try:
@@ -51,12 +48,12 @@ async def get_Vehicles(Query_Vehicles: str) -> str:
         name = Namelist[name_2]
         name1 = Namelist[name1_2]
         name2 = Namelist[name2_2]
-        d = ["\n载具名称:" + name, "击杀:" + kills, "KPM:" + kpm, "击毁载具:" + Destroyed,
+        Vehicles_list = ["\n载具名称:" + name, "击杀:" + kills, "KPM:" + kpm, "击毁载具:" + Destroyed,
              "载具名称:" + name1, "击杀:" + kills1, "KPM:" + kpm1, "击毁载具:" + Destroyed1,
              "载具名称:" + name2, "击杀:" + kills2, "KPM:" + kpm2, "击毁载具:" + Destroyed2,
              ]
-        res2 = (' \n'.join(d))
-        return res2
+        Vehicles_str = (' \n'.join(Vehicles_list))
+        return Vehicles_str
     except:
-        c = 'ID错误或网络问题，请稍后重试'
-        return c
+        error = 'ID错误或网络问题，请稍后重试'
+        return error
