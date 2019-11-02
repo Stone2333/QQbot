@@ -1,5 +1,6 @@
 import pymysql
 
+
 def Select_Server(ServerName):
     db = pymysql.connect(
         host="127.0.0.1",
@@ -10,11 +11,13 @@ def Select_Server(ServerName):
     sql = 'SELECT ServerID FROM `server` WHERE ServerName = "{}"'.format(ServerName)
     cursor.execute(sql)
     db.commit()
-    a =cursor.fetchall()
-    b = list(a[0])
-    print(b)
+    Server_content =cursor.fetchall()
+    # 将元组转换成列表
+    Server_content_list = list(Server_content[0])
+    print(Server_content_list)
     cursor.close()
     db.close()
+    return Server_content_list
 
 
 def Select_User():
@@ -23,21 +26,22 @@ def Select_User():
         user="root",
         password="123456",
         db="bf1")
-    # cursor = db.cursor(pymysql.cursors.DictCursor)  输出字典
+    # 获取结果为字典
+    # cursor = db.cursor(pymysql.cursors.DictCursor)
     cursor = db.cursor()
     sql = 'SELECT username FROM `user`'
     cursor.execute(sql)
     db.commit()
-    # 表条数
-    # sql1 = "SELECT COUNT(*) FROM `user`"
-    # cursor.execute(sql)
-    # db.commit()
-    a = cursor.fetchall()
-    b = list(a)
-    print(b)
+    User_content = cursor.fetchall()
+    # 讲遍历出的内容拼接成列表
+    User_content_list = []
+    for (row,) in User_content:
+        User_content_list.append(row)
+    print(User_content_list)
     cursor.close()
     db.close()
-    return b
+    return User_content_list
+
 
 def Select_Overview(name):
     db = pymysql.connect(
@@ -49,12 +53,13 @@ def Select_Overview(name):
     sql = 'SELECT SCORE_MIN,KD_RATIO,WIN_PERCENT,KILLS_GAME,KILLS_MIN,INFANTRY_KPM,INFANTRY_KD,VEHICLE_KILLS,VEHICLE_KPM,SKILL,ACCURACY FROM `overview` WHERE name = "{}"'.format(name)
     cursor.execute(sql)
     db.commit()
-    a = cursor.fetchall()
-    b = list(a[0])
-    print(b)
+    Overview_content = cursor.fetchall()
+    Overview_content_list = list(Overview_content[0])
+    print(Overview_content_list)
     cursor.close()
     db.close()
-    return b
+    return Overview_content_list
+
 
 def Select_Vehicles(name):
     db = pymysql.connect(
@@ -66,12 +71,13 @@ def Select_Vehicles(name):
     sql = 'SELECT VehiclesName, KILLS, KPM, Destroyed, VehiclesName1, KILLS1, KPM1, Destroyed1, VehiclesName2, KILLS2, KPM2, Destroyed2 FROM `vehicles` WHERE name = "{}"'.format(name)
     cursor.execute(sql)
     db.commit()
-    a = cursor.fetchall()
-    b = list(a[0])
-    print(b)
+    Vehicles_content = cursor.fetchall()
+    Vehicles_content_list = list(Vehicles_content[0])
+    print(Vehicles_content_list)
     cursor.close()
     db.close()
-    return b
+    return Vehicles_content_list
+
 
 def Select_Weapons(name):
     db = pymysql.connect(
@@ -83,12 +89,13 @@ def Select_Weapons(name):
     sql = 'SELECT WeaponsName,KILLS, KPM, Accuracy,Headshots,WeaponsName1,KILLS1,KPM1,Accuracy1,Headshots1,WeaponsName2,KILLS2,KPM2,Accuracy2,Headshots2 FROM `weapons` WHERE name = "{}"'.format(name)
     cursor.execute(sql)
     db.commit()
-    a = cursor.fetchall()
-    b = list(a[0])
-    print(b)
+    Weapons_content = cursor.fetchall()
+    Weapons_content_list = list(Weapons_content[0])
+    print(Weapons_content_list)
     cursor.close()
     db.close()
-    return b
+    return Weapons_content_list
+
 
 def Select_Recent_Sessions(name):
     db = pymysql.connect(
@@ -100,18 +107,17 @@ def Select_Recent_Sessions(name):
     sql = 'SELECT SPM,KD,KPM,TimePlayed,SPM1,KD1,KPM1,TimePlayed1,SPM2, KD2, KPM2, TimePlayed2 FROM `recent_sessions` WHERE name = "{}"'.format(name)
     cursor.execute(sql)
     db.commit()
-    a = cursor.fetchall()
-    b = list(a[0])
-    print(b)
+    Recent_Sessions_content = cursor.fetchall()
+    Recent_Sessions_content_list = list(Recent_Sessions_content[0])
+    print(Recent_Sessions_content_list)
     cursor.close()
     db.close()
-    return b
-
+    return Recent_Sessions_content_list
 
 
 if __name__ == "__main__":
-    Select_Server("ZBW")
-#     Select_User()
+    # Select_Server("ZBW")
+    Select_User()
 #     Select_Overview("BF_StoneGOGOGO")
 #     Select_Weapons("BF_StoneGOGOGO")
 #     Select_Vehicles("BF_StoneGOGOGO")
