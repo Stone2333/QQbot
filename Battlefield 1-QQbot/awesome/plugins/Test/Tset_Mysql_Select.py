@@ -13,10 +13,16 @@ def Select_Server_Id(ServerName):
     db.commit()
     Server_Id_content =cursor.fetchall()
     # 将元组转换成列表
-    Server_Id_content_list = list(Server_Id_content[0])
-    print(Server_Id_content_list)
-    cursor.close()
-    db.close()
+    try:
+        Server_Id_content_list = list(Server_Id_content[0])
+        print(Server_Id_content_list)
+        cursor.close()
+        db.close()
+    except:
+        Server_Id_content_list = list(Server_Id_content)
+        print(Server_Id_content_list)
+        cursor.close()
+        db.close()
     return Server_Id_content_list
 
 def Select_Server(ServerName):
@@ -31,10 +37,16 @@ def Select_Server(ServerName):
     db.commit()
     Server_content =cursor.fetchall()
     # 将元组转换成列表
-    Server_content_list = list(Server_content[0])
-    print(Server_content_list)
-    cursor.close()
-    db.close()
+    try:
+        Server_content_list = list(Server_content[0])
+        print(Server_content_list)
+        cursor.close()
+        db.close()
+    except:
+        Server_content_list = list(Server_content)
+        print(Server_content_list)
+        cursor.close()
+        db.close()
     return Server_content_list
 
 
@@ -72,10 +84,16 @@ def Select_User(username):
     cursor.execute(sql)
     db.commit()
     User_content = cursor.fetchall()
-    User_content_list = list(User_content[0])
-    print(User_content_list)
-    cursor.close()
-    db.close()
+    try:
+        User_content_list = list(User_content[0])
+        print(User_content_list)
+        cursor.close()
+        db.close()
+    except:
+        User_content_list = list(User_content)
+        print(User_content_list)
+        cursor.close()
+        db.close()
     return User_content_list
 
 
@@ -90,10 +108,16 @@ def Select_Overview(name):
     cursor.execute(sql)
     db.commit()
     Overview_content = cursor.fetchall()
-    Overview_content_list = list(Overview_content[0])
-    print(Overview_content_list)
-    cursor.close()
-    db.close()
+    try:
+        Overview_content_list = list(Overview_content[0])
+        print(Overview_content_list)
+        cursor.close()
+        db.close()
+    except:
+        Overview_content_list = list(Overview_content)
+        print(Overview_content_list)
+        cursor.close()
+        db.close()
     return Overview_content_list
 
 
@@ -108,10 +132,16 @@ def Select_Vehicles(name):
     cursor.execute(sql)
     db.commit()
     Vehicles_content = cursor.fetchall()
-    Vehicles_content_list = list(Vehicles_content[0])
-    print(Vehicles_content_list)
-    cursor.close()
-    db.close()
+    try:
+        Vehicles_content_list = list(Vehicles_content[0])
+        print(Vehicles_content_list)
+        cursor.close()
+        db.close()
+    except:
+        Vehicles_content_list = list(Vehicles_content)
+        print(Vehicles_content_list)
+        cursor.close()
+        db.close()
     return Vehicles_content_list
 
 
@@ -126,10 +156,16 @@ def Select_Weapons(name):
     cursor.execute(sql)
     db.commit()
     Weapons_content = cursor.fetchall()
-    Weapons_content_list = list(Weapons_content[0])
-    print(Weapons_content_list)
-    cursor.close()
-    db.close()
+    try:
+        Weapons_content_list = list(Weapons_content[0])
+        print(Weapons_content_list)
+        cursor.close()
+        db.close()
+    except:
+        Weapons_content_list = list(Weapons_content)
+        print(Weapons_content_list)
+        cursor.close()
+        db.close()
     return Weapons_content_list
 
 
@@ -144,22 +180,25 @@ def Select_Recent_Sessions(name):
     cursor.execute(sql)
     db.commit()
     Recent_Sessions_content = cursor.fetchall()
-    Recent_Sessions_content_list = list(Recent_Sessions_content[0])
-    print(Recent_Sessions_content_list)
-    cursor.close()
-    db.close()
+    try:
+        Recent_Sessions_content_list = list(Recent_Sessions_content[0])
+        print(Recent_Sessions_content_list)
+        cursor.close()
+        db.close()
+    except:
+        Recent_Sessions_content_list = list(Recent_Sessions_content)
+        print(Recent_Sessions_content_list)
+        cursor.close()
+        db.close()
     return Recent_Sessions_content_list
 
-# loop = asyncio.get_event_loop()
-# tasks = [Select_Overview()]
-# loop.run_until_complete(asyncio.wait(tasks))
-# loop.close()
 
 if __name__ == "__main__":
-    Select_Server("ZBW")
-    Select_User("BF_StoneGOGOGO")
-    Select_All_User()
-    Select_Overview("BF_StoneGOGOGO")
-    Select_Weapons("BF_StoneGOGOGO")
-    Select_Vehicles("BF_StoneGOGOGO")
-    Select_Recent_Sessions("BF_StoneGOGOGO")
+    # Select_Server("koi")
+    # Select_Server_Id("koi")
+    # Select_User("Bear_maio")
+    # Select_All_User()
+    Select_Overview("Bear_maio")
+    # Select_Weapons("Bear_maio")
+    # Select_Vehicles("Bear_maio")
+    # Select_Recent_Sessions("Bear_maio")
