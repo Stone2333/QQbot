@@ -15,6 +15,7 @@ ACCURACY varchar(20) null,
 INDEX(name)
 )ENGINE=INNODB charset=utf8;
 
+
 create table Recent_Sessions(
 id int auto_increment primary key,
 name varchar(30) not null unique,
@@ -33,7 +34,8 @@ TimePlayed2 varchar(20) null,
 INDEX(name)
 )ENGINE=INNODB charset=utf8;
 
-create table Server(
+
+create table Server_id(
 id int auto_increment primary key,
 ServerName varchar(100) not null unique,
 ServerID varchar(20) not null unique,
@@ -86,4 +88,14 @@ create table user(
 id int auto_increment primary key,
 username varchar(30) not null unique,
 INDEX(username)
+)ENGINE=INNODB charset=utf8;
+
+
+create table Server(
+id int auto_increment primary key,
+ServerName varchar(20) not null unique,
+Name varchar(100) not null,
+Maplist varchar(20) not null,
+Prayers varchar(20) not null,
+INDEX(ServerName)
 )ENGINE=INNODB charset=utf8;

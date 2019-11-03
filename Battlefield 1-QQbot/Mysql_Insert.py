@@ -1,7 +1,7 @@
 import pymysql
 
 
-def Insert_Server(ServerName,ServerID):
+def Insert_Server_Id(ServerName,ServerID):
     db = pymysql.connect(
         host="127.0.0.1",
         user="root",
@@ -13,25 +13,25 @@ def Insert_Server(ServerName,ServerID):
     db.commit()
     cursor.close()
     db.close()
-    print("服务器插入成功")
+    print("服务器ID数据库插入成功")
 
 
-async def Insert_user(username):
+def Insert_User(name):
     db = pymysql.connect(
         host="127.0.0.1",
         user="root",
         password="123456",
         db="bf1")
     cursor = db.cursor()
-    sql = 'INSERT INTO `user` (username) VALUES ("{}") '.format(username)
+    sql = 'INSERT INTO `user` (username) VALUES ("{}") '.format(name)
     cursor.execute(sql)
     db.commit()
     cursor.close()
     db.close()
-    print("ID插入成功")
+    print("游戏ID数据库插入成功")
 
 
-def Insert_overview(name, SCORE_MIN, KD_RATIO, WIN_PERCENT, KILLS_GAME, KILLS_MIN, INFANTRY_KPM, INFANTRY_KD,VEHICLE_KILLS, VEHICLE_KPM, SKILL, ACCURACY):
+def Insert_Overview(name, SCORE_MIN, KD_RATIO, WIN_PERCENT, KILLS_GAME, KILLS_MIN, INFANTRY_KPM, INFANTRY_KD,VEHICLE_KILLS, VEHICLE_KPM, SKILL, ACCURACY):
     db = pymysql.connect(
         host="127.0.0.1",
         user="root",
@@ -43,10 +43,10 @@ def Insert_overview(name, SCORE_MIN, KD_RATIO, WIN_PERCENT, KILLS_GAME, KILLS_MI
     db.commit()
     cursor.close()
     db.close()
-    print("战绩插入成功")
+    print("战绩数据库插入成功")
 
 
-async def Insert_vehicles(name, VehiclesName, KILLS, KPM, Destroyed, VehiclesName1, KILLS1, KPM1, Destroyed1, VehiclesName2, KILLS2, KPM2, Destroyed2):
+def Insert_Vehicles(name, VehiclesName, KILLS, KPM, Destroyed, VehiclesName1, KILLS1, KPM1, Destroyed1, VehiclesName2, KILLS2, KPM2, Destroyed2):
     db = pymysql.connect(
         host="127.0.0.1",
         user="root",
@@ -59,10 +59,10 @@ async def Insert_vehicles(name, VehiclesName, KILLS, KPM, Destroyed, VehiclesNam
     db.commit()
     cursor.close()
     db.close()
-    print("载具插入成功")
+    print("载具数据库插入成功")
 
 
-async def Insert_weapons(name, WeaponsName, KILLS, KPM, Accuracy, Headshots, WeaponsName1, KILLS1, KPM1, Accuracy1, Headshots1, WeaponsName2, KILLS2, KPM2, Accuracy2, Headshots2):
+def Insert_Weapons(name, WeaponsName, KILLS, KPM, Accuracy, Headshots, WeaponsName1, KILLS1, KPM1, Accuracy1, Headshots1, WeaponsName2, KILLS2, KPM2, Accuracy2, Headshots2):
     db = pymysql.connect(
         host="127.0.0.1",
         user="root",
@@ -74,10 +74,10 @@ async def Insert_weapons(name, WeaponsName, KILLS, KPM, Accuracy, Headshots, Wea
     db.commit()
     cursor.close()
     db.close()
-    print("武器插入成功")
+    print("武器数据库插入成功")
 
 
-async def Insert_recent_sessions(name, SPM, KD, KPM, TimePlayed, SPM1, KD1, KPM1, TimePlayed1, SPM2, KD2, KPM2, TimePlayed2):
+def Insert_Recent_Sessions(name, SPM, KD, KPM, TimePlayed, SPM1, KD1, KPM1, TimePlayed1, SPM2, KD2, KPM2, TimePlayed2):
     db = pymysql.connect(
         host="127.0.0.1",
         user="root",
@@ -89,4 +89,21 @@ async def Insert_recent_sessions(name, SPM, KD, KPM, TimePlayed, SPM1, KD1, KPM1
     db.commit()
     cursor.close()
     db.close()
-    print("最近战绩插入成功")
+    print("最近战绩数据库插入成功")
+
+
+def Insert_Servers(ServerName,Name,Maplist,Prayers):
+    db = pymysql.connect(
+        host="127.0.0.1",
+        user="root",
+        password="123456",
+        db="bf1")
+    cursor = db.cursor()
+    sql = 'INSERT INTO `server` (ServerName, Name, Maplist, Prayers) VALUES ("{}","{}","{}","{}") '.format(ServerName,
+        Name, Maplist, Prayers)
+    print(sql)
+    cursor.execute(sql)
+    db.commit()
+    cursor.close()
+    db.close()
+    print("服务器信息数据库插入成功")

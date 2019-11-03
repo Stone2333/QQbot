@@ -150,10 +150,13 @@ def Select_Recent_Sessions(name):
     db.close()
     return Recent_Sessions_content_list
 
+# loop = asyncio.get_event_loop()
+# tasks = [Select_Overview()]
+# loop.run_until_complete(asyncio.wait(tasks))
+# loop.close()
 
 if __name__ == "__main__":
     Select_Server("ZBW")
-    Select_Server_Id("ZBW")
     Select_User("BF_StoneGOGOGO")
     Select_All_User()
     Select_Overview("BF_StoneGOGOGO")
