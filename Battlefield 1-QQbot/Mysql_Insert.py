@@ -13,7 +13,7 @@ def Insert_Server_Id(ServerName,ServerID):
     db.commit()
     cursor.close()
     db.close()
-    print("服务器ID数据库插入成功")
+    print(ServerName, "服务器ID数据库插入成功")
 
 
 def Insert_User(name):
@@ -28,7 +28,7 @@ def Insert_User(name):
     db.commit()
     cursor.close()
     db.close()
-    print("游戏ID数据库插入成功")
+    print(name, "游戏ID数据库插入成功")
 
 
 def Insert_Overview(name, SCORE_MIN, KD_RATIO, WIN_PERCENT, KILLS_GAME, KILLS_MIN, INFANTRY_KPM, INFANTRY_KD,VEHICLE_KILLS, VEHICLE_KPM, SKILL, ACCURACY):
@@ -43,7 +43,7 @@ def Insert_Overview(name, SCORE_MIN, KD_RATIO, WIN_PERCENT, KILLS_GAME, KILLS_MI
     db.commit()
     cursor.close()
     db.close()
-    print("战绩数据库插入成功")
+    print(name, "战绩数据库插入成功")
 
 
 def Insert_Vehicles(name, VehiclesName, KILLS, KPM, Destroyed, VehiclesName1, KILLS1, KPM1, Destroyed1, VehiclesName2, KILLS2, KPM2, Destroyed2):
@@ -59,7 +59,7 @@ def Insert_Vehicles(name, VehiclesName, KILLS, KPM, Destroyed, VehiclesName1, KI
     db.commit()
     cursor.close()
     db.close()
-    print("载具数据库插入成功")
+    print(name, "载具数据库插入成功")
 
 
 def Insert_Weapons(name, WeaponsName, KILLS, KPM, Accuracy, Headshots, WeaponsName1, KILLS1, KPM1, Accuracy1, Headshots1, WeaponsName2, KILLS2, KPM2, Accuracy2, Headshots2):
@@ -74,7 +74,7 @@ def Insert_Weapons(name, WeaponsName, KILLS, KPM, Accuracy, Headshots, WeaponsNa
     db.commit()
     cursor.close()
     db.close()
-    print("武器数据库插入成功")
+    print(name, "武器数据库插入成功")
 
 
 def Insert_Recent_Sessions(name, SPM, KD, KPM, TimePlayed, SPM1, KD1, KPM1, TimePlayed1, SPM2, KD2, KPM2, TimePlayed2):
@@ -89,7 +89,7 @@ def Insert_Recent_Sessions(name, SPM, KD, KPM, TimePlayed, SPM1, KD1, KPM1, Time
     db.commit()
     cursor.close()
     db.close()
-    print("最近战绩数据库插入成功")
+    print(name, "最近战绩数据库插入成功")
 
 
 def Insert_Servers(ServerName,Name,Maplist,Prayers):
@@ -106,4 +106,4 @@ def Insert_Servers(ServerName,Name,Maplist,Prayers):
     db.commit()
     cursor.close()
     db.close()
-    print("服务器信息数据库插入成功")
+    print(ServerName, "服务器信息数据库插入成功")

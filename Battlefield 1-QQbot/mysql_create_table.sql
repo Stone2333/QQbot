@@ -12,6 +12,7 @@ VEHICLE_KILLS varchar(20) null,
 VEHICLE_KPM varchar(20) null,
 SKILL varchar(20) null,
 ACCURACY varchar(20) null,
+update_time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 INDEX(name)
 )ENGINE=INNODB charset=utf8;
 
@@ -31,6 +32,7 @@ SPM2 varchar(20) null,
 KD2 varchar(20) null,
 KPM2 varchar(20) null,
 TimePlayed2 varchar(20) null,
+update_time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 INDEX(name)
 )ENGINE=INNODB charset=utf8;
 
@@ -39,6 +41,7 @@ create table Server_id(
 id int auto_increment primary key,
 ServerName varchar(100) not null unique,
 ServerID varchar(20) not null unique,
+update_time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 INDEX(ServerName,ServerID)
 )ENGINE=INNODB charset=utf8;
 
@@ -58,6 +61,7 @@ VehiclesName2 varchar(100) null,
 KILLS2 varchar(20) null,
 KPM2 varchar(20) null,
 Destroyed2 varchar(20) null,
+update_time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 INDEX(name)
 )ENGINE=INNODB charset=utf8;
 
@@ -80,6 +84,7 @@ KILLS2 varchar(20) null,
 KPM2 varchar(20) null,
 Accuracy2 varchar(20) null,
 Headshots2 varchar(20) null,
+update_time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 INDEX(name)
 )ENGINE=INNODB charset=utf8;
 
@@ -87,6 +92,7 @@ INDEX(name)
 create table user(
 id int auto_increment primary key,
 username varchar(30) not null unique,
+update_time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 INDEX(username)
 )ENGINE=INNODB charset=utf8;
 
@@ -97,5 +103,6 @@ ServerName varchar(20) not null unique,
 Name varchar(100) not null,
 Maplist varchar(20) not null,
 Prayers varchar(20) not null,
+update_time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 INDEX(ServerName)
 )ENGINE=INNODB charset=utf8;
