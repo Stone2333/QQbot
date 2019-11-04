@@ -1,7 +1,7 @@
 import requests
 from lxml import etree
 import re
-import Mysql_Insert
+import Test_Mysql_Insert
 
 def get_Weapons(Query_Weapons: str) -> str:
     base_url = "https://battlefieldtracker.com/bf1/profile/pc/{}/weapons"
@@ -43,7 +43,7 @@ def get_Weapons(Query_Weapons: str) -> str:
         Accuracy2 = xpath.xpath("//td[@class='stat detailed'][3]/div[@class='value']/text()")[f]
         Headshots2 = xpath.xpath("//tbody/tr/td[@class='stat'][1]/text()")[e]
 
-        Mysql_Insert.Insert_Weapons(Query_Weapons, WeaponsName, KILLS, KPM, Accuracy, Headshots, WeaponsName1, KILLS1, KPM1, Accuracy1, Headshots1, WeaponsName2, KILLS2, KPM2, Accuracy2, Headshots2)
+        Test_Mysql_Insert.Insert_Weapons(Query_Weapons, WeaponsName, KILLS, KPM, Accuracy, Headshots, WeaponsName1, KILLS1, KPM1, Accuracy1, Headshots1, WeaponsName2, KILLS2, KPM2, Accuracy2, Headshots2)
         print('爬虫插入武器成功')
     except:
         a = ''
@@ -99,7 +99,7 @@ def get_Vehicles(Query_Vehicles: str) -> str:
         name1 = Namelist[name1_2]
         name2 = Namelist[name2_2]
 
-        Mysql_Insert.Insert_Vehicles(Query_Vehicles, name, kills, kpm, Destroyed, name1, kills1, kpm1, Destroyed1, name2, kills2, kpm2, Destroyed2)
+        Test_Mysql_Insert.Insert_Vehicles(Query_Vehicles, name, kills, kpm, Destroyed, name1, kills1, kpm1, Destroyed1, name2, kills2, kpm2, Destroyed2)
         print("爬虫插入战绩成功")
         # d = []
         # res2 = (' \n'.join(d))
@@ -160,7 +160,7 @@ def get_Recent_Sessions(Quer_Recent_Sessions: str) -> str:
         except:
             TimePlayed3 = ''
 
-        Mysql_Insert.Insert_Recent_Sessions(Quer_Recent_Sessions,SPM1,Kd1,KPM1,TimePlayed1,SPM2,Kd2,KPM2,TimePlayed2,SPM3, Kd3, KPM3, TimePlayed3)
+        Test_Mysql_Insert.Insert_Recent_Sessions(Quer_Recent_Sessions,SPM1,Kd1,KPM1,TimePlayed1,SPM2,Kd2,KPM2,TimePlayed2,SPM3, Kd3, KPM3, TimePlayed3)
         print('爬虫插入最近战绩成功')
     except:
         a = '无法查询到最近战绩'
@@ -202,7 +202,7 @@ def get_Overview(Query_Overview: str) -> str:
         # 存进列表
         # res1 = [Query_Overview, SCORE_MIN, KD_RATIO, WIN_PERCENT, KILLS_GAME, KILLS_MIN, INFANTRY_KPM, INFANTRY_KD,VEHICLE_KILLS, VEHICLE_KPM, SKILL, ACCURACY]
         # print(res1)
-        Overview = Mysql_Insert.Insert_Overview(Query_Overview, SCORE_MIN, KD_RATIO, WIN_PERCENT, KILLS_GAME, KILLS_MIN, INFANTRY_KPM, INFANTRY_KD, VEHICLE_KILLS, VEHICLE_KPM, SKILL, ACCURACY)
+        Overview = Test_Mysql_Insert.Insert_Overview(Query_Overview, SCORE_MIN, KD_RATIO, WIN_PERCENT, KILLS_GAME, KILLS_MIN, INFANTRY_KPM, INFANTRY_KD, VEHICLE_KILLS, VEHICLE_KPM, SKILL, ACCURACY)
         print('爬虫插入战绩成功')
         return Overview
     except:
@@ -247,7 +247,7 @@ def get_Servers(Quer_Servers: str) -> str:
                        'Gali cia': '加利西亚', 'Albion': '阿尔比恩', 'Tsaritsyn': '察里津', 'Volga River': '窝瓦河', 'Rupture': '决裂',
                        'Soissons': '苏瓦松', 'Verdun Heights': '凡尔登高地', 'Fort De Vaux': '法乌克斯要塞', 'Prise de Tahure': '攻占托尔',
                        'Nivelle Nights': '尼维尔之夜', "Giant's Shadow": '庞然暗影'}
-            Mysql_Insert.Insert_Servers(Quer_Servers, Name, Maplist[Map], Prayers)
+            Test_Mysql_Insert.Insert_Servers(Quer_Servers, Name, Maplist[Map], Prayers)
             print('爬虫插入服务器信息成功')
         except:
             # b = '\n服务器未注册、服务器不存在或网络问题\n可查询服务器列表：\nZBW，711，FAZE，XD233-1#，XD233-2#，FRM5-1#，FRM5-2#，FRM5-3#，QWQ，QVQ,0V0，404-1#，404-2#，404-3#，CDN,KGB-1#,KGB-2#\n查询格式：\n【查服务器】+空格+列表'
