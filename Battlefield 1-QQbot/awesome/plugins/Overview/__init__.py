@@ -3,6 +3,14 @@ from nonebot import on_natural_language, NLPSession, IntentCommand
 from .Overview_data_source import *
 # import Mysql_Insert
 
+
+__plugin_name__ = '战绩查询'
+__plugin_usage__ = r"""
+战绩查询格式：
+【战绩】+空格+ID
+【查战绩】+空格+ID
+"""
+
 # 当用户输入关键字没有输入值时则提示
 @on_command('Overview', aliases=('战绩', '查战绩'), only_to_me=False)
 async def Overview(session: CommandSession):

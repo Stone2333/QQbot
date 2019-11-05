@@ -2,9 +2,11 @@ from nonebot import on_command, CommandSession
 from nonebot import on_natural_language, NLPSession, IntentCommand
 import Test_data_source
 
-__plugin_name__ = '测试1'
+__plugin_name__ = '测试模块'
 __plugin_usage__ = r"""
-测试1
+测试模块：
+mysql新增，查询，更新
+定任务失败重跑
 """
 
 @on_command('Test_Overview', aliases=('测试', '测试战绩'), only_to_me=False)

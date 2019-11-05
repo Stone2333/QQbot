@@ -2,6 +2,13 @@ from nonebot import on_command, CommandSession
 from nonebot import on_natural_language, NLPSession, IntentCommand
 from .Vehicles_data_source import *
 
+__plugin_name__ = '载具查询'
+__plugin_usage__ = r"""
+载具查询格式：
+【载具】+空格+ID
+【查载具】+空格+ID
+"""
+
 
 @on_command('Vehicles', aliases=('载具', '查载具'),only_to_me=False)
 async def Vehicles(session: CommandSession):
