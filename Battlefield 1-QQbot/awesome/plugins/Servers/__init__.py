@@ -1,6 +1,5 @@
 from nonebot import on_command, CommandSession
 from nonebot import on_natural_language, NLPSession, IntentCommand
-from jieba import posseg
 from .Servers_data_source import *
 
 @on_command('Servers', aliases=('服务器', '查服务器'),only_to_me=False)

@@ -1,6 +1,5 @@
 from nonebot import on_command, CommandSession
 from nonebot import on_natural_language, NLPSession, IntentCommand
-from jieba import posseg
 import Test_data_source
 
 
