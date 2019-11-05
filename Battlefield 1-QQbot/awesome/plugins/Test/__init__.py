@@ -2,7 +2,10 @@ from nonebot import on_command, CommandSession
 from nonebot import on_natural_language, NLPSession, IntentCommand
 import Test_data_source
 
-
+__plugin_name__ = '测试1'
+__plugin_usage__ = r"""
+测试1
+"""
 
 @on_command('Test_Overview', aliases=('测试', '测试战绩'), only_to_me=False)
 async def Test_Overview(session: CommandSession):
