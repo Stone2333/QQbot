@@ -90,13 +90,31 @@ def Update_Servers(ServerName,Name,Maplist,Prayers):
     db.close()
     print(ServerName, "服务器信息数据库插入成功")
 
+def Update_User(name):
+    db = pymysql.connect(
+        host="127.0.0.1",
+        user="root",
+        password="123456",
+        db="bf1")
+    cursor = db.cursor()
+    sql = 'UPDATE `user` set username = "{}" where username = "{}"'.format(name, name)
+    print(sql)
+    cursor.execute(sql)
+    db.commit()
+    cursor.close()
+    db.close()
+    print(name, "游戏ID信息数据库插入成功")
+
+
+if __name__ == '__main__':
+    Update_User('bf_stonegogogo')
 
 
 
-if __name__ == "__main__":
-    # Update_Server_Id(456, 'zbw')
-    Update_Overview("drunkard50","a","a","a","a","a","a","a","a","a","a","a")
-    Update_Weapons("drunkard50",2,2,1,1,1,1,1,1,1,1,1,1,11,1,1)
-    Update_Vehicles("drunkard50",1,1,1,1,1,1,1,1,1,1,1,1)
-    Update_Recent_Sessions('drunkard50',1,1,1,1,1,1,1,1,1,1,1,1,)
-    Update_Servers("zbw",1,1,1)
+# if __name__ == "__main__":
+#     # Update_Server_Id(456, 'zbw')
+#     Update_Overview("drunkard50","a","a","a","a","a","a","a","a","a","a","a")
+#     Update_Weapons("drunkard50",2,2,1,1,1,1,1,1,1,1,1,1,11,1,1)
+#     Update_Vehicles("drunkard50",1,1,1,1,1,1,1,1,1,1,1,1)
+#     Update_Recent_Sessions('drunkard50',1,1,1,1,1,1,1,1,1,1,1,1,)
+#     Update_Servers("zbw",1,1,1)

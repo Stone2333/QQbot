@@ -1,17 +1,17 @@
-import Tset_Mysql_Select
+import Test_Mysql_Select
 import Test_Mysql_Insert
 
 
 # 调用爬虫插入可能会受网络原因失败 已优化
 async def Tset_Select_Overview(Test_Query_Overview: str) -> str:
-    Overview = Tset_Mysql_Select.Select_Overview(Test_Query_Overview)
+    Overview = Test_Mysql_Select.Select_Overview(Test_Query_Overview)
     # 判断数据库中有没有这个ID，有则直接在数据库中查询，没有则调用爬虫爬取插入
     if Overview == []:
         # 调用爬虫爬取插入
         try:
             Test_Mysql_Insert.get_Overview(Test_Query_Overview)
             # 爬取完毕在数据库中查询
-            Overview = Tset_Mysql_Select.Select_Overview(Test_Query_Overview)
+            Overview = Test_Mysql_Select.Select_Overview(Test_Query_Overview)
             SCORE_MIN = "分数/分钟:" + Overview[0]
             KD_RATIO = "K/D比:" + Overview[1]
             WIN_PERCENT = "胜率:" + Overview[2]
@@ -53,16 +53,16 @@ async def Tset_Select_Overview(Test_Query_Overview: str) -> str:
 
 
 async def Tset_Select_Servers_Id(Test_Quer_Servers: str) -> str:
-    ServersID = Tset_Mysql_Select.Select_Server_Id(Test_Quer_Servers)
+    ServersID =Test_Mysql_Select.Select_Server_Id(Test_Quer_Servers)
     ServersID_str = ServersID[0]
     return ServersID_str
 
 async def Tset_Select_Servers(Test_Quer_Servers: str) -> str:
-    Servers = Tset_Mysql_Select.Select_Server(Test_Quer_Servers)
+    Servers = Test_Mysql_Select.Select_Server(Test_Quer_Servers)
     if Servers == []:
         try:
             Test_Mysql_Insert.get_Servers(Test_Quer_Servers)
-            Servers = Tset_Mysql_Select.Select_Server(Test_Quer_Servers)
+            Servers = Test_Mysql_Select.Select_Server(Test_Quer_Servers)
             Name = Servers[0]
             Maplist = Servers[1]
             Prayers = Servers[2]
@@ -84,11 +84,11 @@ async def Tset_Select_Servers(Test_Quer_Servers: str) -> str:
 
 
 async def Tset_Select_Weapons(Test_Query_Weapons: str) -> str:
-    Weapons = Tset_Mysql_Select.Select_Weapons(Test_Query_Weapons)
+    Weapons = Test_Mysql_Select.Select_Weapons(Test_Query_Weapons)
     if Weapons == []:
         try:
             Test_Mysql_Insert.get_Weapons(Test_Query_Weapons)
-            Weapons = Tset_Mysql_Select.Select_Weapons(Test_Query_Weapons)
+            Weapons = Test_Mysql_Select.Select_Weapons(Test_Query_Weapons)
             name = Weapons[0]
             kills = Weapons[1]
             kpm = Weapons[2]
@@ -138,11 +138,11 @@ async def Tset_Select_Weapons(Test_Query_Weapons: str) -> str:
 
 
 async def Tset_Select_Recent_Sessions(Test_Query_Recent_Sessions: str) -> str:
-    Recent_Sessions = Tset_Mysql_Select.Select_Recent_Sessions(Test_Query_Recent_Sessions)
+    Recent_Sessions = Test_Mysql_Select.Select_Recent_Sessions(Test_Query_Recent_Sessions)
     if Recent_Sessions == []:
         try:
             Test_Mysql_Insert.get_Recent_Sessions(Test_Query_Recent_Sessions)
-            Recent_Sessions = Tset_Mysql_Select.Select_Recent_Sessions(Test_Query_Recent_Sessions)
+            Recent_Sessions = Test_Mysql_Select.Select_Recent_Sessions(Test_Query_Recent_Sessions)
             SPM1 = Recent_Sessions[0]
             KD1 = Recent_Sessions[1]
             KPM1 = Recent_Sessions[2]
@@ -187,11 +187,11 @@ async def Tset_Select_Recent_Sessions(Test_Query_Recent_Sessions: str) -> str:
 
 
 async def Tset_Select_Vehicles(Test_Query_Vehicles: str) -> str:
-    Vehicles = Tset_Mysql_Select.Select_Vehicles(Test_Query_Vehicles)
+    Vehicles = Test_Mysql_Select.Select_Vehicles(Test_Query_Vehicles)
     if Vehicles == []:
         try:
             Test_Mysql_Insert.get_Vehicles(Test_Query_Vehicles)
-            Vehicles = Tset_Mysql_Select.Select_Vehicles(Test_Query_Vehicles)
+            Vehicles = Test_Mysql_Select.Select_Vehicles(Test_Query_Vehicles)
             name = Vehicles[0]
             kills = Vehicles[1]
             kpm = Vehicles[2]

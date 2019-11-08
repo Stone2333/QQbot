@@ -26,35 +26,49 @@ async def get_Recent_Sessions(Quer_Recent_Sessions: str) -> str:
                 0]
         except:
             TimePlayed1 = ''
-        SPM2 = xpath.xpath(
-            "/html/body/div[1]/div[1]/div[3]/div[2]/div[2]/div[2]/div[1]/div[2]/div/div[2]/div[2]/div[1]/div[1]//text()")[
-            0]
-        Kd2 = xpath.xpath(
-            "/html/body/div[1]/div[1]/div[3]/div[2]/div[2]/div[2]/div[1]/div[2]/div/div[2]/div[2]/div[2]/div[1]//text()")[
-            0]
-        KPM2 = xpath.xpath(
-            "/html/body/div[1]/div[1]/div[3]/div[2]/div[2]/div[2]/div[1]/div[2]/div/div[2]/div[2]/div[3]/div[1]//text()")[
-            0]
+
         try:
-            TimePlayed2 = xpath.xpath(
-                "/html/body/div[1]/div[1]/div[3]/div[2]/div[2]/div[2]/div[1]/div[2]/div/div[2]/div[2]/div[6]/div[1]//text()")[
+            SPM2 = xpath.xpath(
+                "/html/body/div[1]/div[1]/div[3]/div[2]/div[2]/div[2]/div[1]/div[2]/div/div[2]/div[2]/div[1]/div[1]//text()")[
                 0]
+            Kd2 = xpath.xpath(
+                "/html/body/div[1]/div[1]/div[3]/div[2]/div[2]/div[2]/div[1]/div[2]/div/div[2]/div[2]/div[2]/div[1]//text()")[
+                0]
+            KPM2 = xpath.xpath(
+                "/html/body/div[1]/div[1]/div[3]/div[2]/div[2]/div[2]/div[1]/div[2]/div/div[2]/div[2]/div[3]/div[1]//text()")[
+                0]
+            try:
+                TimePlayed2 = xpath.xpath(
+                    "/html/body/div[1]/div[1]/div[3]/div[2]/div[2]/div[2]/div[1]/div[2]/div/div[2]/div[2]/div[6]/div[1]//text()")[
+                    0]
+            except:
+                TimePlayed2 = ''
         except:
+            SPM2 = ''
+            Kd2 = ''
+            KPM2 = ''
             TimePlayed2 = ''
-        SPM3 = xpath.xpath(
-            "/html/body/div[1]/div[1]/div[3]/div[2]/div[2]/div[2]/div[1]/div[2]/div/div[3]/div[2]/div[1]/div[1]//text()")[
-            0]
-        Kd3 = xpath.xpath(
-            "/html/body/div[1]/div[1]/div[3]/div[2]/div[2]/div[2]/div[1]/div[2]/div/div[3]/div[2]/div[2]/div[1]//text()")[
-            0]
-        KPM3 = xpath.xpath(
-            "/html/body/div[1]/div[1]/div[3]/div[2]/div[2]/div[2]/div[1]/div[2]/div/div[3]/div[2]/div[3]/div[1]//text()")[
-            0]
+
         try:
-            TimePlayed3 = xpath.xpath(
-                "/html/body/div[1]/div[1]/div[3]/div[2]/div[2]/div[2]/div[1]/div[2]/div/div[3]/div[2]/div[6]/div[1]//text()")[
+            SPM3 = xpath.xpath(
+                "/html/body/div[1]/div[1]/div[3]/div[2]/div[2]/div[2]/div[1]/div[2]/div/div[3]/div[2]/div[1]/div[1]//text()")[
                 0]
+            Kd3 = xpath.xpath(
+                "/html/body/div[1]/div[1]/div[3]/div[2]/div[2]/div[2]/div[1]/div[2]/div/div[3]/div[2]/div[2]/div[1]//text()")[
+                0]
+            KPM3 = xpath.xpath(
+                "/html/body/div[1]/div[1]/div[3]/div[2]/div[2]/div[2]/div[1]/div[2]/div/div[3]/div[2]/div[3]/div[1]//text()")[
+                0]
+            try:
+                TimePlayed3 = xpath.xpath(
+                    "/html/body/div[1]/div[1]/div[3]/div[2]/div[2]/div[2]/div[1]/div[2]/div/div[3]/div[2]/div[6]/div[1]//text()")[
+                    0]
+            except:
+                TimePlayed3 = ''
         except:
+            SPM3 = ''
+            Kd3 = ''
+            KPM3 = ''
             TimePlayed3 = ''
 
         Recent_Sessions_list = ["\n最近战绩:", "SPM:" + SPM1, "KD:" + Kd1, "Kpm:" + KPM1, "游戏时间:" + TimePlayed1,

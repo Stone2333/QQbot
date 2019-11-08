@@ -1,6 +1,7 @@
 from nonebot import on_command, CommandSession
 from nonebot import on_natural_language, NLPSession, IntentCommand
 from .Vehicles_data_source import *
+import Mysql_Insert
 
 __plugin_name__ = '载具查询'
 __plugin_usage__ = r"""
@@ -15,7 +16,7 @@ async def Vehicles(session: CommandSession):
     Query_Vehicles = session.get('Query_Vehicles', prompt='你想查询载具的ID是多少？')
     prompt = "查询中稍等片刻"
     await session.send(prompt)
-    Vehicles_report = await get_Vehicles(Query_Vehicles)
+    Vehicles_report = await Select_Vehicles(Query_Vehicles)
     await session.send(Vehicles_report, at_sender=True)
 
 

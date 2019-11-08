@@ -5,11 +5,11 @@ import pytz
 from aiocqhttp.exceptions import Error as CQHttpError
 
 import Test_Mysql_Update
-import Tset_Mysql_Select
+import Test_Mysql_Select
 import time
 
 # 定时器 每5分钟触发一次
-@nonebot.scheduler.scheduled_job('cron', minute='*/5')
+# @nonebot.scheduler.scheduled_job('cron', minute='*/5')
 async def _():
     bot = nonebot.get_bot()
     now = datetime.now(pytz.timezone('Asia/Shanghai'))
@@ -18,7 +18,7 @@ async def _():
                                  message=f'定时任务开始')
         Start_Time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())
         print("开始时间：", Start_Time)
-        All_User = Tset_Mysql_Select.Select_All_User()
+        All_User = Test_Mysql_Select.Select_All_User()
         for index in range(len(All_User)):
             user_name = All_User[index]
             try:

@@ -1,7 +1,8 @@
 from nonebot import on_command, CommandSession
 from nonebot import on_natural_language, NLPSession, IntentCommand
 from .Overview_data_source import *
-# import Mysql_Insert
+import Mysql_Insert
+import Mysql_Update
 
 
 __plugin_name__ = '战绩查询'
@@ -15,10 +16,9 @@ __plugin_usage__ = r"""
 @on_command('Overview', aliases=('战绩', '查战绩'), only_to_me=False)
 async def Overview(session: CommandSession):
     Query_Overview = session.get('Query_Overview', prompt='你想查询战绩的ID是多少？')
-    # await Mysql_Insert.Insert_user(Query_Overview)
     prompt = "查询中请稍候"
     await session.send(prompt)
-    Overview_report = await get_Overview(Query_Overview)
+    Overview_report = await Select_Overview(Query_Overview)
     await session.send(Overview_report, at_sender=True)
 
 

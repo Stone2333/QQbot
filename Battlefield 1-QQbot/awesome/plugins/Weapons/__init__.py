@@ -1,6 +1,7 @@
 from nonebot import on_command, CommandSession
 from nonebot import on_natural_language, NLPSession, IntentCommand
 from .Weapons_data_source import *
+import Mysql_Insert
 
 __plugin_name__ = '武器查询'
 __plugin_usage__ = r"""
@@ -14,7 +15,7 @@ async def Weapons(session: CommandSession):
     Query_Weapons = session.get('Query_Weapons', prompt='你想查询武器的ID是多少？')
     prompt = "查询中请稍候"
     await session.send(prompt)
-    Weapons_report = await get_Weapons(Query_Weapons)
+    Weapons_report = await Select_Weapons(Query_Weapons)
     await session.send(Weapons_report, at_sender=True)
 
 

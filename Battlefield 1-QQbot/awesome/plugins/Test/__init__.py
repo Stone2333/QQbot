@@ -102,7 +102,7 @@ async def _(session: CommandSession):
     session.state[session.current_key] = stripped_arg
 
 
-@on_command('Test_Recent_Sessions', aliases=('测试最近', '测试最近战绩', '查最近战绩'), only_to_me=False)
+@on_command('Test_Recent_Sessions', aliases=('测试最近', '测试最近战绩', '测试最近战绩'), only_to_me=False)
 async def Test_Recent_Sessions(session: CommandSession):
     Test_Quer_Recent_Sessions = session.get('Test_Quer_Recent_Sessions', prompt='你想查询最近战绩的ID是多少？')
     prompt = "查询中稍等片刻"
