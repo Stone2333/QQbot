@@ -9,10 +9,10 @@ def get_Weapons(Query_Weapons: str) -> str:
     headers = {
         "User-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
     }
-    # proxies = {
-    #     'http': 'username:password@125.123.122.178:9999',
-    # }
-    response = requests.get(url, headers=headers)
+    proxies = {
+        'http': 'username:password@222.89.32.173:9999'
+    }
+    response = requests.get(url, proxies=proxies,headers=headers)
     htmlContent = response.content.decode("utf-8")
     # 2.将html解析成一个xpath对象
     xpath = etree.HTML(htmlContent)
@@ -57,10 +57,10 @@ def get_Vehicles(Query_Vehicles: str) -> str:
     headers = {
         "User-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
     }
-    # proxies = {
-    #     'http': 'username:password@125.123.122.178:9999',
-    # }
-    response = requests.get(url, headers=headers)
+    proxies = {
+        'http': 'username:password@222.89.32.173:9999'
+    }
+    response = requests.get(url, proxies=proxies, headers=headers)
     htmlContent = response.content.decode("utf-8")
     # 2.将html解析成一个xpath对象
     xpath = etree.HTML(htmlContent)
@@ -115,7 +115,10 @@ def get_Recent_Sessions(Quer_Recent_Sessions: str) -> str:
     headers = {
         "User-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
     }
-    response = requests.get(url, headers=headers)
+    proxies = {
+        'http': 'username:password@222.89.32.173:9999'
+    }
+    response = requests.get(url, proxies=proxies, headers=headers)
     html = response.content.decode("utf-8")
     xpath = etree.HTML(html)
     try:
@@ -177,10 +180,10 @@ def get_Overview(Query_Overview: str) -> str:
     headers = {
         "User-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
     }
-    # proxies = {
-    #     'http': 'username:password@125.123.122.178:9999',
-    # }
-    response = requests.get(url, headers=headers)
+    proxies = {
+        'http': 'username:password@222.89.32.173:9999'
+    }
+    response = requests.get(url, proxies=proxies, headers=headers)
     html = response.content.decode("utf-8")
     # 过滤html
     pattern = '"Field":.*?,"Value":(.*?)\},\{'
@@ -227,10 +230,10 @@ def get_Servers(Quer_Servers: str) -> str:
             headers = {
                 "User-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
             }
-            # proxies = {
-            #     'http': 'username:password@125.123.122.178:9999',
-            # }
-            response = requests.get(url_join, headers=headers)
+            proxies = {
+                'http': 'username:password@222.89.32.173:9999'
+            }
+            response = requests.get(url_join, proxies=proxies, headers=headers)
             htmlContent = response.content.decode("utf-8")
             pattern = '<div class="quick-info">.*?<span class="value">(.*?)<small>(.*?)</small>'
             # 服务器人数

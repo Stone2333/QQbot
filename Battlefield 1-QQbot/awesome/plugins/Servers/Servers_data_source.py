@@ -4,7 +4,7 @@ import re
 
 
 async def get_Servers(Quer_Servers: str) -> str:
-    Server = {'ZBW': '4548409440277', 'zbw': '4548409440277'}
+    Server = {'ZBW': '4719713770564', 'zbw': '4719713770564', 'QWQ': '4621146300215', 'qwq': '4621146300215', 'BNB':'4680554600670','bnb': '4680554600670','qvq':'4471243610926','QVQ':'4471243610926'}
     if Quer_Servers in Server:
         # Server = {'ZBW': '4548409440277', 'zbw': '4548409440277', '711': '4549052410528', 'FAZE': '4617118720211',
         #           'XD233-1#': '4460849620490', 'XD233-2#': '4576102980226', 'QWQ': '4621146300215',
@@ -23,6 +23,7 @@ async def get_Servers(Quer_Servers: str) -> str:
             # }
             response = requests.get(url_join, headers=headers)
             htmlContent = response.content.decode("utf-8")
+
             pattern = '<div class="quick-info">.*?<span class="value">(.*?)<small>(.*?)</small>'
             # 服务器人数
             html = re.findall(pattern, htmlContent, re.S)
@@ -31,15 +32,19 @@ async def get_Servers(Quer_Servers: str) -> str:
             Prayers = (''.join(Total))
             xpath = etree.HTML(htmlContent)
             Name = xpath.xpath('/html/body/div[1]/div[1]/div[3]/div[1]/div[2]/h1/span[1]/text()')[0]
-            Map = xpath.xpath('/html/body/div[1]/div[1]/div[3]/div[1]/div[2]/div/div[3]/span[2]/text()')[0]
-            Maplist = {'Ballroom Blitz': '流血宴厅', 'Argonne Forest': '阿尔贡森林', 'Fao Fortress': '法欧堡', 'Suez': '苏伊士',
-                       'St Quentin Scar': '圣康坦的伤痕', 'Sinai Desert': '西奈沙漠', 'Amiens': '亚眠', 'Monte Grappa': '格拉巴山',
-                       "Empire's Edge": '帝国边境', 'Passchendaele': '帕斯尚尔', 'Caporetto': '波雷托', 'River Somme': '索姆河',
-                       "Razor's Edge": '剃刀边缘', 'London Calling': '伦敦的呼唤', 'Heligoland Bight': '黑尔戈兰湾', 'Zeebrugge': '泽布吕赫',
-                       'Cape Helles': '海丽丝岬', 'Achi Baba': '阿奇巴巴', 'Lupkow Pass': '武普库夫山口', 'Brusilov Keep': '勃鲁西洛夫关口',
-                       'Gali cia': '加利西亚', 'Albion': '阿尔比恩', 'Tsaritsyn': '察里津', 'Volga River': '窝瓦河', 'Rupture': '决裂',
-                       'Soissons': '苏瓦松', 'Verdun Heights': '凡尔登高地', 'Fort De Vaux': '法乌克斯要塞', 'Prise de Tahure': '攻占托尔',
-                       'Nivelle Nights': '尼维尔之夜', "Giant's Shadow": '庞然暗影'}
+            try:
+                Map = xpath.xpath('/html/body/div[1]/div[1]/div[3]/div[1]/div[2]/div/div[3]/span[2]/text()')[0]
+                Maplist = {'Ballroom Blitz': '流血宴厅', 'Argonne Forest': '阿尔贡森林', 'Fao Fortress': '法欧堡', 'Suez': '苏伊士',
+                           'St Quentin Scar': '圣康坦的伤痕', 'Sinai Desert': '西奈沙漠', 'Amiens': '亚眠', 'Monte Grappa': '格拉巴山',
+                           "Empire's Edge": '帝国边境', 'Passchendaele': '帕斯尚尔', 'Caporetto': '波雷托', 'River Somme': '索姆河',
+                           "Razor's Edge": '剃刀边缘', 'London Calling': '伦敦的呼唤', 'Heligoland Bight': '黑尔戈兰湾', 'Zeebrugge': '泽布吕赫',
+                           'Cape Helles': '海丽丝岬', 'Achi Baba': '阿奇巴巴', 'Lupkow Pass': '武普库夫山口', 'Brusilov Keep': '勃鲁西洛夫关口',
+                           'Galicia': '加利西亚', 'Albion': '阿尔比恩', 'Tsaritsyn': '察里津', 'Volga River': '窝瓦河', 'Rupture': '决裂',
+                           'Soissons': '苏瓦松', 'Verdun Heights': '凡尔登高地', 'Fort De Vaux': '法乌克斯要塞', 'Prise de Tahure': '攻占托尔',
+                           'Nivelle Nights': '尼维尔之夜', "Giant's Shadow": '庞然暗影'}
+            except:
+                Map = ''
+                Maplist = {'': '未知'}
             Servers_list = ['\n服务器名称:' + Name, '\n地图:' + Maplist[Map], '\n服务器人数:' + Prayers]
             Servers_str = (''.join(Servers_list))
             return Servers_str
@@ -50,3 +55,5 @@ async def get_Servers(Quer_Servers: str) -> str:
     else:
         Servers_null = "服务器未注册,请联系管理员"
         return Servers_null
+
+

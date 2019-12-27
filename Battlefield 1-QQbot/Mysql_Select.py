@@ -193,12 +193,50 @@ def Select_Recent_Sessions(name):
     return Recent_Sessions_content_list
 
 
+def synchronous():
+    db = pymysql.connect(
+        host="127.0.0.1",
+        user="root",
+        password="123456",
+        db="bf1")
+    cursor = db.cursor()
+    sql = '''SELECT user.username FROM user 
+left join overview on user.username = overview.name 
+left join vehicles on user.username = vehicles.name
+left join weapons on user.username = weapons.name
+where overview.`name`is null'''
+    cursor.execute(sql)
+    db.commit()
+    Recent_Sessions_content = cursor.fetchall()
+    Recent_Sessions_content_list = list(Recent_Sessions_content)
+    company_name_list_join = []
+    for index in range(len(Recent_Sessions_content_list)):
+        company_name_address = list(Recent_Sessions_content_list[index])
+        for company_name_address_list in range(len(company_name_address)):
+            company_name_list_join.append(company_name_address[company_name_address_list])
+    print(company_name_list_join)
+    cursor.close()
+    db.close()
+    return company_name_list_join
+
+    # return Recent_Sessions_content_list
+
+
 if __name__ == "__main__":
-    Select_Server("koi")
-    Select_Server_Id("koi")
-    Select_User("Bear_maio")
-    # Select_All_User()
-    Select_Overview("Bear_maio")
-    Select_Weapons("Bear_maio")
-    Select_Vehicles("Bear_maio")
-    Select_Recent_Sessions("Bear_maio")
+    # Select_Server("koi")
+    # Select_Server_Id("koi")
+    # Select_User("Bear_maio")
+    # # Select_All_User()
+    # Select_Overview("Bear_maio")
+    # Select_Weapons("Bear_maio")
+    # Select_Vehicles("Bear_maio")
+    # Select_Recent_Sessions("Bear_maio")
+    synchronous()
+
+
+
+"""SELECT * FROM user 
+left join overview on user.username = overview.name 
+left join vehicles on user.username = vehicles.name
+left join weapons on user.username = weapons.name
+where user.username = 'aaa'"""
