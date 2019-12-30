@@ -45,9 +45,10 @@ def get_Update_Weapons(Query_Weapons: str) -> str:
         Headshots2 = xpath.xpath("//tbody/tr/td[@class='stat'][1]/text()")[e]
         try:
             Mysql_Update.Update_Weapons(Query_Weapons, WeaponsName, KILLS, KPM, Accuracy, Headshots, WeaponsName1, KILLS1, KPM1, Accuracy1, Headshots1, WeaponsName2, KILLS2, KPM2, Accuracy2, Headshots2)
+            print(Query_Weapons, '爬虫更新武器成功')
         except:
             print(Query_Weapons, '爬虫更新武器失败')
-        print(Query_Weapons, '爬虫更新武器成功')
+
     except:
         error = 'ID错误或网络问题，请稍后重试'
         return error
@@ -67,41 +68,36 @@ def get_Update_Vehicles(Query_Vehicles: str) -> str:
     xpath = etree.HTML(htmlContent)
     a = 0
     try:
-        name = xpath.xpath("//td[@class='details']/div[@class='title']/text()")[a]
-        name_1 = name.replace("\n", "")
-        name_2 = name_1.replace("\r", "")
+        name = xpath.xpath("//td[@class='details']/div[@class='title']/text()")[a].strip()
         kills = xpath.xpath("//td[@class='stat detailed'][1]/div[@class='value']/text()")[a]
         kpm = xpath.xpath("//td[@class='stat detailed'][2]/div[@class='value']/text()")[a]
         Destroyed = xpath.xpath("//td[@class='stat'][1]/text()")[a]
 
         b = 1
-        name1 = xpath.xpath("//td[@class='details']/div[@class='title']/text()")[2]
-        name1_1 = name1.replace("\n", "")
-        name1_2 = name1_1.replace("\r", "")
+        name1 = xpath.xpath("//td[@class='details']/div[@class='title']/text()")[2].strip()
         kills1 = xpath.xpath("//td[@class='stat detailed'][1]/div[@class='value']/text()")[b]
         kpm1 = xpath.xpath("//td[@class='stat detailed'][2]/div[@class='value']/text()")[b]
         Destroyed1 = xpath.xpath("//td[@class='stat'][1]/text()")[b]
 
         c = 2
-        name2 = xpath.xpath("//td[@class='details']/div[@class='title']/text()")[4]
-        name2_1 = name2.replace("\n", "")
-        name2_2 = name2_1.replace("\r", "")
+        name2 = xpath.xpath("//td[@class='details']/div[@class='title']/text()")[4].strip()
         kills2 = xpath.xpath("//td[@class='stat detailed'][1]/div[@class='value']/text()")[c]
         kpm2 = xpath.xpath("//td[@class='stat detailed'][2]/div[@class='value']/text()")[c]
         Destroyed2 = xpath.xpath("//td[@class='stat'][1]/text()")[c]
 
-        Namelist = {'ASSAULT TANK ': '圣沙蒙', 'ASSAULT TRUCK ': '菊花车', 'Attack Plane ': '攻击机', 'Horse ': '马',
-                    'Landship ': '巡航坦克', 'HEAVY BOMBER ': '重型轰炸机 ', 'Light Tank ': '轻型坦克', 'Heavy Tank ': '重型坦克',
-                    'Stationary Weapon ': '固定武器', 'Artillery Truck ': '火炮车', 'Behemoth ': '巨兽', 'Bomber ': '轰炸机'
+        Namelist = {'ASSAULT TANK': '圣沙蒙', 'ASSAULT TRUCK': '菊花车', 'Attack Plane': '攻击机', 'Horse': '马',
+                    'Landship': '巡航坦克', 'HEAVY BOMBER': '重型轰炸机', 'Light Tank': '轻型坦克', 'Heavy Tank': '重型坦克',
+                    'Stationary Weapon': '固定武器', 'Artillery Truck': '火炮车', 'Behemoth': '巨兽', 'Bomber': '轰炸机'
             , 'Boat ': '船', 'Fighter ': '战斗机'}
-        name = Namelist[name_2]
-        name1 = Namelist[name1_2]
-        name2 = Namelist[name2_2]
+        name_1 = Namelist[name]
+        name1_2 = Namelist[name1]
+        name2_3 = Namelist[name2]
         try:
-            Mysql_Update.Update_Vehicles(Query_Vehicles, name, kills, kpm, Destroyed, name1, kills1, kpm1, Destroyed1, name2, kills2, kpm2, Destroyed2)
+            Mysql_Update.Update_Vehicles(Query_Vehicles, name_1, kills, kpm, Destroyed, name1_2, kills1, kpm1, Destroyed1, name2_3, kills2, kpm2, Destroyed2)
+            print(Query_Vehicles, "爬虫更新载具成功")
         except:
             print(Query_Vehicles, "爬虫更新载具失败")
-        print(Query_Vehicles, "爬虫更新载具成功")
+
     except:
         error = 'ID错误或网络问题，请稍后重试'
         return error
@@ -158,10 +154,10 @@ def get_Update_Recent_Sessions(Quer_Recent_Sessions: str) -> str:
         except:
             TimePlayed3 = ''
         try:
-            Mysql_Update.Update_Recent_Sessions(Quer_Recent_Sessions, SPM1,Kd1,KPM1,TimePlayed1,SPM2,Kd2,KPM2,TimePlayed2,SPM3, Kd3, KPM3, TimePlayed3)
+            Mysql_Update.Update_Recent_Sessions(Quer_Recent_Sessions, SPM1, Kd1, KPM1, TimePlayed1, SPM2, Kd2, KPM2, TimePlayed2, SPM3, Kd3, KPM3, TimePlayed3)
+            print(Quer_Recent_Sessions, '爬虫更新最近战绩成功')
         except:
             print(Quer_Recent_Sessions, '爬虫更新最近战绩失败')
-        print(Quer_Recent_Sessions, '爬虫更新最近战绩成功')
 
     except:
         error = '无法查询到最近战绩'
@@ -201,10 +197,11 @@ def get_Update_Overview(Query_Overview: str) -> str:
         SKILL = res[11]
         ACCURACY = res[15]
         try:
-            Overview = Mysql_Update.Update_Overview(Query_Overview, SCORE_MIN, KD_RATIO, WIN_PERCENT, KILLS_GAME, KILLS_MIN, INFANTRY_KPM, INFANTRY_KD, VEHICLE_KILLS, VEHICLE_KPM, SKILL, ACCURACY)
+            Mysql_Update.Update_Overview(Query_Overview, SCORE_MIN, KD_RATIO, WIN_PERCENT, KILLS_GAME, KILLS_MIN, INFANTRY_KPM, INFANTRY_KD, VEHICLE_KILLS, VEHICLE_KPM, SKILL, ACCURACY)
+            print(Query_Overview, '爬虫更新战绩成功')
         except:
             print(Query_Overview, "爬虫更新战绩失败")
-        print(Query_Overview, '爬虫更新战绩成功')
+
 
     except:
         error = 'ID错误或网络问题，请稍后重试'
@@ -214,12 +211,6 @@ def get_Update_Overview(Query_Overview: str) -> str:
 def get_Update_Servers(Quer_Servers: str) -> str:
     Server = {'ZBW': '4548409440277', 'zbw': '4548409440277', 'QWQ': '4621146300215'}
     if Quer_Servers in Server:
-        # Server = {'ZBW': '4548409440277', 'zbw': '4548409440277', '711': '4549052410528', 'FAZE': '4617118720211',
-        #           'XD233-1#': '4460849620490', 'XD233-2#': '4576102980226', 'QWQ': '4621146300215',
-        #           'QVQ': '4471243610926', '0V0': '4649704670029', 'FRM5-1#': '4639825910955', 'FRM5-2#': '4570182580087',
-        #           'FRM5-3#': '4624140460607', '404-1#': '4462319260673', '404-2#': '4505664220683',
-        #           '404-3#': '4545127080330', 'CDN': '4614832770811', 'HENT': '4607940010117', 'KGB-1#': '4629077150013',
-        #           'KGB-2#': '4623779700501'}
         try:
             url_join = "https://battlefieldtracker.com/bf1/servers/pc/" + Server[Quer_Servers]
             # url = base_url.format(url1)
@@ -250,9 +241,10 @@ def get_Update_Servers(Quer_Servers: str) -> str:
                        'Nivelle Nights': '尼维尔之夜', "Giant's Shadow": '庞然暗影'}
             try:
                 Mysql_Update.Update_Servers(Quer_Servers, Name, Maplist[Map], Prayers)
+                print(Quer_Servers, '爬虫更新服务器信息成功')
             except:
-                print(Quer_Servers, "更新服务器信息失败")
-            print(Quer_Servers, '爬虫更新服务器信息成功')
+                print(Quer_Servers, "爬虫更新服务器信息失败")
+
         except:
             error = '网络问题，未查询到服务器信息，请稍后重试'
             return error

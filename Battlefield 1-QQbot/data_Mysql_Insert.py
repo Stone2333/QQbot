@@ -44,9 +44,10 @@ def get_Weapons(Query_Weapons: str) -> str:
         Headshots2 = xpath.xpath("//tbody/tr/td[@class='stat'][1]/text()")[e]
         try:
             Mysql_Insert.Insert_Weapons(Query_Weapons, WeaponsName, KILLS, KPM, Accuracy, Headshots, WeaponsName1, KILLS1, KPM1, Accuracy1, Headshots1, WeaponsName2, KILLS2, KPM2, Accuracy2, Headshots2)
+            print(Query_Weapons, '爬虫插入武器成功')
         except:
             print(Query_Weapons, '爬虫插入武器失败')
-        print(Query_Weapons, '爬虫插入武器成功')
+
     except:
         error = 'ID错误或网络问题，请稍后重试'
         return error
@@ -69,41 +70,36 @@ def get_Vehicles(Query_Vehicles: str) -> str:
     # 从每个数据标签中找出载具的信息
     a = 0
     try:
-        name = xpath.xpath("//td[@class='details']/div[@class='title']/text()")[a]
-        name_1 = name.replace("\n", "")
-        name_2 = name_1.replace("\r", "")
+        name = xpath.xpath("//td[@class='details']/div[@class='title']/text()")[a].strip()
         kills = xpath.xpath("//td[@class='stat detailed'][1]/div[@class='value']/text()")[a]
         kpm = xpath.xpath("//td[@class='stat detailed'][2]/div[@class='value']/text()")[a]
         Destroyed = xpath.xpath("//td[@class='stat'][1]/text()")[a]
 
         b = 1
-        name1 = xpath.xpath("//td[@class='details']/div[@class='title']/text()")[2]
-        name1_1 = name1.replace("\n", "")
-        name1_2 = name1_1.replace("\r", "")
+        name1 = xpath.xpath("//td[@class='details']/div[@class='title']/text()")[2].strip()
         kills1 = xpath.xpath("//td[@class='stat detailed'][1]/div[@class='value']/text()")[b]
         kpm1 = xpath.xpath("//td[@class='stat detailed'][2]/div[@class='value']/text()")[b]
         Destroyed1 = xpath.xpath("//td[@class='stat'][1]/text()")[b]
 
         c = 2
-        name2 = xpath.xpath("//td[@class='details']/div[@class='title']/text()")[4]
-        name2_1 = name2.replace("\n", "")
-        name2_2 = name2_1.replace("\r", "")
+        name2 = xpath.xpath("//td[@class='details']/div[@class='title']/text()")[4].strip()
         kills2 = xpath.xpath("//td[@class='stat detailed'][1]/div[@class='value']/text()")[c]
         kpm2 = xpath.xpath("//td[@class='stat detailed'][2]/div[@class='value']/text()")[c]
         Destroyed2 = xpath.xpath("//td[@class='stat'][1]/text()")[c]
 
-        Namelist = {'ASSAULT TANK ': '圣沙蒙', 'ASSAULT TRUCK ': '菊花车', 'Attack Plane ': '攻击机', 'Horse ': '马',
-                    'Landship ': '巡航坦克', 'HEAVY BOMBER ': '重型轰炸机 ', 'Light Tank ': '轻型坦克', 'Heavy Tank ': '重型坦克',
-                    'Stationary Weapon ': '固定武器', 'Artillery Truck ': '火炮车', 'Behemoth ': '巨兽', 'Bomber ': '轰炸机'
-            , 'Boat ': '船', 'Fighter ': '战斗机'}
-        name = Namelist[name_2]
-        name1 = Namelist[name1_2]
-        name2 = Namelist[name2_2]
+        Namelist = {'ASSAULT TANK': '圣沙蒙', 'ASSAULT TRUCK': '菊花车', 'Attack Plane': '攻击机', 'Horse': '马',
+                    'Landship': '巡航坦克', 'HEAVY BOMBER': '重型轰炸机', 'Light Tank': '轻型坦克', 'Heavy Tank': '重型坦克',
+                    'Stationary Weapon': '固定武器', 'Artillery Truck ': '火炮车', 'Behemoth': '巨兽', 'Bomber': '轰炸机'
+            , 'Boat': '船', 'Fighter': '战斗机'}
+
+        name_1 = Namelist[name]
+        name1_2 = Namelist[name1]
+        name2_3 = Namelist[name2]
         try:
-            Mysql_Insert.Insert_Vehicles(Query_Vehicles, name, kills, kpm, Destroyed, name1, kills1, kpm1, Destroyed1, name2, kills2, kpm2, Destroyed2)
+            Mysql_Insert.Insert_Vehicles(Query_Vehicles, name_1, kills, kpm, Destroyed,  name1_2, kills1, kpm1, Destroyed1, name2_3, kills2, kpm2, Destroyed2)
+            print(Query_Vehicles, "爬虫插入载具成功")
         except:
             print(Query_Vehicles, "爬虫插入载具失败")
-        print(Query_Vehicles, "爬虫插入载具成功")
 
     except:
         error = 'ID错误或网络问题，请稍后重试'
@@ -162,9 +158,10 @@ def get_Recent_Sessions(Quer_Recent_Sessions: str) -> str:
             TimePlayed3 = ''
         try:
             Mysql_Insert.Insert_Recent_Sessions(Quer_Recent_Sessions, SPM1,Kd1,KPM1,TimePlayed1,SPM2,Kd2,KPM2,TimePlayed2,SPM3, Kd3, KPM3, TimePlayed3)
+            print(Quer_Recent_Sessions, '爬虫插入最近战绩成功')
         except:
             print(Quer_Recent_Sessions, '爬虫插入最近战绩失败')
-        print(Quer_Recent_Sessions, '爬虫插入最近战绩成功')
+
     except:
         error = '无法查询到最近战绩'
         return error
@@ -190,6 +187,7 @@ def get_Overview(Query_Overview: str) -> str:
     try:
         # BTRSCORE = "BTR分数:" + res[0]
         # BTR_MIN = "BTR/分钟:" + res[1]
+
         SCORE_MIN = res[2]
         KD_RATIO = res[3]
         WIN_PERCENT = res[4]
@@ -203,10 +201,9 @@ def get_Overview(Query_Overview: str) -> str:
         ACCURACY = res[15]
         try:
             Mysql_Insert.Insert_Overview(Query_Overview, SCORE_MIN, KD_RATIO, WIN_PERCENT, KILLS_GAME, KILLS_MIN, INFANTRY_KPM, INFANTRY_KD, VEHICLE_KILLS, VEHICLE_KPM, SKILL, ACCURACY)
+            print(Query_Overview, '爬虫插入战绩成功')
         except:
             print(Query_Overview, '爬虫插入战绩失败')
-        print(Query_Overview, '爬虫插入战绩成功')
-
     except:
         error = 'ID错误或网络问题，请稍后重试'
         return error
@@ -251,9 +248,9 @@ def get_Servers(Quer_Servers: str) -> str:
                        'Nivelle Nights': '尼维尔之夜', "Giant's Shadow": '庞然暗影'}
             try:
                 Mysql_Insert.Insert_Servers(Quer_Servers, Name, Maplist[Map], Prayers)
+                print(Quer_Servers, '爬虫插入服务器信息成功')
             except:
                 print(Quer_Servers, '爬虫插入服务器信息失败')
-            print(Quer_Servers, '爬虫插入服务器信息成功')
         except:
             # b = '\n服务器未注册、服务器不存在或网络问题\n可查询服务器列表：\nZBW，711，FAZE，XD233-1#，XD233-2#，FRM5-1#，FRM5-2#，FRM5-3#，QWQ，QVQ,0V0，404-1#，404-2#，404-3#，CDN,KGB-1#,KGB-2#\n查询格式：\n【查服务器】+空格+列表'
             error = '网络问题，未查询到服务器信息，请稍后重试'
@@ -264,7 +261,7 @@ def get_Servers(Quer_Servers: str) -> str:
 
 if __name__=="__main__":
     # get_Servers("ZBW")
-    get_Overview("LEONID_47")
+    # get_Overview("LEONID_47")
     # get_Weapons("BF_StoneGOGOGO")
-    # get_Vehicles("BF_StoneGOGOGO")
+    get_Vehicles("BF_StoneGOGOGO")
     # get_Recent_Sessions("BF_StoneGOGOGO")
