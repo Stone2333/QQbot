@@ -24,4 +24,4 @@ def px_insert(company_name, company_address):
     cursor.execute(sql)
     db.commit()
     p = '培训公司信息数据库入库成功'
-    return p
+    return p 
