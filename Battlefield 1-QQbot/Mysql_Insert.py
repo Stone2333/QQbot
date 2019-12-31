@@ -1,21 +1,26 @@
 import pymysql
 
 
-def Insert_Server_Id(ServerName,ServerID):
+# 插入服务器名称和服务器ID
+def Insert_Server_Id(servername, serverid):
     db = pymysql.connect(
         host="127.0.0.1",
         user="root",
         password="123456",
         db="bf1")
     cursor = db.cursor()
-    sql = 'INSERT INTO `server` (ServerName,ServerID) VALUES ("{}","{}") '.format(ServerName,ServerID)
+    sql = '''
+          INSERT INTO `server` (servername, serverid) 
+          VALUES ("{}","{}")
+          '''.format(servername, serverid)
     cursor.execute(sql)
     db.commit()
     cursor.close()
     db.close()
-    print(ServerName, "服务器ID数据库插入成功")
+    print(servername, "服务器ID数据库插入成功")
 
 
+# 插入游戏名称
 def Insert_User(name):
     db = pymysql.connect(
         host="127.0.0.1",
@@ -23,7 +28,10 @@ def Insert_User(name):
         password="123456",
         db="bf1")
     cursor = db.cursor()
-    sql = 'INSERT INTO `user` (username) VALUES ("{}") '.format(name)
+    sql = '''
+          INSERT INTO `user` (username) 
+          VALUES ("{}") 
+          '''.format(name)
     cursor.execute(sql)
     db.commit()
     cursor.close()
@@ -31,14 +39,18 @@ def Insert_User(name):
     print(name, "游戏ID数据库插入成功")
 
 
-def Insert_Overview(name, SCORE_MIN, KD_RATIO, WIN_PERCENT, KILLS_GAME, KILLS_MIN, INFANTRY_KPM, INFANTRY_KD,VEHICLE_KILLS, VEHICLE_KPM, SKILL, ACCURACY):
+# 插入战绩信息
+def Insert_Overview(name, score_min, kd_ratio, win_percent, kills_game, kills_min, infantry_kpm, infantry_kd, vehicle_kills, vehicle_kpm, skill, accuracy):
     db = pymysql.connect(
         host="127.0.0.1",
         user="root",
         password="123456",
         db="bf1")
     cursor = db.cursor()
-    sql = 'INSERT INTO `overview` (name, SCORE_MIN, KD_RATIO, WIN_PERCENT, KILLS_GAME, KILLS_MIN, INFANTRY_KPM, INFANTRY_KD,VEHICLE_KILLS, VEHICLE_KPM, SKILL, ACCURACY) VALUES ("{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}") '.format(name, SCORE_MIN, KD_RATIO, WIN_PERCENT, KILLS_GAME, KILLS_MIN, INFANTRY_KPM, INFANTRY_KD, VEHICLE_KILLS, VEHICLE_KPM, SKILL, ACCURACY)
+    sql = '''
+          INSERT INTO `overview` (name, score_min, kd_ratio, win_percent, kills_game, kills_min, infantry_kpm, infantry_kd, vehicle_kills, vehicle_kpm, skill, accuracy) 
+          VALUES ("{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}") 
+          '''.format(name, score_min, kd_ratio, win_percent, kills_game, kills_min, infantry_kpm, infantry_kd, vehicle_kills, vehicle_kpm, skill, accuracy)
     cursor.execute(sql)
     db.commit()
     cursor.close()
@@ -46,15 +58,18 @@ def Insert_Overview(name, SCORE_MIN, KD_RATIO, WIN_PERCENT, KILLS_GAME, KILLS_MI
     print(name, "战绩数据库插入成功")
 
 
-def Insert_Vehicles(name, VehiclesName, KILLS, KPM, Destroyed, VehiclesName1, KILLS1, KPM1, Destroyed1, VehiclesName2, KILLS2, KPM2, Destroyed2):
+# 插入载具信息
+def Insert_Vehicles(name, vehiclesname, kills, kpm, destroyed, vehiclesname1, kills1, kpm1, destroyed1, vehiclesname2, kills2, kpm2, destroyed2):
     db = pymysql.connect(
         host="127.0.0.1",
         user="root",
         password="123456",
         db="bf1")
     cursor = db.cursor()
-    sql = 'INSERT INTO `vehicles` (name, VehiclesName, KILLS, KPM, Destroyed, VehiclesName1, KILLS1, KPM1, Destroyed1, VehiclesName2, KILLS2, KPM2, Destroyed2) VALUES ("{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}") '.format(
-        name, VehiclesName, KILLS, KPM, Destroyed, VehiclesName1, KILLS1, KPM1, Destroyed1, VehiclesName2, KILLS2, KPM2, Destroyed2)
+    sql = '''
+          INSERT INTO `vehicles` (name, VehiclesName, KILLS, KPM, Destroyed, VehiclesName1, KILLS1, KPM1, Destroyed1, VehiclesName2, KILLS2, KPM2, Destroyed2)
+          VALUES ("{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}")
+          '''.format(name, vehiclesname, kills, kpm, destroyed, vehiclesname1, kills1, kpm1, destroyed1, vehiclesname2, kills2, kpm2, destroyed2)
     cursor.execute(sql)
     db.commit()
     cursor.close()
@@ -62,14 +77,18 @@ def Insert_Vehicles(name, VehiclesName, KILLS, KPM, Destroyed, VehiclesName1, KI
     print(name, "载具数据库插入成功")
 
 
-def Insert_Weapons(name, WeaponsName, KILLS, KPM, Accuracy, Headshots, WeaponsName1, KILLS1, KPM1, Accuracy1, Headshots1, WeaponsName2, KILLS2, KPM2, Accuracy2, Headshots2):
+# 插入武器信息
+def Insert_Weapons(name, weaponsname, kills, kpm, accuracy, headshots, weaponsname1, kills1, kpm1, accuracy1, headshots1, weaponsname2, kills2, kpm2, accuracy2, headshots2):
     db = pymysql.connect(
         host="127.0.0.1",
         user="root",
         password="123456",
         db="bf1")
     cursor = db.cursor()
-    sql = 'INSERT INTO `weapons` (name, WeaponsName,KILLS, KPM, Accuracy,Headshots,WeaponsName1,KILLS1,KPM1,Accuracy1,Headshots1,WeaponsName2,KILLS2,KPM2,Accuracy2,Headshots2) VALUES ("{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}") '.format(name, WeaponsName, KILLS, KPM, Accuracy, Headshots, WeaponsName1, KILLS1, KPM1, Accuracy1, Headshots1, WeaponsName2, KILLS2, KPM2, Accuracy2, Headshots2)
+    sql = '''
+          INSERT INTO `weapons` (name, weaponsname, kills, kpm, accuracy, headshots, weaponsname1, kills1, kpm1, accuracy1, headshots1, weaponsname2, kills2, kpm2, accuracy2, headshots2)
+          VALUES ("{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}")
+          '''.format(name, weaponsname, kills, kpm, accuracy, headshots, weaponsname1, kills1, kpm1, accuracy1, headshots1, weaponsname2, kills2, kpm2, accuracy2, headshots2)
     cursor.execute(sql)
     db.commit()
     cursor.close()
@@ -77,14 +96,18 @@ def Insert_Weapons(name, WeaponsName, KILLS, KPM, Accuracy, Headshots, WeaponsNa
     print(name, "武器数据库插入成功")
 
 
-def Insert_Recent_Sessions(name, SPM, KD, KPM, TimePlayed, SPM1, KD1, KPM1, TimePlayed1, SPM2, KD2, KPM2, TimePlayed2):
+# 插入最近战绩
+def Insert_Recent_Sessions(name, spm, kd, kpm, timeplayed, spm1, kd1, kpm1, timeplayed1, spm2, kd2, kpm2, timeplayed2):
     db = pymysql.connect(
         host="127.0.0.1",
         user="root",
         password="123456",
         db="bf1")
     cursor = db.cursor()
-    sql = 'INSERT INTO `recent_sessions` (name, SPM,KD,KPM,TimePlayed,SPM1,KD1,KPM1,TimePlayed1,SPM2, KD2, KPM2, TimePlayed2) VALUES ("{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}") '.format(name, SPM, KD, KPM, TimePlayed, SPM1, KD1, KPM1, TimePlayed1, SPM2, KD2, KPM2, TimePlayed2)
+    sql = '''
+          INSERT INTO `recent_sessions` (name, spm, kd, kpm, timeplayed, spm1, kd1, kpm1, timeplayed1, spm2, kd2, kpm2, timeplayed2) 
+          VALUES ("{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}")
+          '''.format(name, spm, kd, kpm, timeplayed, spm1, kd1, kpm1, timeplayed1, spm2, kd2, kpm2, timeplayed2)
     cursor.execute(sql)
     db.commit()
     cursor.close()
@@ -92,18 +115,20 @@ def Insert_Recent_Sessions(name, SPM, KD, KPM, TimePlayed, SPM1, KD1, KPM1, Time
     print(name, "最近战绩数据库插入成功")
 
 
-def Insert_Servers(ServerName,Name,Maplist,Prayers):
+# 插入服务器详细信息
+def Insert_Servers(servername, name, maplist, prayers):
     db = pymysql.connect(
         host="127.0.0.1",
         user="root",
         password="123456",
         db="bf1")
     cursor = db.cursor()
-    sql = 'INSERT INTO `server` (ServerName, Name, Maplist, Prayers) VALUES ("{}","{}","{}","{}") '.format(ServerName,
-        Name, Maplist, Prayers)
-    print(sql)
+    sql = '''
+          INSERT INTO `server` (servername, name, maplist, prayers)
+          VALUES ("{}","{}","{}","{}")
+          '''.format(servername, name, maplist, prayers)
     cursor.execute(sql)
     db.commit()
     cursor.close()
     db.close()
-    print(ServerName, "服务器信息数据库插入成功")
+    print(servername, "服务器信息数据库插入成功")
