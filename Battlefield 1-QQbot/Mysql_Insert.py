@@ -1,6 +1,7 @@
 import pymysql
 
 
+
 # 插入服务器名称和服务器ID
 def Insert_Server_Id(servername, serverid):
     db = pymysql.connect(

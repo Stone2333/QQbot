@@ -261,8 +261,6 @@ def synchronous():
     db.close()
     return company_name_list_join
 
-    # return Recent_Sessions_content_list
-
 
 if __name__ == "__main__":
     # Select_Server("koi")
@@ -274,11 +272,3 @@ if __name__ == "__main__":
     # Select_Vehicles("Bear_maio")
     # Select_Recent_Sessions("Bear_maio")
     synchronous()
-
-
-
-"""SELECT * FROM user 
-left join overview on user.username = overview.name 
-left join vehicles on user.username = vehicles.name
-left join weapons on user.username = weapons.name
-where user.username = 'aaa'"""

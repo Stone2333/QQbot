@@ -1,6 +1,8 @@
 import pymysql
 import re
 
+
+
 # 根据传入名称模糊查询
 def Select_company_name(company_name):
     a = re.findall(r'[^\*"/:?\\|;\-\=]', company_name, re.S)

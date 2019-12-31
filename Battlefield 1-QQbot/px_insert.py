@@ -2,6 +2,7 @@ import pymysql
 import re
 
 
+
 # 插入培训公司信息
 def px_insert(company_name, company_address):
     a = re.findall(r'[^\*"/:?\\|;\-\=]', company_name, re.S)
