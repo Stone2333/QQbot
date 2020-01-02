@@ -42,7 +42,8 @@ def Select_Server(servername):
     sql = '''
           SELECT name,maplist,prayers 
           FROM `server` 
-          WHERE servername = "{}"'''.format(servername)
+          WHERE servername = "{}"
+          '''.format(servername)
     cursor.execute(sql)
     db.commit()
     Server_content =cursor.fetchall()
@@ -230,6 +231,37 @@ def Select_Recent_Sessions(name):
         cursor.close()
         db.close()
     return Recent_Sessions_content_list
+
+
+# 游戏名称同步
+def synchronous():
+    db = pymysql.connect(
+        host="127.0.0.1",
+        user="root",
+        password="123456",
+        db="bf1")
+    cursor = db.cursor()
+    sql = '''
+          SELECT user.username 
+          FROM user 
+          LEFT JOIN overview ON user.username = overview.name 
+          LEFT JOIN vehicles ON user.username = vehicles.name
+          LEFT JOIN weapons ON user.username = weapons.name
+          WHERE overview.`name`IS NULL
+          '''
+    cursor.execute(sql)
+    db.commit()
+    Recent_Sessions_content = cursor.fetchall()
+    Recent_Sessions_content_list = list(Recent_Sessions_content)
+    company_name_list_join = []
+    for index in range(len(Recent_Sessions_content_list)):
+        company_name_address = list(Recent_Sessions_content_list[index])
+        for company_name_address_list in range(len(company_name_address)):
+            company_name_list_join.append(company_name_address[company_name_address_list])
+    print(company_name_list_join)
+    cursor.close()
+    db.close()
+    return company_name_list_join
 
 
 if __name__ == "__main__":
