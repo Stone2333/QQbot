@@ -30,9 +30,9 @@ def Update_Overview(name, score_min, kd_ratio, win_percent, kills_game, kills_mi
     cursor = db.cursor()
     sql = '''
           UPDATE `overview` 
-          SET  score_min = "{}", kd_ratio = "{}", win_percent = "{}", kills_game = "{}", kills_min = "{}", infantry_kpm = "{}", infantry_kd = "{}",vehicle_kills = "{}", vehicle_kpm = "{}", skill = "{}", accuracy = "{}"
+          SET  score_min = "{}", kd_ratio = "{}", win_percent = "{}", kills_game = "{}", kills_min = "{}", infantry_kpm = "{}", infantry_kd = "{}",vehicle_kills = "{}", vehicle_kpm = "{}", skill = "{}", accuracy = "{}",update_time = now()
           WHERE name = "{}"
-          '''.format(score_min, kd_ratio, win_percent, kills_game, kills_min, infantry_kpm, infantry_kd,vehicle_kills, vehicle_kpm, skill, accuracy, name)
+          '''.format(score_min, kd_ratio, win_percent, kills_game, kills_min, infantry_kpm, infantry_kd, vehicle_kills, vehicle_kpm, skill, accuracy, name)
     cursor.execute(sql)
     db.commit()
     cursor.close()
@@ -50,7 +50,7 @@ def Update_Vehicles(name, vehiclesname, kills, kpm, destroyed, vehiclesname1, ki
     cursor = db.cursor()
     sql = '''
           UPDATE `vehicles` 
-          SET vehiclesname = "{}", kills = "{}", kpm = "{}", destroyed = "{}", vehiclesname1 = "{}", kills1 = "{}", kpm1 = "{}", destroyed1 = "{}", vehiclesname2 = "{}", kills2 ="{}", kpm2 = "{}", destroyed2 = "{}" 
+          SET vehiclesname = "{}", kills = "{}", kpm = "{}", destroyed = "{}", vehiclesname1 = "{}", kills1 = "{}", kpm1 = "{}", destroyed1 = "{}", vehiclesname2 = "{}", kills2 ="{}", kpm2 = "{}", destroyed2 = "{}" ,update_time = now()
           WHERE name = "{}"
           '''.format(vehiclesname, kills, kpm, destroyed, vehiclesname1, kills1, kpm1, destroyed1, vehiclesname2, kills2, kpm2, destroyed2, name)
     cursor.execute(sql)
@@ -70,7 +70,7 @@ def Update_Weapons(name, weaponsname, kills, kpm, accuracy, headshots, weaponsna
     cursor = db.cursor()
     sql = '''
           UPDATE `weapons` 
-          SET weaponsname = "{}", kills = "{}", kpm = "{}", accuracy = "{}", headshots = "{}", weaponsname1 = "{}",kills1 = "{}", kpm1 = "{}", accuracy1 = "{}", headshots1 = "{}", weaponsname2 = "{}", kills2 = "{}", kpm2 = "{}", accuracy2 = "{}", headshots2 = "{}" 
+          SET weaponsname = "{}", kills = "{}", kpm = "{}", accuracy = "{}", headshots = "{}", weaponsname1 = "{}",kills1 = "{}", kpm1 = "{}", accuracy1 = "{}", headshots1 = "{}", weaponsname2 = "{}", kills2 = "{}", kpm2 = "{}", accuracy2 = "{}", headshots2 = "{}", update_time = now() 
           WHERE name = "{}"
           '''.format(weaponsname, kills, kpm, accuracy, headshots, weaponsname1, kills1, kpm1, accuracy1, headshots1, weaponsname2, kills2, kpm2, accuracy2, headshots2, name)
     cursor.execute(sql)

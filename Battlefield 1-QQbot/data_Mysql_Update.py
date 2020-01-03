@@ -204,7 +204,7 @@ def get_Update_Overview(Query_Overview: str) -> str:
         SKILL = res[11]
         ACCURACY = res[15]
         try:
-            Overview = Mysql_Update.Update_Overview(Query_Overview, SCORE_MIN, KD_RATIO, WIN_PERCENT, KILLS_GAME, KILLS_MIN, INFANTRY_KPM, INFANTRY_KD, VEHICLE_KILLS, VEHICLE_KPM, SKILL, ACCURACY)
+            Mysql_Update.Update_Overview(Query_Overview, SCORE_MIN, KD_RATIO, WIN_PERCENT, KILLS_GAME, KILLS_MIN, INFANTRY_KPM, INFANTRY_KD, VEHICLE_KILLS, VEHICLE_KPM, SKILL, ACCURACY)
         except:
             print(Query_Overview, "爬虫更新战绩失败")
         print(Query_Overview, '爬虫更新战绩成功')
@@ -265,8 +265,4 @@ def get_Update_Servers(Quer_Servers: str) -> str:
 
 
 # if __name__=="__main__":
-#     # get_Servers("ZBW")
-#     get_Overview("LEONID_47")
-    # get_Weapons("BF_StoneGOGOGO")
-    # get_Vehicles("BF_StoneGOGOGO")
-    # get_Recent_Sessions("BF_StoneGOGOGO")
+#     get_Update_Overview('bf_stonegogogo')
