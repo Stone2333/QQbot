@@ -8,6 +8,7 @@ QQbot是使用[NoneBot](https://nonebot.cqp.moe/)的异步QQ机器人框架所�
   - 个人载具信息查询
   - 个人最近战绩信息查询
   - 服务器信息查询
+-注意：是否注册只影响数据更新,不影响查询
 
 ### 环境部署
 具体部署环境不再陈述，请按照以下安装指南部署环境[NoneBot安装指南](https://nonebot.cqp.moe/guide/)
