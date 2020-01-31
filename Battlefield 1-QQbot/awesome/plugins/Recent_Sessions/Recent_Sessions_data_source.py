@@ -82,7 +82,7 @@ async def get_Recent_Sessions(Quer_Recent_Sessions: str) -> str:
                 KPM3 = ''
                 TimePlayed3 = ''
         except:
-            error = '无法查询到最近战绩'
+            error = 'ID错误/橘子信息设置为隐私/很久没玩,无法查询到最近战绩'
             return error
         Recent_Sessions_list = ["\n最近战绩:", "游玩时间:" + Time1, "SPM:" + SPM1, "KD:" + Kd1, "Kpm:" + KPM1,
                                 "游戏时间:" + TimePlayed1,

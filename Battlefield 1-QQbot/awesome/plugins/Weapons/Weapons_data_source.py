@@ -32,7 +32,7 @@ async def Select_Weapons(Test_Query_Weapons: str) -> str:
             print('这是爬虫爬取完成后查到的武器数据')
             return Weapons_str
         except:
-            error = '网络原因请稍候重试'
+            error = 'ID错误/橘子信息设置为隐私/没用过武器/网络问题,无法查询到最近战绩'
             return error
     else:
         name = Weapons[0]

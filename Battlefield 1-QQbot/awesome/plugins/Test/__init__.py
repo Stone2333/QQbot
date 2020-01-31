@@ -9,7 +9,7 @@ mysql新增，查询，更新
 定任务失败重跑
 """
 
-@on_command('Test_Overview', aliases=('测试', '测试战绩'), only_to_me=False)
+@on_command('Test_Overview', aliases=('测试1', '测试战绩'), only_to_me=False)
 async def Test_Overview(session: CommandSession):
     Test_Query_Overview = session.get('Test_Query_Overview', prompt='你想查询战绩的ID是多少？')
     prompt = "查询中请稍候"

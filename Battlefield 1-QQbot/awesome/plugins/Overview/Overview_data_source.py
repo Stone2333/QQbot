@@ -30,7 +30,7 @@ async def Select_Overview(Query_Overview: str) -> str:
             print('这是爬虫爬取完成后查到的战绩数据')
             return Overview_str
         except:
-            error = '网络原因请稍候重试'
+            error = 'ID错误/橘子信息设置为隐私,无法查询到数据'
             return error
     else:
         SCORE_MIN = "分数/分钟:" + Overview[0]

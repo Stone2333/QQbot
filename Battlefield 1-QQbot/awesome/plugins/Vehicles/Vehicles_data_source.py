@@ -30,7 +30,7 @@ async def Select_Vehicles(Query_Vehicles: str) -> str:
             print('这是爬虫爬取完成后查到的载具数据')
             return Vehicles_str
         except:
-            error = '网络原因请稍候重试'
+            error = 'ID错误/橘子信息设置为隐私/没用过载具,无法查询到数据'
             return error
     else:
         name = Vehicles[0]
