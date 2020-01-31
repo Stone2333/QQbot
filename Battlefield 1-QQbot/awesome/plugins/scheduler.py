@@ -11,15 +11,21 @@ import os
 from apscheduler.schedulers.blocking import BlockingScheduler
 
 # 定时器
-# @nonebot.scheduler.scheduled_job('cron', hour='12')
-# async def _():
-#     bot = nonebot.get_bot()
-#     now = datetime.now(pytz.timezone('Asia/Shanghai'))
-#     try:
-#         await bot.send_group_msg(group_id=552546607,
-#                                  message=f'现在{now.hour}点整啦！')
-#     except CQHttpError:
-#         pass
+### @nonebot.scheduler.scheduled_job('cron', minutes='*/1',misfire_grace_time=10) @nonebot.scheduler.scheduled_job('cron', minutes='*/1',misfire_grace_time=10)
+@nonebot.scheduler.scheduled_job('cron', hour='*',misfire_grace_time=10)
+
+async def _():
+    bot = nonebot.get_bot()
+    now = datetime.now(pytz.timezone('Asia/Shanghai'))
+    try:
+        # await bot.send_group_msg(group_id=552546607,
+        #                          message=dingxiang())
+        await bot.send_group_msg(group_id=458824937,
+                                 message=dingxiang())
+        await bot.send_group_msg(group_id=729032552,
+                                 message=dingxiang())
+    except CQHttpError:
+        pass
 
 
 # 失败重跑
@@ -122,6 +128,7 @@ def insert():
 
 
 def update():
+    insert()
     Start_Time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())
     print("开始时间：", Start_Time)
     All_User = Mysql_Select.Select_All_User()
@@ -138,11 +145,52 @@ def update():
     End_Time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())
     print("结束时间：", End_Time)
 
+def dingxiang():
+    import re
+    import requests
+    from lxml import etree
+    import json
+    try:
+        url = "https://3g.dxy.cn/newh5/view/pneumonia"
+        headers = {
+            "User-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
+        }
+        # proxies = {
+        #     'http': 'username:password@125.123.122.178:9999',
+        # }
+        response = requests.get(url, headers=headers)
+        htmlContent = response.content.decode("utf-8")
+        print(htmlContent)
+        # 2.将html解析成一个xpath对象
+        xpath = etree.HTML(htmlContent)
+        # 全国统计
+        patt = '"countRemark":"",(.*?),"virus":"新型冠状病毒'
+        s = re.findall(string=htmlContent, pattern=patt)
+        print(s)
+        f = "{%s}" % s[0]
+        c = json.loads(f)
+        d = c["confirmedCount"]
+        e = c["suspectedCount"]
+        # 治愈
+        f = c["curedCount"]
+        g = c["deadCount"]
+        # 截止时间
+        # patt = '<div class="title___2d1_B"><span>(.*?)</span><em><img alt="question"'
+        # s1 = re.findall(string=htmlContent, pattern=patt)
+        # print(s1)
+        Start_Time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())
+        time1 = "查询时间：" + Start_Time + '\n'
+        s3 = time1 + '全国新型肺炎疫情实时动态：\n' + '全国确诊:' + str(d) + '例' + ',疑似:' + str(e) + '例' + ',治愈:' + str(
+            f) + '例' + ',死亡:' + str(g) + '例' + '\n' + '疑似病例数来自国家卫健委数据，目前为全国数据'+'\n数据来源:丁香医生'
+        return s3
+    except:
+        return '页面改版，呼叫石头'
+
 
 # 每天12点启动定时任务
 if __name__ == '__main__':
     scheduler = BlockingScheduler()
-    scheduler.add_job(update, 'cron', hour=12)
+    scheduler.add_job(update, 'cron', hour=12, misfire_grace_time=10)
     try:
         scheduler.start()
     except (KeyboardInterrupt, SystemExit):
@@ -150,5 +198,6 @@ if __name__ == '__main__':
 
 
 # if __name__ == '__main__':
+#     dingxiang()
 #     insert()
     # update()
