@@ -1,0 +1,19 @@
+[[source]]
+name = "清华大学镜像"
+url = "https://pypi.tuna.tsinghua.edu.cn/simple/"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+requests = "*"
+lxml = "*"
+sqlacodegen = "*"
+sqlalchemy = "*"
+configparser = "*"
+nonebot = {extras = ["scheduler"],version = "*"}
+apscheduler = "*"
+pymysql = "*"
+
+[requires]
+python_version = "3.7"

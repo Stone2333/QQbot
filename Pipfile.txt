@@ -1,7 +1,0 @@
-[packages]
-requests = "*"
-lxml = "*"
-pytz = "*"
-nonebot = "*"
-pymysql = "*"
-nonebot[scheduler] = "*"
