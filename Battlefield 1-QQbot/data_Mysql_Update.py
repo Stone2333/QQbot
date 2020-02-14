@@ -13,7 +13,7 @@ def get_Update_Weapons(Query_Weapons: str) -> str:
     proxies = {
         'http': 'username:password@222.89.32.173:9999'
     }
-    response = requests.get(url, proxies=proxies, headers=headers)
+    response = requests.get(url, proxies=proxies, headers=headers,timeout=15)
     htmlContent = response.content.decode("utf-8")
     # 2.将html解析成一个xpath对象
     xpath = etree.HTML(htmlContent)
@@ -61,7 +61,7 @@ def get_Update_Vehicles(Query_Vehicles: str) -> str:
     proxies = {
         'http': 'username:password@222.89.32.173:9999'
     }
-    response = requests.get(url, proxies=proxies, headers=headers)
+    response = requests.get(url, proxies=proxies, headers=headers,timeout=15)
     htmlContent = response.content.decode("utf-8")
     # 2.将html解析成一个xpath对象
     xpath = etree.HTML(htmlContent)
@@ -115,7 +115,7 @@ def get_Update_Recent_Sessions(Quer_Recent_Sessions: str) -> str:
     proxies = {
         'http': 'username:password@222.89.32.173:9999'
     }
-    response = requests.get(url, proxies=proxies, headers=headers)
+    response = requests.get(url, proxies=proxies, headers=headers, timeout=15)
     html = response.content.decode("utf-8")
     xpath = etree.HTML(html)
     try:
@@ -181,7 +181,7 @@ def get_Update_Overview(Query_Overview: str) -> str:
     proxies = {
         'http': 'username:password@222.89.32.173:9999'
     }
-    response = requests.get(url, proxies=proxies, headers=headers)
+    response = requests.get(url, proxies=proxies, headers=headers, timeout=15)
 
     html = response.content.decode("utf-8")
     # 过滤html
@@ -232,7 +232,7 @@ def get_Update_Servers(Quer_Servers: str) -> str:
             proxies = {
                 'http': 'username:password@222.89.32.173:9999'
             }
-            response = requests.get(url_join, proxies=proxies, headers=headers)
+            response = requests.get(url_join, proxies=proxies, headers=headers, timeout=15)
             htmlContent = response.content.decode("utf-8")
             pattern = '<div class="quick-info">.*?<span class="value">(.*?)<small>(.*?)</small>'
             # 服务器人数

@@ -9,7 +9,7 @@ import Mysql_Update
 @on_command('cha1', aliases=('疫情详细', '疫情'), only_to_me=False)
 async def cha1(session: CommandSession):
     Query_Login = session.get('chaxun1', prompt='请输入"全国"')
-    chaxun = await dingxiang2(Query_Login)
+    chaxun = await dingxiang(Query_Login)
     await session.send(chaxun)
 
 

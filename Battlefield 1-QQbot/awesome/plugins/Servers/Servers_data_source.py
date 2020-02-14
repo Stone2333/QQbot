@@ -4,7 +4,7 @@ import re
 
 
 async def get_Servers(Quer_Servers: str) -> str:
-    Server = {'ZBW': '4797358890048', 'zbw': '4797358890048', 'QWQ': '4621146300215', 'qwq': '4621146300215', 'BNB':'4680554600670','bnb': '4680554600670','qvq':'4471243610926','QVQ':'4471243610926','FYZ':'4760381930274'}
+    Server = {'ZBW': '4797358890048', 'zbw': '4797358890048', 'SNOW': '4719812010034', 'snow':'4719812010034','FYZ':'4760381930274'}
     if Quer_Servers in Server:
         # Server = {'ZBW': '4548409440277', 'zbw': '4548409440277', '711': '4549052410528', 'FAZE': '4617118720211',
         #           'XD233-1#': '4460849620490', 'XD233-2#': '4576102980226', 'QWQ': '4621146300215',
@@ -21,7 +21,7 @@ async def get_Servers(Quer_Servers: str) -> str:
             # proxies = {
             #     'http': 'username:password@125.123.122.178:9999',
             # }
-            response = requests.get(url_join, headers=headers)
+            response = requests.get(url_join, headers=headers, timeout=15)
             htmlContent = response.content.decode("utf-8")
 
             pattern = '<div class="quick-info">.*?<span class="value">(.*?)<small>(.*?)</small>'
@@ -38,7 +38,7 @@ async def get_Servers(Quer_Servers: str) -> str:
                            'St Quentin Scar': '圣康坦的伤痕', 'Sinai Desert': '西奈沙漠', 'Amiens': '亚眠', 'Monte Grappa': '格拉巴山',
                            "Empire's Edge": '帝国边境', 'Passchendaele': '帕斯尚尔', 'Caporetto': '波雷托', 'River Somme': '索姆河',
                            "Razor's Edge": '剃刀边缘', 'London Calling': '伦敦的呼唤', 'Heligoland Bight': '黑尔戈兰湾', 'Zeebrugge': '泽布吕赫',
-                           'Cape Helles': '海丽丝岬', 'Achi Baba': '阿奇巴巴', 'Lupkow Pass': '武普库夫山口', 'Brusilov Keep': '勃鲁西洛夫关口',
+                           'Cape Helles': '海丽丝岬', 'Achi Baba': '阿奇巴巴', 'Łupków Pass': '武普库夫山口', 'Brusilov Keep': '勃鲁西洛夫关口',
                            'Galicia': '加利西亚', 'Albion': '阿尔比恩', 'Tsaritsyn': '察里津', 'Volga River': '窝瓦河', 'Rupture': '决裂',
                            'Soissons': '苏瓦松', 'Verdun Heights': '凡尔登高地', 'Fort De Vaux': '法乌克斯要塞', 'Prise de Tahure': '攻占托尔',
                            'Nivelle Nights': '尼维尔之夜', "Giant's Shadow": '庞然暗影'}
