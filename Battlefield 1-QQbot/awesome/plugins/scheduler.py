@@ -9,7 +9,9 @@ import data_Mysql_Insert
 from datetime import datetime
 import os
 from apscheduler.schedulers.blocking import BlockingScheduler
-
+import re
+import requests
+import json
 # 定时器
 ### @nonebot.scheduler.scheduled_job('cron', minutes='*/1',misfire_grace_time=10) @nonebot.scheduler.scheduled_job('cron', minutes='*/1',misfire_grace_time=10)
 @nonebot.scheduler.scheduled_job('cron', hour='*',misfire_grace_time=10)
@@ -21,9 +23,9 @@ async def _():
         # await bot.send_group_msg(group_id=552546607,
         #                          message=dingxiang())
         await bot.send_group_msg(group_id=458824937,
-                                 message=dingxiang())
+                                 message=queryAll())
         await bot.send_group_msg(group_id=729032552,
-                                 message=dingxiang())
+                                 message=queryAll())
     except CQHttpError:
         pass
 
@@ -144,6 +146,43 @@ def update():
             pass
     End_Time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())
     print("结束时间：", End_Time)
+
+def getData() -> str:
+    headers = {
+        "User-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
+    }
+    res = requests.get("https://3g.dxy.cn/newh5/view/pneumonia", headers=headers)
+    content = res.content.decode(encoding="utf-8", errors="error")
+
+def queryAll():
+    content = getData()
+    pattern = re.compile(r'window.getStatisticsService = (.*?)}catch\(e\){}')
+    result = pattern.findall(content)
+    data = json.loads(result[0])
+    queryTime = "查询时间: {}\n".format(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()))
+    updateTime = "更新时间: {}\n".format(datetime.fromtimestamp(data["modifyTime"] / 1000).strftime('%Y-%m-%d %H:%M:%S', ))
+    startStr = '全国新型肺炎疫情实时动态：\n'
+    try:
+        data0Str = '累计确诊:{}例,今日新增{}例\n'.format(data["confirmedCount"],data["confirmedIncr"])
+        data1Str = '现存确诊:{}例,今日新增{}例\n'.format(data["currentConfirmedCount"],data["currentConfirmedIncr"])
+        data2Str = '现存疑似:{}例,今日新增{}例\n'.format(data["suspectedCount"],data["suspectedIncr"])
+        data3Str = '累计治愈:{}例,今日新增{}例\n'.format(data["curedCount"],data["curedIncr"])
+        data4Str = '累计重症:{}例,今日新增{}例\n'.format(data["seriousCount"],data["seriousIncr"])
+        data5Str = '累计死亡:{}例,今日新增{}例\n'.format(data["deadCount"],data["deadIncr"])
+        endStr = "疑似病例数来自国家卫健委数据，目前为全国数据\n数据来源:丁香医生"
+        return '{}{}{}{}{}{}{}{}{}{}'.format(queryTime,updateTime,startStr,data0Str,data1Str,data2Str,data3Str,data4Str,data5Str,endStr)
+    except:
+        data0Str = '累计确诊:{}例\n'.format(data["confirmedCount"])
+        data1Str = '现存确诊:{}例\n'.format(data["currentConfirmedCount"])
+        data2Str = '现存疑似:{}例\n'.format(data["suspectedCount"])
+        data3Str = '累计治愈:{}例\n'.format(data["curedCount"])
+        data4Str = '累计重症:{}例\n'.format(data["seriousCount"])
+        data5Str = '累计死亡:{}例\n'.format(data["deadCount"])
+        endStr = "\n疑似病例数来自国家卫健委数据，目前为全国数据\n数据来源:丁香医生"
+        new = "较昨日变化数据：待国家卫健委数据公布中"
+        return '{}{}{}{}{}{}{}{}{}{}{}'.format(queryTime, updateTime, startStr, data0Str, data1Str, data2Str, data3Str,
+                                             data4Str, data5Str, new, endStr)
+
 
 def dingxiang():
     import json

@@ -9,7 +9,7 @@ async def get_Recent_Sessions(Quer_Recent_Sessions: str) -> str:
         headers = {
             "User-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
         }
-        response = requests.get(url, headers=headers,timeout=15)
+        response = requests.get(url, headers=headers,timeout=60)
         html = response.content.decode("utf-8")
         # xpath定位
         xpath = etree.HTML(html)

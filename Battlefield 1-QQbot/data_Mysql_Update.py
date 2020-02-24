@@ -13,7 +13,7 @@ def get_Update_Weapons(Query_Weapons: str) -> str:
     proxies = {
         'http': 'username:password@222.89.32.173:9999'
     }
-    response = requests.get(url, proxies=proxies, headers=headers,timeout=15)
+    response = requests.get(url, proxies=proxies, headers=headers,timeout=60)
     htmlContent = response.content.decode("utf-8")
     # 2.将html解析成一个xpath对象
     xpath = etree.HTML(htmlContent)
@@ -45,9 +45,10 @@ def get_Update_Weapons(Query_Weapons: str) -> str:
         Headshots2 = xpath.xpath("//tbody/tr/td[@class='stat'][1]/text()")[e]
         try:
             Mysql_Update.Update_Weapons(Query_Weapons, WeaponsName, KILLS, KPM, Accuracy, Headshots, WeaponsName1, KILLS1, KPM1, Accuracy1, Headshots1, WeaponsName2, KILLS2, KPM2, Accuracy2, Headshots2)
+            print(Query_Weapons, '爬虫更新武器成功')
         except:
             print(Query_Weapons, '爬虫更新武器失败')
-        print(Query_Weapons, '爬虫更新武器成功')
+
     except:
         error = 'ID错误或网络问题，请稍后重试'
         return error
@@ -61,7 +62,7 @@ def get_Update_Vehicles(Query_Vehicles: str) -> str:
     proxies = {
         'http': 'username:password@222.89.32.173:9999'
     }
-    response = requests.get(url, proxies=proxies, headers=headers,timeout=15)
+    response = requests.get(url, proxies=proxies, headers=headers,timeout=60)
     htmlContent = response.content.decode("utf-8")
     # 2.将html解析成一个xpath对象
     xpath = etree.HTML(htmlContent)
@@ -99,9 +100,10 @@ def get_Update_Vehicles(Query_Vehicles: str) -> str:
         name2 = Namelist[name2_2]
         try:
             Mysql_Update.Update_Vehicles(Query_Vehicles, name, kills, kpm, Destroyed, name1, kills1, kpm1, Destroyed1, name2, kills2, kpm2, Destroyed2)
+            print(Query_Vehicles, "爬虫更新载具成功")
         except:
             print(Query_Vehicles, "爬虫更新载具失败")
-        print(Query_Vehicles, "爬虫更新载具成功")
+
     except:
         error = 'ID错误或网络问题，请稍后重试'
         return error
@@ -115,7 +117,7 @@ def get_Update_Recent_Sessions(Quer_Recent_Sessions: str) -> str:
     proxies = {
         'http': 'username:password@222.89.32.173:9999'
     }
-    response = requests.get(url, proxies=proxies, headers=headers, timeout=15)
+    response = requests.get(url, proxies=proxies, headers=headers, timeout=60)
     html = response.content.decode("utf-8")
     xpath = etree.HTML(html)
     try:
@@ -162,9 +164,9 @@ def get_Update_Recent_Sessions(Quer_Recent_Sessions: str) -> str:
             TimePlayed3 = ''
         try:
             Mysql_Update.Update_Recent_Sessions(Quer_Recent_Sessions, SPM1,Kd1,KPM1,TimePlayed1,SPM2,Kd2,KPM2,TimePlayed2,SPM3, Kd3, KPM3, TimePlayed3)
+            print(Quer_Recent_Sessions, '爬虫更新最近战绩成功')
         except:
             print(Quer_Recent_Sessions, '爬虫更新最近战绩失败')
-        print(Quer_Recent_Sessions, '爬虫更新最近战绩成功')
 
     except:
         error = '无法查询到最近战绩'
@@ -181,7 +183,7 @@ def get_Update_Overview(Query_Overview: str) -> str:
     proxies = {
         'http': 'username:password@222.89.32.173:9999'
     }
-    response = requests.get(url, proxies=proxies, headers=headers, timeout=15)
+    response = requests.get(url, proxies=proxies, headers=headers, timeout=60)
 
     html = response.content.decode("utf-8")
     # 过滤html
@@ -205,9 +207,10 @@ def get_Update_Overview(Query_Overview: str) -> str:
         ACCURACY = res[15]
         try:
             Mysql_Update.Update_Overview(Query_Overview, SCORE_MIN, KD_RATIO, WIN_PERCENT, KILLS_GAME, KILLS_MIN, INFANTRY_KPM, INFANTRY_KD, VEHICLE_KILLS, VEHICLE_KPM, SKILL, ACCURACY)
+            print(Query_Overview, '爬虫更新战绩成功')
         except:
             print(Query_Overview, "爬虫更新战绩失败")
-        print(Query_Overview, '爬虫更新战绩成功')
+
 
     except:
         error = 'ID错误或网络问题，请稍后重试'
@@ -232,7 +235,7 @@ def get_Update_Servers(Quer_Servers: str) -> str:
             proxies = {
                 'http': 'username:password@222.89.32.173:9999'
             }
-            response = requests.get(url_join, proxies=proxies, headers=headers, timeout=15)
+            response = requests.get(url_join, proxies=proxies, headers=headers, timeout=60)
             htmlContent = response.content.decode("utf-8")
             pattern = '<div class="quick-info">.*?<span class="value">(.*?)<small>(.*?)</small>'
             # 服务器人数
@@ -253,9 +256,10 @@ def get_Update_Servers(Quer_Servers: str) -> str:
                        'Nivelle Nights': '尼维尔之夜', "Giant's Shadow": '庞然暗影'}
             try:
                 Mysql_Update.Update_Servers(Quer_Servers, Name, Maplist[Map], Prayers)
+                print(Quer_Servers, '爬虫更新服务器信息成功')
             except:
                 print(Quer_Servers, "更新服务器信息失败")
-            print(Quer_Servers, '爬虫更新服务器信息成功')
+
         except:
             error = '网络问题，未查询到服务器信息，请稍后重试'
             return error

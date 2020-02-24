@@ -10,6 +10,7 @@ import requests
 import time
 import json
 import math
+from datetime import datetime
 
 
 async def dingxiang(address):
@@ -93,17 +94,28 @@ def queryAll():
     result = pattern.findall(content)
     data = json.loads(result[0])
     queryTime = "查询时间: {}\n".format(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()))
-    updateTime = "更新时间: {}\n".format(datetime.datetime.fromtimestamp(data["modifyTime"] / 1000).strftime('%Y-%m-%d %H:%M:%S', ))
+    updateTime = "更新时间: {}\n".format(datetime.fromtimestamp(data["modifyTime"] / 1000).strftime('%Y-%m-%d %H:%M:%S', ))
     startStr = '全国新型肺炎疫情实时动态：\n'
-    data0Str = '累计确诊:{}例,今日新增{}例\n'.format(data["confirmedCount"],data["confirmedIncr"])
-    data1Str = '现存确诊:{}例,今日新增{}例\n'.format(data["currentConfirmedCount"],data["currentConfirmedIncr"])
-    data2Str = '现存疑似:{}例,今日新增{}例\n'.format(data["suspectedCount"],data["suspectedIncr"])
-    data3Str = '累计治愈:{}例,今日新增{}例\n'.format(data["curedCount"],data["curedIncr"])
-    data4Str = '累计重症:{}例,今日新增{}例\n'.format(data["seriousCount"],data["seriousIncr"])
-    data5Str = '累计死亡:{}例,今日新增{}例\n'.format(data["deadCount"],data["deadIncr"])
-    endStr = "疑似病例数来自国家卫健委数据，目前为全国数据\n数据来源:丁香医生"
-    return '{}{}{}{}{}{}{}{}{}{}'.format(queryTime,updateTime,startStr,data0Str,data1Str,data2Str,data3Str,data4Str,data5Str,endStr)
-
+    try:
+        data0Str = '累计确诊:{}例,今日新增{}例\n'.format(data["confirmedCount"],data["confirmedIncr"])
+        data1Str = '现存确诊:{}例,今日新增{}例\n'.format(data["currentConfirmedCount"],data["currentConfirmedIncr"])
+        data2Str = '现存疑似:{}例,今日新增{}例\n'.format(data["suspectedCount"],data["suspectedIncr"])
+        data3Str = '累计治愈:{}例,今日新增{}例\n'.format(data["curedCount"],data["curedIncr"])
+        data4Str = '累计重症:{}例,今日新增{}例\n'.format(data["seriousCount"],data["seriousIncr"])
+        data5Str = '累计死亡:{}例,今日新增{}例\n'.format(data["deadCount"],data["deadIncr"])
+        endStr = "疑似病例数来自国家卫健委数据，目前为全国数据\n数据来源:丁香医生"
+        return '{}{}{}{}{}{}{}{}{}{}'.format(queryTime,updateTime,startStr,data0Str,data1Str,data2Str,data3Str,data4Str,data5Str,endStr)
+    except:
+        data0Str = '累计确诊:{}例\n'.format(data["confirmedCount"])
+        data1Str = '现存确诊:{}例\n'.format(data["currentConfirmedCount"])
+        data2Str = '现存疑似:{}例\n'.format(data["suspectedCount"])
+        data3Str = '累计治愈:{}例\n'.format(data["curedCount"])
+        data4Str = '累计重症:{}例\n'.format(data["seriousCount"])
+        data5Str = '累计死亡:{}例\n'.format(data["deadCount"])
+        endStr = "\n疑似病例数来自国家卫健委数据，目前为全国数据\n数据来源:丁香医生"
+        new = "较昨日变化数据：待国家卫健委数据公布中"
+        return '{}{}{}{}{}{}{}{}{}{}{}'.format(queryTime, updateTime, startStr, data0Str, data1Str, data2Str, data3Str,
+                                             data4Str, data5Str, new, endStr)
 if __name__ == '__main__':
     # print(queryByAddress('北京'))
     # print(queryByAddress('朝阳区'))

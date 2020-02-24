@@ -21,7 +21,7 @@ async def get_Servers(Quer_Servers: str) -> str:
             # proxies = {
             #     'http': 'username:password@125.123.122.178:9999',
             # }
-            response = requests.get(url_join, headers=headers, timeout=15)
+            response = requests.get(url_join, headers=headers,timeout=60)
             htmlContent = response.content.decode("utf-8")
 
             pattern = '<div class="quick-info">.*?<span class="value">(.*?)<small>(.*?)</small>'
