@@ -240,12 +240,12 @@ def synchronous():
         db="bf1")
     cursor = db.cursor()
     sql = '''
-          SELECT user.username 
-          FROM user 
-          LEFT JOIN overview ON user.username = overview.name 
-          LEFT JOIN vehicles ON user.username = vehicles.name
-          LEFT JOIN weapons ON user.username = weapons.name
-          WHERE overview.`name`IS NULL
+         SELECT user.username
+         FROM user 
+         LEFT JOIN overview ON user.username = overview.name 
+         LEFT JOIN vehicles ON user.username = vehicles.name
+         LEFT JOIN weapons ON user.username = weapons.name
+         WHERE overview.`name` IS NULL OR vehicles.`name` IS NULL OR weapons.`name` IS NULL
           '''
     cursor.execute(sql)
     db.commit()

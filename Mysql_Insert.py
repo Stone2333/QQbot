@@ -11,7 +11,7 @@ def Insert_Server_Id(servername, serverid):
         db="bf1")
     cursor = db.cursor()
     sql = '''
-          INSERT INTO `server` (servername, serverid) 
+          INSERT INTO `server_id` (servername, serverid) 
           VALUES ("{}","{}")
           '''.format(servername, serverid)
     cursor.execute(sql)

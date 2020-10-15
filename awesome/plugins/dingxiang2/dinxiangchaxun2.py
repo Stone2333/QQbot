@@ -43,6 +43,7 @@ def queryByAddress(address: str):
     # 全部省市key,value
     allData = {}
     datas = json.loads(result[0])
+    print(datas)
     for item in datas:
         allData[item["provinceName"]] = {
             "name" : item["provinceName"],                                  #名称
@@ -53,6 +54,7 @@ def queryByAddress(address: str):
             "curedCount": item["curedCount"],                               #治愈数
             "locationId": item["locationId"],                               #地方id
         }
+
         allData[item["provinceShortName"]] = {
             "name": item["provinceShortName"],
             "provinceShortName": item["provinceShortName"],
@@ -76,16 +78,45 @@ def queryByAddress(address: str):
     item = allData[address]
     # 省份数据
     province_locationId = math.floor(item["locationId"] / 10000) * 10000
-    province = list(filter(lambda temp: temp["locationId"] == province_locationId and "provinceName" in temp.keys(),allData.values()))[0]
-    provinceStr = "{} 现存确诊: {}例,累计确诊: {}例,治愈:{}例,死亡{}例\n".format(province["name"], province["currentConfirmedCount"],province["confirmedCount"], province["curedCount"],province["deadCount"])
+    print(province_locationId)
+    # print(allData)
+    try:
+        province = list(filter(lambda temp: temp["locationId"] == province_locationId and "provinceName" in temp.keys(), allData.values()))[0]
+        print()
+        provinceStr = "{} 现存确诊: {}例,累计确诊: {}例,治愈:{}例,死亡{}例\n".format(province["name"], province["currentConfirmedCount"],province["confirmedCount"], province["curedCount"],province["deadCount"])
 
-    # 城市数据,判断如果是查询的城市,那么还需要拼接城市的信息
-    cityStr = ""
-    if item["locationId"] % 10000 != 0:
-        cityStr = "{} 现存确诊: {}例,累计确诊: {}例,治愈:{}例,死亡{}例\n".format(item["name"], item["currentConfirmedCount"],item["confirmedCount"], item["curedCount"],item["deadCount"])
+        # 城市数据,判断如果是查询的城市,那么还需要拼接城市的信息
+        cityStr = ""
+        if item["locationId"] % 10000 != 0:
+            cityStr = "{} 现存确诊: {}例,累计确诊: {}例,治愈:{}例,死亡{}例\n".format(item["name"], item["currentConfirmedCount"],item["confirmedCount"], item["curedCount"],item["deadCount"])
 
-    endStr = "数据来源:丁香医生"
-    return '{}{}{}{}'.format(queryTime,provinceStr,cityStr,endStr)
+        endStr = "数据来源:丁香医生"
+        return '{}{}{}{}'.format(queryTime,provinceStr,cityStr,endStr)
+    except:
+        if province_locationId == 820000:
+            item = allData['澳门']
+            cityStr = "{} 现存确诊: {}例,累计确诊: {}例,治愈:{}例,死亡{}例\n".format(item["name"], item["currentConfirmedCount"],
+                                                                     item["confirmedCount"], item["curedCount"],
+                                                                     item["deadCount"])
+
+            endStr = "数据来源:丁香医生"
+            return '{}{}{}'.format(queryTime, cityStr, endStr)
+        elif province_locationId == 810000:
+            item = allData['香港']
+            cityStr = "{} 现存确诊: {}例,累计确诊: {}例,治愈:{}例,死亡{}例\n".format(item["name"], item["currentConfirmedCount"],
+                                                                     item["confirmedCount"], item["curedCount"],
+                                                                     item["deadCount"])
+
+            endStr = "数据来源:丁香医生"
+            return '{}{}{}'.format(queryTime, cityStr, endStr)
+        elif province_locationId == 710000:
+            item = allData['台湾']
+            cityStr = "{} 现存确诊: {}例,累计确诊: {}例,治愈:{}例,死亡{}例\n".format(item["name"], item["currentConfirmedCount"],
+                                                                     item["confirmedCount"], item["curedCount"],
+                                                                     item["deadCount"])
+
+            endStr = "数据来源:丁香医生"
+            return '{}{}{}'.format(queryTime, cityStr, endStr)
 
 # 查询全国数据
 def queryAll():

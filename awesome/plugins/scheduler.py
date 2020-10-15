@@ -5,12 +5,14 @@ import time
 import data_Mysql_Update
 import Mysql_Select
 import data_Mysql_Insert
-from datetime import datetime
+from datetime import datetime as d
 from apscheduler.schedulers.blocking import BlockingScheduler
 import re
 import requests
 import json
 import sys
+import time
+import datetime
 #sys.path.append('/root/bandwagonhost/PromotionCode/accesscode')
 sys.path.append('C:\\QQbot\\awesome\\plugins')
 # configpath = os.getcwd().replace('\\plugins','')
@@ -19,19 +21,15 @@ sys.path.append('C:\\QQbot\\awesome\\plugins')
 
 
 # 定时器
-### @nonebot.scheduler.scheduled_job('cron', minutes='*/1',misfire_grace_time=10) @nonebot.scheduler.scheduled_job('cron', minutes='*/1',misfire_grace_time=10)
-@nonebot.scheduler.scheduled_job('cron', hour='*',misfire_grace_time=10)
 
+#@nonebot.scheduler.scheduled_job(update, 'cron', hour=16, misfire_grace_time=100)
+@nonebot.scheduler.scheduled_job('cron', day_of_week='0-4', hour=18, misfire_grace_time=100)
 async def _():
     bot = nonebot.get_bot()
-    now = datetime.now(pytz.timezone('Asia/Shanghai'))
+    
     try:
         await bot.send_group_msg(group_id=552546607,
-                                  message=queryAll())
-        #await bot.send_group_msg(group_id=458824937,
-        #                        message=queryAll())
-        #await bot.send_group_msg(group_id=729032552,
-        #                        message=queryAll())
+                                 message= '[CQ:at,qq=374717284]' + jiancha())
     except CQHttpError:
         pass
 
@@ -226,6 +224,85 @@ def dingxiang():
         return s3
     except:
         return '页面改版，呼叫石头'
+
+
+def oaLogin():
+    url = 'http://noa.xinyegk.com/login'
+    headers = {'Content-Type': 'application/json;charset=UTF-8'}
+    data = {
+        "username": "石文兵",
+        "password": "123456",
+        "captcha": ""
+    }
+    response = requests.post(headers=headers, url=url, json=data)
+    return response
+
+
+
+def getCookies():
+    """
+    获取OAcookie
+    :return:cookie
+    """
+    response = oaLogin()
+    cookies = response.cookies
+    cookie = requests.utils.dict_from_cookiejar(cookies)
+    return cookie
+
+def getTimestamp():
+    timestamp = time.time() * 1000
+    patt = '^\d{13}'
+    interceptingTimestamp = re.findall(pattern=patt, string=str(timestamp))
+    return interceptingTimestamp[0]
+
+
+def getRz():
+    timestamp = getTimestamp()
+    nowTime = d.now().strftime('%Y-%m-%d')
+    url = 'http://noa.xinyegk.com/logmanagement/lm01/page?deptId=&creator=&logdate={}&_t={}'.format(nowTime, timestamp)
+    cookie = getCookies()
+    headers = {
+        # 'Content-Type': 'application/json, text/plain, */*',
+        'Cookie': 'JSESSIONID={}'.format(cookie['JSESSIONID'])
+    }
+    response = requests.get(headers=headers, url=url)
+    responseData = response.json()
+    # print(responseData)
+    if responseData['data']['total'] == 0:
+        print(nowTime + '没写日志')
+        return nowTime + '没写日志'
+    elif responseData['data']['total'] == 1:
+        print(nowTime + '写了日志')
+        return nowTime + '写了日志'
+
+
+def getZb():
+    week = d.now().isocalendar()
+    timestamp = getTimestamp()
+    url = 'http://noa.xinyegk.com/logmanagement/lm02/page?deptId=&creator=&newweek={}&_t={}'.format(week[1], timestamp)
+    cookie = getCookies()
+    headers = {
+        # 'Content-Type': 'application/json, text/plain, */*',
+        'Cookie': 'JSESSIONID={}'.format(cookie['JSESSIONID'])
+    }
+    response = requests.get(headers=headers, url=url)
+    responseData = response.json()
+    if responseData['data']['list'] != []:
+        print(str(week[0]) + '年' + str(week[1]) + '周' + '写了周报')
+        return str(week[0]) + '年' + str(week[1]) + '周' + '写了周报'
+    else:
+        print(str(week[0]) + '年' + str(week[1]) + '周' + '没写周报')
+        return str(week[0]) + '年' + str(week[1]) + '周' + '没写周报'
+
+def jiancha():
+    dayOfWeek = d.now().isoweekday()
+    if dayOfWeek == 5:
+        string = getRz() + '\n' + getZb()
+        return string
+    else:
+        string = getRz()
+        return string
+
 
 
 # 每天12点启动定时任务

@@ -1,19 +1,15 @@
 ﻿import requests
 from lxml import etree
 import re
+import Mysql_Select
 
 
 async def get_Servers(Quer_Servers: str) -> str:
-    Server = {'ZBW': '4885770830864', 'zbw': '4885770830864','FYZ':'5021009900415','fyz':'5021009900415','ARXI':'4896487920900','arxi':'4896487920900','arxi2':'4953750010322','ARXI2':'4953750010322','madoka':'4902185090578','MADOKA':'4902185090578','FC2/1':'4885967930149','FC2/2':'4946262360461','INKA':'4931184580734','KS':'4962931860903', '1S': '4885771190870','PCR/1':'4968863110212','PCR/2':'4975054660824'}
-    if Quer_Servers in Server:
-        # Server = {'ZBW': '4548409440277', 'zbw': '4548409440277', '711': '4549052410528', 'FAZE': '4617118720211',
-        #           'XD233-1#': '4460849620490', 'XD233-2#': '4576102980226', 'QWQ': '4621146300215',
-        #           'QVQ': '4471243610926', '0V0': '4649704670029', 'FRM5-1#': '4639825910955', 'FRM5-2#': '4570182580087',
-        #           'FRM5-3#': '4624140460607', '404-1#': '4462319260673', '404-2#': '4505664220683',
-        #           '404-3#': '4545127080330', 'CDN': '4614832770811', 'HENT': '4607940010117', 'KGB-1#': '4629077150013',
-        #           'KGB-2#': '4623779700501'}
+    name = Mysql_Select.Select_Server_Id(Quer_Servers)
+   
+    if name != []:
         try:
-            url_join = "https://battlefieldtracker.com/bf1/servers/pc/" + Server[Quer_Servers]
+            url_join = "https://battlefieldtracker.com/bf1/servers/pc/" + name[0]
             # url = base_url.format(url1)
             headers = {
                 "User-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
