@@ -1,4 +1,4 @@
-import pymysql
+﻿import pymysql
 
 
 # 根据服务器名字查询服务器ID
@@ -262,6 +262,23 @@ def synchronous():
     return company_name_list_join
 
 
+def Select_Id(qq):
+    db = pymysql.connect(
+        host="127.0.0.1",
+        user="root",
+        password="123456",
+        db="bf1")
+    cursor = db.cursor()
+    sql = '''
+          SELECT username
+          FROM `relevance` WHERE qq = "{}"
+          '''.format(qq)
+    cursor.execute(sql)
+    db.commit()
+    Server_Id_content =cursor.fetchall()
+    return Server_Id_content
+
+
 if __name__ == "__main__":
     # Select_Server("koi")
     # Select_Server_Id("koi")
@@ -271,4 +288,4 @@ if __name__ == "__main__":
     # Select_Weapons("Bear_maio")
     # Select_Vehicles("Bear_maio")
     # Select_Recent_Sessions("Bear_maio")
-    synchronous()
+    pass

@@ -1,4 +1,4 @@
-import pymysql
+﻿import pymysql
 
 
 
@@ -133,3 +133,41 @@ def Insert_Servers(servername, name, maplist, prayers):
     cursor.close()
     db.close()
     print(servername, "服务器信息数据库插入成功")
+
+
+# 插入意见
+def Insert_idea(qq, idea):
+    db = pymysql.connect(
+        host="127.0.0.1",
+        user="root",
+        password="123456",
+        db="bf1")
+    cursor = db.cursor()
+    sql = '''
+          INSERT INTO `proposal` (qq,idea)
+          VALUES ("{}","{}")
+          '''.format(qq, idea)
+    cursor.execute(sql)
+    db.commit()
+    cursor.close()
+    db.close()
+    print(qq, "意见信息数据库插入成功")
+
+
+def Insert_relevance(qq, username):
+    db = pymysql.connect(
+        host="127.0.0.1",
+        user="root",
+        password="123456",
+        db="bf1")
+    cursor = db.cursor()
+    sql = '''
+          INSERT INTO `relevance` (qq, username)
+          VALUES ("{}","{}")
+          '''.format(qq, username)
+    cursor.execute(sql)
+    db.commit()
+    cursor.close()
+    db.close()
+    print('游戏ID与QQ绑定成功')
+

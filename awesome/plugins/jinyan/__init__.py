@@ -10,24 +10,35 @@ from aiocqhttp import CQHttp
 async def Jin(session: CommandSession):
     bot = nonebot.get_bot()
     c = session.event['group_id']
+    print(c)
     msg = session.ctx["message"]
+    print(msg)
     patt = 'qq=(.*)]'
     b = re.findall(pattern=patt, string=str(msg))
-    patt = ' ,(.*)'
-    d = re.findall(pattern=patt, string=str(msg))
-    if d == []:
+
+    if b == []:
+    # if d == []:
         patt = ' 全体'
         d = re.findall(pattern=patt, string=str(msg))
         patt1 = ' 解除全体'
         k = re.findall(pattern=patt1, string=str(msg))
-        if d == [' 全部']:
+        if d == [' 全体']:
             await bot.set_group_whole_ban(group_id=c, enable=True)
         elif k == [' 解除全体']:
             await bot.set_group_whole_ban(group_id=c, enable=False)
+
     else:
-        if d[0] == '解除':
+        patt = '](.*)'
+        d = re.findall(pattern=patt, string=str(msg))
+        print(d)
+        if d[0] == ' 解除':
             f = 0
             await bot.set_group_ban(group_id=c, user_id=int(b[0]), duration=f)
+        elif d == ['']:
+            n = 1 * 60
+            await bot.set_group_ban(group_id=c, user_id=int(b[0]), duration=n)
         else:
-            g = int(d[0]) * 60
+            patt = ' \d+'
+            k = re.findall(pattern=patt, string=str(msg))
+            g = int(k[0]) * 60
             await bot.set_group_ban(group_id=c, user_id=int(b[0]), duration=g)

@@ -1,14 +1,16 @@
-import nonebot
+﻿import nonebot
 from aiocqhttp.exceptions import Error as CQHttpError
+import time
+import random
 
 
 async def qunfa2(message):
     bot = nonebot.get_bot()
     list = await bot.get_group_list()
-    try:
-        for i in list:
-            group = i['group_id']
-            if group != 428422528 or 910459586 or 458824937 or 712532013 or 419868786:
-                await bot.send_group_msg(group_id=group, message=message)
-    except CQHttpError:
-        pass
+    for i in list:
+        time.sleep(random.randint(0,5))
+	time.sle
+        id = i['group_id']
+        if id not in [428422528, 910459586, 458824937]:
+            await bot.send_group_msg(group_id=id, message=message)
+    return '完成'

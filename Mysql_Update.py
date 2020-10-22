@@ -1,4 +1,4 @@
-import pymysql
+﻿import pymysql
 
 
 # 根据名称更新服务器ID
@@ -137,6 +137,24 @@ def Update_User(name):
     cursor.close()
     db.close()
     print(name, "游戏ID信息数据库插入成功")
+
+def Update_ID(qq, id):
+    db = pymysql.connect(
+        host="127.0.0.1",
+        user="root",
+        password="123456",
+        db="bf1")
+    cursor = db.cursor()
+    sql = '''
+          UPDATE `relevance` 
+          SET username = "{}" 
+          WHERE qq = "{}"
+          '''.format(id, qq)
+    cursor.execute(sql)
+    db.commit()
+    cursor.close()
+    db.close()
+    print(id, "游戏ID更新成功")
 
 
 if __name__ == '__main__':
