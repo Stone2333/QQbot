@@ -14,7 +14,7 @@ __plugin_usage__ = r"""
 async def test(session: CommandSession):
     test1 = session.get('test1', prompt='你想注册ID是多少？')
     qq = session.event['sender']['user_id']
-    img = await get_img(qq, test1)
+    img = await get_img(qq, test1, session)
     await session.send(img)
 
 

@@ -3,7 +3,7 @@ import requests
 from lxml import etree
 import re
 
-async def get_img(qq, Query_Login: str,) -> str:
+async def get_img(qq, Query_Login: str, session) -> str:
     relevance = Mysql_Select.Select_Id(qq)
     if Query_Login == '色图':
         print(Query_Login)
@@ -22,6 +22,8 @@ async def get_img(qq, Query_Login: str,) -> str:
             return 'qq号暂未绑定游戏ID,请使用绑定关键字绑定游戏ID 绑定 XXX'
         else:
             try:
+                prompt = "查询中请稍候"
+                await session.send(prompt)
                 url = "https://battlefieldtracker.com/bf1/profile/pc/{}".format(relevance[0][0])
                 headers = {
                     "User-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
