@@ -2,16 +2,11 @@
 import requests
 from lxml import etree
 import re
+import data_Mysql_Insert
 
 async def get_img(qq, Query_Login: str, session) -> str:
     relevance = Mysql_Select.Select_Id(qq)
-    if Query_Login == '色图':
-        print(Query_Login)
-        c = '[CQ:image,file=file:///E:/2.jpg]'
-        return c
-    elif Query_Login == '吃瓜':
-        return '吃瓜'
-    elif Query_Login == '快速链接':
+    if Query_Login == '快速链接':
         s = "www.ceve-market.org/index/\nwww.baidu.com"
         return s.strip()
     elif Query_Login == '劳动仲裁':
@@ -115,3 +110,170 @@ async def get_img(qq, Query_Login: str, session) -> str:
             except:
                 error = '网络问题请稍后重试'
                 return error
+    elif Query_Login == '.战绩':
+        if relevance == ():
+            return 'qq号暂未绑定游戏ID,请使用绑定关键字绑定游戏ID 绑定 XXX'
+        else:
+            Overview = Mysql_Select.Select_Overview(relevance[0][0])
+            # 判断数据库中有没有这个ID，有则直接在数据库中查询，没有则调用爬虫爬取插入
+            if Overview == []:
+                # 调用爬虫爬取插入
+                try:
+                    prompt = "查询中请稍候"
+                    await session.send(prompt)
+                    data_Mysql_Insert.get_Overview(relevance)
+                    # 爬取完毕在数据库中查询
+                    Overview = Mysql_Select.Select_Overview(relevance)
+                    SCORE_MIN = "分数/分钟:" + Overview[0]
+                    KD_RATIO = "K/D比:" + Overview[1]
+                    WIN_PERCENT = "胜率:" + Overview[2]
+                    KILLS_GAME = "场均击杀:" + Overview[3]
+                    KILLS_MIN = "杀敌/分钟:" + Overview[4]
+                    INFANTRY_KPM = "步兵KPM:" + Overview[5]
+                    INFANTRY_KD = "步兵KD:" + Overview[6]
+                    VEHICLE_KILLS = "载具击杀:" + Overview[7]
+                    VEHICLE_KPM = "载具KPM:" + Overview[8]
+                    SKILL = "技巧值:" + Overview[9]
+                    ACCURACY = "准度:" + Overview[10]
+                    Overview_list = ["\n游戏ID:" + relevance, SCORE_MIN, KD_RATIO, WIN_PERCENT, KILLS_GAME,
+                                     KILLS_MIN,
+                                     INFANTRY_KPM,
+                                     INFANTRY_KD,
+                                     VEHICLE_KILLS, VEHICLE_KPM, SKILL, ACCURACY]
+                    # 去逗号
+                    Overview_str = (' \n'.join(Overview_list))
+                    print('这是爬虫爬取完成后查到的战绩数据')
+                    return Overview_str
+                except:
+                    error = 'ID错误/橘子信息设置为隐私,无法查询到数据'
+                    return error
+            else:
+                SCORE_MIN = "分数/分钟:" + Overview[0]
+                KD_RATIO = "K/D比:" + Overview[1]
+                WIN_PERCENT = "胜率:" + Overview[2]
+                KILLS_GAME = "场均击杀:" + Overview[3]
+                KILLS_MIN = "杀敌/分钟:" + Overview[4]
+                INFANTRY_KPM = "步兵KPM:" + Overview[5]
+                INFANTRY_KD = "步兵KD:" + Overview[6]
+                VEHICLE_KILLS = "载具击杀:" + Overview[7]
+                VEHICLE_KPM = "载具KPM:" + Overview[8]
+                SKILL = "技巧值:" + Overview[9]
+                ACCURACY = "准度:" + Overview[10]
+                Overview_list = ["\n游戏ID:" + relevance, SCORE_MIN, KD_RATIO, WIN_PERCENT, KILLS_GAME, KILLS_MIN,
+                                 INFANTRY_KPM, INFANTRY_KD, VEHICLE_KILLS, VEHICLE_KPM, SKILL, ACCURACY]
+                Overview_str = (' \n'.join(Overview_list))
+                print('这是直接查数据库查到的战绩数据')
+                return Overview_str
+    elif Query_Login == '.武器':
+        if relevance == ():
+            return 'qq号暂未绑定游戏ID,请使用绑定关键字绑定游戏ID 绑定 XXX'
+        else:
+            Weapons = Mysql_Select.Select_Weapons(relevance[0][0])
+            if Weapons == []:
+                try:
+                    prompt = "查询中请稍候"
+                    await session.send(prompt)
+                    data_Mysql_Insert.get_Weapons(relevance[0][0])
+                    Weapons = Mysql_Select.Select_Weapons(relevance[0][0])
+                    name = Weapons[0]
+                    kills = Weapons[1]
+                    kpm = Weapons[2]
+                    Accuracy = Weapons[3]
+                    Headshots = Weapons[4]
+                    name1 = Weapons[5]
+                    kills1 = Weapons[6]
+                    kpm1 = Weapons[7]
+                    Accuracy1 = Weapons[8]
+                    Headshots1 = Weapons[9]
+                    name2 = Weapons[10]
+                    kills2 = Weapons[11]
+                    kpm2 = Weapons[12]
+                    Accuracy2 = Weapons[13]
+                    Headshots2 = Weapons[14]
+                    Weapons_list = ["\n烧火棍名称:" + name, "击毙:" + kills, "每分钟得分:" + kpm, "准度:" + Accuracy,
+                                    "爆头击毙:" + Headshots,
+                                    "烧火棍名称:" + name1, "击毙:" + kills1, "每分钟得分:" + kpm1, "准度:" + Accuracy1,
+                                    "爆头击毙:" + Headshots1,
+                                    "烧火棍名称:" + name2, "击毙:" + kills2, "每分钟得分:" + kpm2, "准度:" + Accuracy2,
+                                    "爆头击毙:" + Headshots2]
+                    Weapons_str = (' \n'.join(Weapons_list))
+                    print('这是爬虫爬取完成后查到的武器数据')
+                    return Weapons_str
+                except:
+                    error = 'ID错误/橘子信息设置为隐私/没用过武器/网络问题,无法查询到最近战绩'
+                    return error
+            else:
+                name = Weapons[0]
+                kills = Weapons[1]
+                kpm = Weapons[2]
+                Accuracy = Weapons[3]
+                Headshots = Weapons[4]
+                name1 = Weapons[5]
+                kills1 = Weapons[6]
+                kpm1 = Weapons[7]
+                Accuracy1 = Weapons[8]
+                Headshots1 = Weapons[9]
+                name2 = Weapons[10]
+                kills2 = Weapons[11]
+                kpm2 = Weapons[12]
+                Accuracy2 = Weapons[13]
+                Headshots2 = Weapons[14]
+                Weapons_list = ["\n烧火棍名称:" + name, "击毙:" + kills, "每分钟得分:" + kpm, "准度:" + Accuracy, "爆头击毙:" + Headshots,
+                                "烧火棍名称:" + name1, "击毙:" + kills1, "每分钟得分:" + kpm1, "准度:" + Accuracy1,
+                                "爆头击毙:" + Headshots1,
+                                "烧火棍名称:" + name2, "击毙:" + kills2, "每分钟得分:" + kpm2, "准度:" + Accuracy2,
+                                "爆头击毙:" + Headshots2]
+                Weapons_str = (' \n'.join(Weapons_list))
+                print('这是直接查数据库查到的武器数据')
+                return Weapons_str
+    elif Query_Login == '.载具':
+        if relevance == ():
+            return 'qq号暂未绑定游戏ID,请使用绑定关键字绑定游戏ID 绑定 XXX'
+        else:
+            Vehicles = Mysql_Select.Select_Vehicles(relevance[0][0])
+            if Vehicles == []:
+                try:
+                    prompt = "查询中请稍候"
+                    await session.send(prompt)
+                    data_Mysql_Insert.get_Vehicles(relevance[0][0])
+                    Vehicles = Mysql_Select.Select_Vehicles(relevance[0][0])
+                    name = Vehicles[0]
+                    kills = Vehicles[1]
+                    kpm = Vehicles[2]
+                    Destroyed = Vehicles[3]
+                    name1 = Vehicles[4]
+                    kills1 = Vehicles[5]
+                    kpm1 = Vehicles[6]
+                    Destroyed1 = Vehicles[7]
+                    name2 = Vehicles[8]
+                    kills2 = Vehicles[9]
+                    kpm2 = Vehicles[10]
+                    Destroyed2 = Vehicles[11]
+                    Vehicles_list = ["\n载具名称:" + name, "击毙:" + kills, "每分钟得分:" + kpm, "击毁载具:" + Destroyed,
+                                     "载具名称:" + name1, "击毙:" + kills1, "每分钟得分:" + kpm1, "击毁载具:" + Destroyed1,
+                                     "载具名称:" + name2, "击毙:" + kills2, "每分钟得分:" + kpm2, "击毁载具:" + Destroyed2]
+                    Vehicles_str = (' \n'.join(Vehicles_list))
+                    print('这是爬虫爬取完成后查到的载具数据')
+                    return Vehicles_str
+                except:
+                    error = 'ID错误/橘子信息设置为隐私/没用过载具,无法查询到数据'
+                    return error
+            else:
+                name = Vehicles[0]
+                kills = Vehicles[1]
+                kpm = Vehicles[2]
+                Destroyed = Vehicles[3]
+                name1 = Vehicles[4]
+                kills1 = Vehicles[5]
+                kpm1 = Vehicles[6]
+                Destroyed1 = Vehicles[7]
+                name2 = Vehicles[8]
+                kills2 = Vehicles[9]
+                kpm2 = Vehicles[10]
+                Destroyed2 = Vehicles[11]
+                Vehicles_list = ["\n载具名称:" + name, "击毙:" + kills, "每分钟得分:" + kpm, "击毁载具:" + Destroyed,
+                                 "载具名称:" + name1, "击毙:" + kills1, "每分钟得分:" + kpm1, "击毁载具:" + Destroyed1,
+                                 "载具名称:" + name2, "击毙:" + kills2, "每分钟得分:" + kpm2, "击毁载具:" + Destroyed2]
+                Vehicles_str = (' \n'.join(Vehicles_list))
+                print('这是直接查数据库查到的载具数据')
+                return Vehicles_str
