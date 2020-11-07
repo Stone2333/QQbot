@@ -19,10 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a15535c6-4cef-4568-97ff-fa9054a69501" name="Default Changelist" comment="名称替换">
-      <change afterPath="$PROJECT_DIR$/awesome/plugins/kuaicha2/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/awesome/plugins/kuaicha2/kuaicha.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="a15535c6-4cef-4568-97ff-fa9054a69501" name="Default Changelist" comment="正则">
+      <change beforePath="$PROJECT_DIR$/awesome/plugins/kuaicha2/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/awesome/plugins/kuaicha2/__init__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +94,7 @@
       <workItem from="1603347763245" duration="38000" />
       <workItem from="1603691746335" duration="1897000" />
       <workItem from="1603849341355" duration="27000" />
-      <workItem from="1604728072697" duration="4800000" />
+      <workItem from="1604728072697" duration="4948000" />
     </task>
     <task id="LOCAL-00001" summary="更新最近战绩">
       <created>1604728345006</created>
@@ -154,7 +152,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604732135944</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="正则">
+      <created>1604734380363</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1604734380363</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,7 +180,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="更新最近战绩" />
     <MESSAGE value="名称替换" />
-    <option name="LAST_COMMIT_MESSAGE" value="名称替换" />
+    <MESSAGE value="正则" />
+    <option name="LAST_COMMIT_MESSAGE" value="正则" />
   </component>
   <component name="WindowStateProjectService">
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1603849366895">
@@ -206,10 +212,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="270" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1603691931807" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1604732152880">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1604734382633">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1604732152880" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1604734382633" />
     <state x="563" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604728087727">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
