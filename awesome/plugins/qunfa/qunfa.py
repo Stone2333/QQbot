@@ -9,7 +9,6 @@ async def qunfa2(message):
     list = await bot.get_group_list()
     for i in list:
         time.sleep(random.randint(0,5))
-	time.sle
         id = i['group_id']
         if id not in [428422528, 910459586, 458824937]:
             await bot.send_group_msg(group_id=id, message=message)
