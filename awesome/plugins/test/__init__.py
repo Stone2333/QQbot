@@ -10,7 +10,7 @@ __plugin_usage__ = r"""
 """
 
 # 当用户输入关键字没有输入值时则提示
-@on_command('test', patterns=('^.最近$','^.武器$','^.载具$','^.战绩$','快速链接','劳动仲裁'), only_to_me=False)
+@on_command('test', patterns=('^.最近$','^.武器$','^.载具$','^.战绩$','^帮助$','快速链接','劳动仲裁'), only_to_me=False)
 async def test(session: CommandSession):
     test1 = session.get('test1', prompt='你想注册ID是多少？')
     qq = session.event['sender']['user_id']
