@@ -119,11 +119,9 @@ async def get_img(qq, Query_Login: str, session) -> str:
             if Overview == []:
                 # 调用爬虫爬取插入
                 try:
-                    prompt = "查询中请稍候"
-                    await session.send(prompt)
-                    data_Mysql_Insert.get_Overview(relevance)
+                    data_Mysql_Insert.get_Overview(relevance[0][0])
                     # 爬取完毕在数据库中查询
-                    Overview = Mysql_Select.Select_Overview(relevance)
+                    Overview = Mysql_Select.Select_Overview(relevance[0][0])
                     SCORE_MIN = "分数/分钟:" + Overview[0]
                     KD_RATIO = "K/D比:" + Overview[1]
                     WIN_PERCENT = "胜率:" + Overview[2]
@@ -135,7 +133,7 @@ async def get_img(qq, Query_Login: str, session) -> str:
                     VEHICLE_KPM = "载具KPM:" + Overview[8]
                     SKILL = "技巧值:" + Overview[9]
                     ACCURACY = "准度:" + Overview[10]
-                    Overview_list = ["\n游戏ID:" + relevance, SCORE_MIN, KD_RATIO, WIN_PERCENT, KILLS_GAME,
+                    Overview_list = ["\n游戏ID:" + relevance[0][0], SCORE_MIN, KD_RATIO, WIN_PERCENT, KILLS_GAME,
                                      KILLS_MIN,
                                      INFANTRY_KPM,
                                      INFANTRY_KD,
@@ -159,7 +157,7 @@ async def get_img(qq, Query_Login: str, session) -> str:
                 VEHICLE_KPM = "载具KPM:" + Overview[8]
                 SKILL = "技巧值:" + Overview[9]
                 ACCURACY = "准度:" + Overview[10]
-                Overview_list = ["\n游戏ID:" + relevance, SCORE_MIN, KD_RATIO, WIN_PERCENT, KILLS_GAME, KILLS_MIN,
+                Overview_list = ["\n游戏ID:" + relevance[0][0], SCORE_MIN, KD_RATIO, WIN_PERCENT, KILLS_GAME, KILLS_MIN,
                                  INFANTRY_KPM, INFANTRY_KD, VEHICLE_KILLS, VEHICLE_KPM, SKILL, ACCURACY]
                 Overview_str = (' \n'.join(Overview_list))
                 print('这是直接查数据库查到的战绩数据')

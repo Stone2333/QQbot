@@ -18,7 +18,7 @@ async def kuaicha2(qq, Query_Overview: str) -> str:
                 try:
                     data_Mysql_Insert.get_Overview(Query_Overview)
                     # 爬取完毕在数据库中查询
-                    Overview = Mysql_Select.Select_Overview(Query_Overview)
+                    Overview = Mysql_Select.Select_Overview(relevance[0][0])
                     SCORE_MIN = "分数/分钟:" + Overview[0]
                     KD_RATIO = "K/D比:" + Overview[1]
                     WIN_PERCENT = "胜率:" + Overview[2]
@@ -30,7 +30,7 @@ async def kuaicha2(qq, Query_Overview: str) -> str:
                     VEHICLE_KPM = "载具KPM:" + Overview[8]
                     SKILL = "技巧值:" + Overview[9]
                     ACCURACY = "准度:" + Overview[10]
-                    Overview_list = ["\n游戏ID:" + Query_Overview, SCORE_MIN, KD_RATIO, WIN_PERCENT, KILLS_GAME, KILLS_MIN,
+                    Overview_list = ["\n游戏ID:" + relevance[0][0], SCORE_MIN, KD_RATIO, WIN_PERCENT, KILLS_GAME, KILLS_MIN,
                                      INFANTRY_KPM,
                                      INFANTRY_KD,
                                      VEHICLE_KILLS, VEHICLE_KPM, SKILL, ACCURACY]
@@ -53,7 +53,7 @@ async def kuaicha2(qq, Query_Overview: str) -> str:
                 VEHICLE_KPM = "载具KPM:" + Overview[8]
                 SKILL = "技巧值:" + Overview[9]
                 ACCURACY = "准度:" + Overview[10]
-                Overview_list = ["\n游戏ID:" + Query_Overview, SCORE_MIN, KD_RATIO, WIN_PERCENT, KILLS_GAME, KILLS_MIN, INFANTRY_KPM,INFANTRY_KD,VEHICLE_KILLS, VEHICLE_KPM, SKILL, ACCURACY]
+                Overview_list = ["\n游戏ID:" + relevance[0][0], SCORE_MIN, KD_RATIO, WIN_PERCENT, KILLS_GAME, KILLS_MIN, INFANTRY_KPM,INFANTRY_KD,VEHICLE_KILLS, VEHICLE_KPM, SKILL, ACCURACY]
                 Overview_str = (' \n'.join(Overview_list))
                 print('这是直接查数据库查到的战绩数据')
                 return Overview_str
