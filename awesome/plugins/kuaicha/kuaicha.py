@@ -82,9 +82,12 @@ async def kuaicha2(qq, Query_Overview: str) -> str:
                     kpm2 = Weapons[12]
                     Accuracy2 = Weapons[13]
                     Headshots2 = Weapons[14]
-                    Weapons_list = ["\n武器名称:" + name, "击杀:" + kills, "Kpm:" + kpm, "准度:" + Accuracy, "爆头击杀:" + Headshots,
-                                    "武器名称:" + name1, "击杀:" + kills1, "Kpm:" + kpm1, "准度:" + Accuracy1, "爆头击杀:" + Headshots1,
-                                    "武器名称:" + name2, "击杀:" + kills2, "Kpm:" + kpm2, "准度:" + Accuracy2, "爆头击杀:" + Headshots2]
+                    Weapons_list = ["\n烧火棍名称:" + name, "击毙:" + kills, "每分钟得分:" + kpm, "准度:" + Accuracy,
+                                    "爆头击毙:" + Headshots,
+                                    "烧火棍名称:" + name1, "击毙:" + kills1, "每分钟得分:" + kpm1, "准度:" + Accuracy1,
+                                    "爆头击毙:" + Headshots1,
+                                    "烧火棍名称:" + name2, "击毙:" + kills2, "每分钟得分:" + kpm2, "准度:" + Accuracy2,
+                                    "爆头击毙:" + Headshots2]
                     Weapons_str = (' \n'.join(Weapons_list))
                     print('这是爬虫爬取完成后查到的武器数据')
                     return Weapons_str
@@ -107,9 +110,11 @@ async def kuaicha2(qq, Query_Overview: str) -> str:
                 kpm2 = Weapons[12]
                 Accuracy2 = Weapons[13]
                 Headshots2 = Weapons[14]
-                Weapons_list = ["\n武器名称:" + name, "击杀:" + kills, "Kpm:" + kpm, "准度:" + Accuracy, "爆头击杀:" + Headshots,
-                                "武器名称:" + name1, "击杀:" + kills1, "Kpm:" + kpm1, "准度:" + Accuracy1, "爆头击杀:" + Headshots1,
-                                "武器名称:" + name2, "击杀:" + kills2, "Kpm:" + kpm2, "准度:" + Accuracy2, "爆头击杀:" + Headshots2]
+                Weapons_list = ["\n烧火棍名称:" + name, "击毙:" + kills, "每分钟得分:" + kpm, "准度:" + Accuracy, "爆头击毙:" + Headshots,
+                                "烧火棍名称:" + name1, "击毙:" + kills1, "每分钟得分:" + kpm1, "准度:" + Accuracy1,
+                                "爆头击毙:" + Headshots1,
+                                "烧火棍名称:" + name2, "击毙:" + kills2, "每分钟得分:" + kpm2, "准度:" + Accuracy2,
+                                "爆头击毙:" + Headshots2]
                 Weapons_str = (' \n'.join(Weapons_list))
                 print('这是直接查数据库查到的武器数据')
                 return Weapons_str
@@ -134,9 +139,9 @@ async def kuaicha2(qq, Query_Overview: str) -> str:
                     kills2 = Vehicles[9]
                     kpm2 = Vehicles[10]
                     Destroyed2 = Vehicles[11]
-                    Vehicles_list = ["\n载具名称:" + name, "击杀:" + kills, "KPM:" + kpm, "击毁载具:" + Destroyed,
-                                     "载具名称:" + name1, "击杀:" + kills1, "KPM:" + kpm1, "击毁载具:" + Destroyed1,
-                                     "载具名称:" + name2, "击杀:" + kills2, "KPM:" + kpm2, "击毁载具:" + Destroyed2]
+                    Vehicles_list = ["\n载具名称:" + name, "击毙:" + kills, "每分钟得分:" + kpm, "击毁载具:" + Destroyed,
+                                     "载具名称:" + name1, "击毙:" + kills1, "每分钟得分:" + kpm1, "击毁载具:" + Destroyed1,
+                                     "载具名称:" + name2, "击毙:" + kills2, "每分钟得分:" + kpm2, "击毁载具:" + Destroyed2]
                     Vehicles_str = (' \n'.join(Vehicles_list))
                     print('这是爬虫爬取完成后查到的载具数据')
                     return Vehicles_str
@@ -156,10 +161,9 @@ async def kuaicha2(qq, Query_Overview: str) -> str:
                 kills2 = Vehicles[9]
                 kpm2 = Vehicles[10]
                 Destroyed2 = Vehicles[11]
-                Vehicles_list = ["\n载具名称:" + name, "击杀:" + kills, "KPM:" + kpm, "击毁载具:" + Destroyed,
-                                 "载具名称:" + name1, "击杀:" + kills1, "KPM:" + kpm1, "击毁载具:" + Destroyed1,
-                                 "载具名称:" + name2, "击杀:" + kills2, "KPM:" + kpm2, "击毁载具:" + Destroyed2,
-                                 ]
+                Vehicles_list = ["\n载具名称:" + name, "击毙:" + kills, "每分钟得分:" + kpm, "击毁载具:" + Destroyed,
+                                 "载具名称:" + name1, "击毙:" + kills1, "每分钟得分:" + kpm1, "击毁载具:" + Destroyed1,
+                                 "载具名称:" + name2, "击毙:" + kills2, "每分钟得分:" + kpm2, "击毁载具:" + Destroyed2]
                 Vehicles_str = (' \n'.join(Vehicles_list))
                 print('这是直接查数据库查到的载具数据')
                 return Vehicles_str
