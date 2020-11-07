@@ -19,9 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a15535c6-4cef-4568-97ff-fa9054a69501" name="Default Changelist" comment="正则">
+    <list default="true" id="a15535c6-4cef-4568-97ff-fa9054a69501" name="Default Changelist" comment="去除">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesome/plugins/kuaicha2/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/awesome/plugins/kuaicha2/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/awesome/plugins/test/Login_data_source.py" beforeDir="false" afterPath="$PROJECT_DIR$/awesome/plugins/test/Login_data_source.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +95,7 @@
       <workItem from="1603347763245" duration="38000" />
       <workItem from="1603691746335" duration="1897000" />
       <workItem from="1603849341355" duration="27000" />
-      <workItem from="1604728072697" duration="5796000" />
+      <workItem from="1604728072697" duration="7024000" />
     </task>
     <task id="LOCAL-00001" summary="更新最近战绩">
       <created>1604728345006</created>
@@ -174,7 +174,35 @@
       <option name="project" value="LOCAL" />
       <updated>1604734926133</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="正则">
+      <created>1604735323331</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1604735323331</updated>
+    </task>
+    <task id="LOCAL-00013" summary="正则">
+      <created>1604735824900</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1604735824900</updated>
+    </task>
+    <task id="LOCAL-00014" summary="去除">
+      <created>1604735945636</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1604735945636</updated>
+    </task>
+    <task id="LOCAL-00015" summary="去除">
+      <created>1604736425040</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1604736425040</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,7 +224,8 @@
     <MESSAGE value="更新最近战绩" />
     <MESSAGE value="名称替换" />
     <MESSAGE value="正则" />
-    <option name="LAST_COMMIT_MESSAGE" value="正则" />
+    <MESSAGE value="去除" />
+    <option name="LAST_COMMIT_MESSAGE" value="去除" />
   </component>
   <component name="WindowStateProjectService">
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1603849366895">
@@ -227,10 +256,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="270" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1604735143070" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1604734942195">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1604736431758">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1604734942195" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1604736431758" />
     <state x="563" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604728087727">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
