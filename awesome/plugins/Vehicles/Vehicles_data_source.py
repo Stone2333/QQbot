@@ -20,9 +20,9 @@ async def Select_Vehicles(Query_Vehicles: str) -> str:
             kills2 = Vehicles[9]
             kpm2 = Vehicles[10]
             Destroyed2 = Vehicles[11]
-            Vehicles_list = ["\n载具名称:" + name, "击杀:" + kills, "KPM:" + kpm, "击毁载具:" + Destroyed,
-                             "载具名称:" + name1, "击杀:" + kills1, "KPM:" + kpm1, "击毁载具:" + Destroyed1,
-                             "载具名称:" + name2, "击杀:" + kills2, "KPM:" + kpm2, "击毁载具:" + Destroyed2]
+            Vehicles_list = ["\n载具名称:" + name, "击毙:" + kills, "每分钟得分:" + kpm, "击毁载具:" + Destroyed,
+                             "载具名称:" + name1, "击毙:" + kills1, "每分钟得分:" + kpm1, "击毁载具:" + Destroyed1,
+                             "载具名称:" + name2, "击毙:" + kills2, "每分钟得分:" + kpm2, "击毁载具:" + Destroyed2]
             Vehicles_str = (' \n'.join(Vehicles_list))
             print('这是爬虫爬取完成后查到的载具数据')
             return Vehicles_str
