@@ -2,13 +2,6 @@ from nonebot import on_command, CommandSession
 from nonebot import on_natural_language, NLPSession, IntentCommand
 from .Servers_data_source import *
 
-__plugin_name__ = '服务器查询'
-__plugin_usage__ = r"""
-服务器查询格式：
-【服务器】+空格+服务器名称
-【查服务器】+空格+服务器名称
-"""
-
 
 @on_command('Servers', aliases=('服务器', '查服务器'),only_to_me=False)
 async def Servers(session: CommandSession):

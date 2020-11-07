@@ -2,12 +2,6 @@ from nonebot import on_command, CommandSession
 from nonebot import on_natural_language, NLPSession, IntentCommand
 from .Recent_Sessions_data_source import *
 
-__plugin_name__ = '最近战绩查询'
-__plugin_usage__ = r"""最近战绩查询格式：
-【最近】+空格+ID
-【最近战绩】+空格+ID
-【查最近战绩】+空格+ID
-"""
 
 
 @on_command('Recent_Sessions', aliases=('最近', '最近战绩', '查最近战绩'), only_to_me=False)

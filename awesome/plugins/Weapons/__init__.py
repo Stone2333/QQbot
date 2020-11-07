@@ -4,12 +4,6 @@ from .Weapons_data_source import *
 
 
 
-__plugin_name__ = '武器查询'
-__plugin_usage__ = r"""
-武器查询格式：
-【武器】+空格+ID
-【查武器】+空格+ID
-"""
 
 @on_command('Weapons', aliases=('武器', '查武器'),only_to_me=False)
 async def Weapons(session: CommandSession):
