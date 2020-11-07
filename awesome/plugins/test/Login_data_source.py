@@ -275,3 +275,6 @@ async def get_img(qq, Query_Login: str, session) -> str:
                 Vehicles_str = (' \n'.join(Vehicles_list))
                 print('这是直接查数据库查到的载具数据')
                 return Vehicles_str
+    else:
+        s = '原有快速查询已废弃,输入关键字".最近"，".战绩"，".武器"，".载具"，即可快速查询更为简便'
+        return s
