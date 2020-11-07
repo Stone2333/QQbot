@@ -19,12 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a15535c6-4cef-4568-97ff-fa9054a69501" name="Default Changelist" comment="去除空格">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesome/plugins/kuaicha2/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesome/plugins/test/Login_data_source.py" beforeDir="false" afterPath="$PROJECT_DIR$/awesome/plugins/test/Login_data_source.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesome/plugins/test/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/awesome/plugins/test/__init__.py" afterDir="false" />
-    </list>
+    <list default="true" id="a15535c6-4cef-4568-97ff-fa9054a69501" name="Default Changelist" comment="修改快查" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -97,7 +92,7 @@
       <workItem from="1603347763245" duration="38000" />
       <workItem from="1603691746335" duration="1897000" />
       <workItem from="1603849341355" duration="27000" />
-      <workItem from="1604728072697" duration="8049000" />
+      <workItem from="1604728072697" duration="8402000" />
     </task>
     <task id="LOCAL-00001" summary="更新最近战绩">
       <created>1604728345006</created>
@@ -239,7 +234,28 @@
       <option name="project" value="LOCAL" />
       <updated>1604737160881</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="修改快查">
+      <created>1604737582903</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1604737582904</updated>
+    </task>
+    <task id="LOCAL-00022" summary="修改快查">
+      <created>1604737743689</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1604737743689</updated>
+    </task>
+    <task id="LOCAL-00023" summary="修改快查">
+      <created>1604737841655</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1604737841655</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,7 +279,8 @@
     <MESSAGE value="正则" />
     <MESSAGE value="去除" />
     <MESSAGE value="去除空格" />
-    <option name="LAST_COMMIT_MESSAGE" value="去除空格" />
+    <MESSAGE value="修改快查" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改快查" />
   </component>
   <component name="WindowStateProjectService">
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1603849366895">
@@ -294,10 +311,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="270" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1604735143070" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1604737161981">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1604737843018">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1604737161981" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1604737843018" />
     <state x="563" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604728087727">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

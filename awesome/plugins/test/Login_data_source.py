@@ -17,7 +17,7 @@ async def get_img(qq, Query_Login: str, session) -> str:
     elif Query_Login == '劳动仲裁':
         s = "文档：劳动仲裁和劳动法记录.note\n链接：http://note.youdao.com/noteshare?id=13ef9e3ff1cbcd4cb61b459c3e46cabf&sub=8C73DE805D394DF9A6C58AF74D900D06"
         return  s
-    elif Query_Login == '最近':
+    elif Query_Login == '.最近':
         if relevance == ():
             return 'qq号暂未绑定游戏ID,请使用绑定关键字绑定游戏ID 绑定 XXX'
         else:
