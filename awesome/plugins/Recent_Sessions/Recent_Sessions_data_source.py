@@ -86,9 +86,11 @@ async def get_Recent_Sessions(Quer_Recent_Sessions: str) -> str:
             return error
         Recent_Sessions_list = ["\n最近战绩:", "游玩时间:" + Time1, "每分钟得分:" + SPM1, "击杀/死亡比:" + Kd1, "每分钟杀敌数:" + KPM1,
                                 "游戏时间:" + TimePlayed1, '================',
-                                "游玩时间:" + Time2, "每分钟得分:" + SPM2, "死亡比:" + Kd2, "每分钟杀敌数:" + KPM2, "游戏时间:" + TimePlayed2,
+                                "游玩时间:" + Time2, "每分钟得分:" + SPM2, "击杀/死亡比:" + Kd2, "每分钟杀敌数:" + KPM2,
+                                "游戏时间:" + TimePlayed2,
                                 '================',
-                                "游玩时间:" + Time3, "每分钟得分:" + SPM3, "击杀:" + Kd3, "每分钟杀敌数:" + KPM3, "游戏时间:" + TimePlayed3]
+                                "游玩时间:" + Time3, "每分钟得分:" + SPM3, "击杀/死亡比:" + Kd3, "每分钟杀敌数:" + KPM3,
+                                "游戏时间:" + TimePlayed3]
         Recent_Sessions_str = (' \n'.join(Recent_Sessions_list))
         return Recent_Sessions_str
     except:

@@ -247,10 +247,13 @@ async def kuaicha2(qq, Query_Overview: str) -> str:
                 except:
                     error = 'ID错误/橘子信息设置为隐私/很久没玩,无法查询到最近战绩'
                     return error
-                Recent_Sessions_list = ["\n最近战绩:", "游玩时间:" + Time1, "SPM:" + SPM1, "KD:" + Kd1, "Kpm:" + KPM1,
-                                        "游戏时间:" + TimePlayed1,
-                                        "\n游玩时间:" + Time2, "SPM:" + SPM2, "KD:" + Kd2, "Kpm:" + KPM2, "游戏时间:" + TimePlayed2,
-                                        "\n游玩时间:" + Time3, "SPM:" + SPM3, "KD:" + Kd3, "Kpm:" + KPM3, "游戏时间:" + TimePlayed3]
+                Recent_Sessions_list = ["\n最近战绩:", "游玩时间:" + Time1, "每分钟得分:" + SPM1, "击杀/死亡比:" + Kd1, "每分钟杀敌数:" + KPM1,
+                                        "游戏时间:" + TimePlayed1, '================',
+                                        "游玩时间:" + Time2, "每分钟得分:" + SPM2, "击杀/死亡比:" + Kd2, "每分钟杀敌数:" + KPM2,
+                                        "游戏时间:" + TimePlayed2,
+                                        '================',
+                                        "游玩时间:" + Time3, "每分钟得分:" + SPM3, "击杀/死亡比:" + Kd3, "每分钟杀敌数:" + KPM3,
+                                        "游戏时间:" + TimePlayed3]
                 Recent_Sessions_str = (' \n'.join(Recent_Sessions_list))
                 return Recent_Sessions_str
             except:
