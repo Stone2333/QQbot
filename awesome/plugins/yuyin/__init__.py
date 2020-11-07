@@ -8,7 +8,7 @@ from .Recent_Sessions_data_source import *
 async def yuyin(session: CommandSession):
     Quer_Recent_Sessions = session.get('Quer_Recent_Sessions', prompt='你想查询最近战绩的ID是多少？')
     Recent_Sessions_report = await get_Recent_Sessions(Quer_Recent_Sessions)
-    await session.send(Recent_Sessions_report, at_sender=True)
+    await session.send(Recent_Sessions_report)
 
 
 @yuyin.args_parser

@@ -21,6 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a15535c6-4cef-4568-97ff-fa9054a69501" name="Default Changelist" comment="语音测试">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/awesome/plugins/yuyin/Recent_Sessions_data_source.py" beforeDir="false" afterPath="$PROJECT_DIR$/awesome/plugins/yuyin/Recent_Sessions_data_source.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/awesome/plugins/yuyin/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/awesome/plugins/yuyin/__init__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +105,7 @@
       <workItem from="1603849341355" duration="27000" />
       <workItem from="1604728072697" duration="11733000" />
       <workItem from="1604742388062" duration="3829000" />
-      <workItem from="1604750980354" duration="4334000" />
+      <workItem from="1604750980354" duration="4927000" />
     </task>
     <task id="LOCAL-00001" summary="更新最近战绩">
       <created>1604728345006</created>
@@ -364,7 +366,21 @@
       <option name="project" value="LOCAL" />
       <updated>1604758346951</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="语音测试">
+      <created>1604758674817</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1604758674817</updated>
+    </task>
+    <task id="LOCAL-00039" summary="语音测试">
+      <created>1604758835919</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1604758835919</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -427,10 +443,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="270" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1604735143070" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1604758348035">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1604759154263">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1604758348035" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1604759154263" />
     <state x="563" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604728087727">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
