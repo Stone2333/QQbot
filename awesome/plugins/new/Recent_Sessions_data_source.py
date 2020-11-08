@@ -12,11 +12,11 @@ async def recent_sessions_msg(Quer_Recent_Sessions):
     if not name:
         data_Mysql_Insert.insert_recent_sessions_data(Quer_Recent_Sessions, msg)
         msg = get_db_recent_sessions(Quer_Recent_Sessions)
-        return msg
+        return '\n'+msg
     else:
         data_Mysql_Update.update_recent_sessions_data(Quer_Recent_Sessions, msg)
         msg = get_db_recent_sessions(Quer_Recent_Sessions)
-        return msg
+        return '\n'+msg
 
 
 def get_recent_sessions(Quer_Recent_Sessions):
@@ -66,7 +66,7 @@ f"""游玩日期:{game_play_time}
 游玩时间:{game_time}
 ===============
 """
-    return '\n'+string2
+    return string2
 
 
 def error(html):
