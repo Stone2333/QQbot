@@ -9,6 +9,8 @@ import data_Mysql_Update
 async def recent_sessions_msg(Quer_Recent_Sessions):
     name = Mysql_Select.get_recent_sessions_all(Quer_Recent_Sessions)
     msg = get_recent_sessions(Quer_Recent_Sessions)
+    if msg == '我们找不到您的数据，请确保您的名称正确':
+        return msg
     if not name:
         data_Mysql_Insert.insert_recent_sessions_data(Quer_Recent_Sessions, msg)
         msg = get_db_recent_sessions(Quer_Recent_Sessions)
