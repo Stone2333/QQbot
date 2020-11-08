@@ -6,10 +6,10 @@ from .Recent_Sessions_data_source import *
 
 @on_command('recent_sessions', aliases=('新最近'), only_to_me=False)
 async def recent_sessions(session: CommandSession):
-    Quer_Recent_Sessions = session.get('Quer_Recent_Sessions', prompt='你想查询最近战绩的ID是多少？')
+    quer_Recent_Sessions = session.get('quer_Recent_Sessions', prompt='你想查询最近战绩的ID是多少？')
     prompt = "查询中稍等片刻"
     await session.send(prompt)
-    Recent_Sessions_report = await recent_sessions(Quer_Recent_Sessions)
+    Recent_Sessions_report = await recent_sessions_msg(quer_Recent_Sessions)
     await session.send(Recent_Sessions_report, at_sender=True)
 
 
@@ -18,7 +18,7 @@ async def _(session: CommandSession):
     stripped_arg = session.current_arg_text.strip()
     if session.is_first_run:
         if stripped_arg:
-            session.state['Quer_Recent_Sessions'] = stripped_arg
+            session.state['quer_Recent_Sessions'] = stripped_arg
         return
 
     if not stripped_arg:

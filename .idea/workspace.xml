@@ -19,10 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a15535c6-4cef-4568-97ff-fa9054a69501" name="Default Changelist" comment="语音测试">
+    <list default="true" id="a15535c6-4cef-4568-97ff-fa9054a69501" name="Default Changelist" comment="新最近">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesome/plugins/yuyin/Recent_Sessions_data_source.py" beforeDir="false" afterPath="$PROJECT_DIR$/awesome/plugins/yuyin/Recent_Sessions_data_source.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesome/plugins/yuyin/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/awesome/plugins/yuyin/__init__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,11 +51,12 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/awesome/plugins" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/awesome/plugins/new" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\QQbot\awesome\plugins\new" />
       <recent name="D:\QQbot\awesome\plugins" />
     </key>
   </component>
@@ -105,7 +104,9 @@
       <workItem from="1603849341355" duration="27000" />
       <workItem from="1604728072697" duration="11733000" />
       <workItem from="1604742388062" duration="3829000" />
-      <workItem from="1604750980354" duration="4927000" />
+      <workItem from="1604750980354" duration="6584000" />
+      <workItem from="1604816735789" duration="6905000" />
+      <workItem from="1604834189138" duration="3237000" />
     </task>
     <task id="LOCAL-00001" summary="更新最近战绩">
       <created>1604728345006</created>
@@ -380,7 +381,35 @@
       <option name="project" value="LOCAL" />
       <updated>1604758835919</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="语音测试">
+      <created>1604759214334</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1604759214334</updated>
+    </task>
+    <task id="LOCAL-00041" summary="语音测试">
+      <created>1604760260926</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1604760260926</updated>
+    </task>
+    <task id="LOCAL-00042" summary="新最近">
+      <created>1604837976757</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1604837976757</updated>
+    </task>
+    <task id="LOCAL-00043" summary="新最近">
+      <created>1604838107410</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1604838107411</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -412,13 +441,14 @@
     <MESSAGE value="找回疫情查询模块" />
     <MESSAGE value="语言测试" />
     <MESSAGE value="语音测试" />
-    <option name="LAST_COMMIT_MESSAGE" value="语音测试" />
+    <MESSAGE value="新最近" />
+    <option name="LAST_COMMIT_MESSAGE" value="新最近" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1603849366895">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1604831422613">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1603849366895" />
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1604831422613" />
     <state width="1493" height="236" key="GridCell.Tab.0.bottom" timestamp="1603697542160">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -439,18 +469,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="147" y="65" key="MergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1604728119713" />
-    <state x="270" y="57" key="SettingsEditor" timestamp="1604735143070">
+    <state x="270" y="57" key="SettingsEditor" timestamp="1604834879177">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="270" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1604735143070" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1604759154263">
+    <state x="270" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1604834879177" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1604838108735">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1604759154263" />
-    <state x="563" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604728087727">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1604838108735" />
+    <state x="563" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604837322756">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="563" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1604728087727" />
+    <state x="563" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1604837322756" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1604745035446">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

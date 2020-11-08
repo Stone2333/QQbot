@@ -6,7 +6,7 @@ import data_Mysql_Insert
 import data_Mysql_Update
 
 
-async def recent_sessions(Quer_Recent_Sessions):
+async def recent_sessions_msg(Quer_Recent_Sessions):
     name = Mysql_Select.get_recent_sessions_all(Quer_Recent_Sessions)
     msg = get_recent_sessions(Quer_Recent_Sessions)
     if not name:
