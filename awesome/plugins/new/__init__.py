@@ -9,7 +9,7 @@ async def recent_sessions(session: CommandSession):
     Quer_Recent_Sessions = session.get('Quer_Recent_Sessions', prompt='你想查询最近战绩的ID是多少？')
     prompt = "查询中稍等片刻"
     await session.send(prompt)
-    Recent_Sessions_report = await get_recent_sessions(Quer_Recent_Sessions)
+    Recent_Sessions_report = await recent_sessions(Quer_Recent_Sessions)
     await session.send(Recent_Sessions_report, at_sender=True)
 
 
