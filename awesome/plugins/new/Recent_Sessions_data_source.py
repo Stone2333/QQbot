@@ -36,7 +36,7 @@ def get_recent_sessions(Quer_Recent_Sessions):
     patt = '<spandata-livestamp="(.*?)T'
     game_play_time = re.findall(string=string2, pattern=patt)
     if not game_play_time:
-        return '近期未玩游戏、暂无最近战绩,若进行了有些没有数据则是网站未更新'
+        return '近期未进行游戏,暂无最近战绩,若进行了游戏没有数据则是网站未更新'
     # spm
     patt = '<divclass="session-stats">.*?<div>(.*?)</div>'
     spm = re.findall(string=string2, pattern=patt)
