@@ -9,7 +9,7 @@ import data_Mysql_Update
 async def recent_sessions_msg(Quer_Recent_Sessions):
     name = Mysql_Select.get_recent_sessions_all(Quer_Recent_Sessions)
     msg = get_recent_sessions(Quer_Recent_Sessions)
-    if msg == '我们找不到您的数据，请确保您的名称正确':
+    if msg == '我们找不到您的统计信息，请确保您名称正确':
         return msg
     if not name:
         data_Mysql_Insert.insert_recent_sessions_data(Quer_Recent_Sessions, msg)
@@ -29,7 +29,7 @@ def get_recent_sessions(Quer_Recent_Sessions):
     response = requests.get(url, headers=headers, timeout=60)
     html = response.content.decode("utf-8")
     msg = error(html)
-    if msg:
+    if msg == '我们找不到您的统计信息，请确保您名称正确':
         return msg
     string2 = html.replace('\n', '').replace('\r', '').replace(' ', '')
     # 游玩的日期
