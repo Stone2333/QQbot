@@ -59,14 +59,14 @@ def get_db_recent_sessions(name):
         game_play_time = m['game_play_time']
         game_time = m['game_time']
         string2 += \
-            f"""游玩日期:{game_play_time}
+f"""游玩日期:{game_play_time}
 每分钟得分:{spm}
 击毙/死亡比:{kd}
 每分钟击毙数:{kpm}
 游玩时间:{game_time}
 ===============
 """
-    return string2
+    return '\n'+string2
 
 
 def error(html):
