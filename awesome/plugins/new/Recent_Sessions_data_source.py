@@ -11,6 +11,8 @@ async def recent_sessions_msg(Quer_Recent_Sessions):
     msg = get_recent_sessions(Quer_Recent_Sessions)
     if msg == '我们找不到您的统计信息，请确保您名称正确':
         return msg
+    elif msg == '近期未进行游戏,暂无最近战绩,若进行了游戏没有数据则是网站未更新':
+        return msg
     if not name:
         data_Mysql_Insert.insert_recent_sessions_data(Quer_Recent_Sessions, msg)
         msg = get_db_recent_sessions(Quer_Recent_Sessions)
