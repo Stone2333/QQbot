@@ -171,3 +171,32 @@ def Insert_relevance(qq, username):
     db.close()
     print('游戏ID与QQ绑定成功')
 
+
+
+def insert_recent_sessions(name, spm, kd, kpm, game_play_time, game_time):
+    """
+    插入最近信息
+
+    :param name:
+    :param spm:
+    :param kd:
+    :param kpm:
+    :param game_play_time:
+    :param game_time:
+    :return:
+    """
+    db = pymysql.connect(
+        host="127.0.0.1",
+        user="root",
+        password="123456",
+        db="bf1")
+    cursor = db.cursor()
+    sql = '''
+          INSERT INTO `recent_sessions` (name, spm, kd, kpm, game_play_time, game_time)
+          VALUES ("{}","{}","{}","{}","{}","{}")
+          '''.format(name, spm, kd, kpm, game_play_time, game_time)
+    cursor.execute(sql)
+    db.commit()
+    cursor.close()
+    db.close()
+    print(name, "最近战绩数据库插入成功")

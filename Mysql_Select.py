@@ -278,6 +278,58 @@ def Select_Id(qq):
     Server_Id_content =cursor.fetchall()
     return Server_Id_content
 
+def get_recent_sessions_id(name):
+    """
+    查询名字对应的id
+
+    :param name:
+    :return:
+    """
+    db = pymysql.connect(
+        host="127.0.0.1",
+        user="root",
+        password="123456",
+        db="bf1")
+    cursor = db.cursor()
+    sql = '''
+          SELECT id
+          FROM `recent_sessions`
+          WHERE name = "{}"
+          '''.format(name)
+    cursor.execute(sql)
+    db.commit()
+    Recent_Sessions_content = cursor.fetchall()
+    cursor.close()
+    db.close()
+    return Recent_Sessions_content
+
+
+def get_recent_sessions_all(name):
+    """
+    查询所有最近消息
+
+    :param name: 名字
+    :return:
+    """
+    db = pymysql.connect(
+        host="127.0.0.1",
+        user="root",
+        password="123456",
+        db="bf1",
+        cursorclass=pymysql.cursors.DictCursor)
+    cursor = db.cursor()
+    sql = '''
+          SELECT spm, kd, kpm, game_play_time, game_time
+          FROM `recent_sessions`
+          WHERE name = "{}"
+          '''.format(name)
+    cursor.execute(sql)
+    db.commit()
+    Recent_Sessions_content = cursor.fetchall()
+    cursor.close()
+    db.close()
+    return Recent_Sessions_content
+
 
 if __name__ == "__main__":
     # Select_Server("koi")

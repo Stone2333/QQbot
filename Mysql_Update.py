@@ -156,9 +156,40 @@ def Update_ID(qq, id):
     db.close()
     print(id, "游戏ID更新成功")
 
+def update_recent_sessions(name, id, spm, kd, kpm, game_play_time, game_time):
+    """
+    更新最近信息
 
-if __name__ == '__main__':
-    Update_User('bf_stonegogogo')
+    :param name:
+    :param id:
+    :param spm:
+    :param kd:
+    :param kpm:
+    :param game_play_time:
+    :param game_time:
+    :return:
+    """
+    db = pymysql.connect(
+        host="127.0.0.1",
+        user="root",
+        password="123456",
+        db="bf1")
+    cursor = db.cursor()
+    sql = '''
+          UPDATE `recent_sessions`
+          SET spm = "{}", kd = "{}", kpm = "{}", game_play_time = "{}", game_time = "{}"
+          WHERE name = "{}" AND id = "{}"
+          '''.format(spm, kd, kpm, game_play_time, game_time, name, id)
+    print(sql)
+    cursor.execute(sql)
+    db.commit()
+    cursor.close()
+    db.close()
+    print(name, "最近战绩数据库更新成功")
+
+#
+# if __name__ == '__main__':
+#     Update_User('bf_stonegogogo')
 
 
 # if __name__ == "__main__":

@@ -266,6 +266,24 @@ def get_Servers(Quer_Servers: str) -> str:
         Servers_null = "服务器未注册,请联系管理员"
         return Servers_null
 
+
+def insert_recent_sessions_data(name, msg):
+
+    game_play_time = msg[0]
+    spm = msg[1]
+    kd = msg[2]
+    kpm = msg[3]
+    game_time = msg[4]
+    a = 0
+    for game_play_time, spm, kd, kpm, game_time in zip(
+            game_play_time, spm, kd, kpm, game_time):
+        a += 1
+        if a <= 3:
+            Mysql_Insert.insert_recent_sessions(
+                name, spm, kd, kpm, game_play_time, game_time)
+        else:
+            break
+
 if __name__=="__main__":
     # get_Servers("ZBW")
     get_Overview("LEONID_47")

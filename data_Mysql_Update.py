@@ -2,6 +2,7 @@ import requests
 from lxml import etree
 import re
 import Mysql_Update
+import Mysql_Select
 
 
 def get_Update_Weapons(Query_Weapons: str) -> str:
@@ -266,6 +267,29 @@ def get_Update_Servers(Quer_Servers: str) -> str:
     else:
         Servers_null = "服务器未注册,请联系管理员"
         return Servers_null
+
+def update_recent_sessions_data(name, msg):
+    """
+    根据名字获取数据更新信息
+
+    :param name:
+    :return:
+    """
+    id_tuple = Mysql_Select.get_recent_sessions_id(name)
+    game_play_time = msg[0]
+    spm = msg[1]
+    kd = msg[2]
+    kpm = msg[3]
+    game_time = msg[4]
+    a = 0
+    for id, game_play_time, spm, kd, kpm, game_time in zip(
+            id_tuple, game_play_time, spm, kd, kpm, game_time):
+        a += 1
+        if a <= 3:
+            Mysql_Update.update_recent_sessions(
+                name, id[0], spm, kd, kpm, game_play_time, game_time)
+        else:
+            break
 
 
 # if __name__=="__main__":
