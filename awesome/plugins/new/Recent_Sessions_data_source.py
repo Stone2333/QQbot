@@ -15,7 +15,7 @@ async def recent_sessions_msg(Quer_Recent_Sessions):
         return msg
     else:
         data_Mysql_Update.update_recent_sessions_data(Quer_Recent_Sessions, msg)
-        get_db_recent_sessions(Quer_Recent_Sessions)
+        msg = get_db_recent_sessions(Quer_Recent_Sessions)
         return msg
 
 
