@@ -33,10 +33,14 @@ def get_recent_sessions(Quer_Recent_Sessions):
     response = requests.get(url, headers=headers, timeout=60)
     html = response.content.decode("utf-8")
     msg = error(html)
+    msg2 = error2(html)
+    msg3 = error3(html)
     if msg == '我们找不到您的统计信息，请确保您名称正确':
         return msg
-    elif msg == '尝试更新统计信息时发生错误,简而言之就是网站挂了,具体啥时间恢复我也不知道':
-        return msg
+    elif msg2 == '尝试更新统计信息时发生错误,简而言之就是网站挂了,具体啥时间恢复我也不知道':
+        return msg2
+    elif msg3 == '很抱歉,在执行您的要求时发生了一个错误,错误报告已提交给管理员,他们将立即修复该错误!,简而言之也是服务器挂了的一种,恢复时间俺也不知道':
+        return msg3
     string2 = html.replace('\n', '').replace('\r', '').replace(' ', '')
     # 游玩的日期
     patt = '<spandata-livestamp="(.*?)T'
@@ -98,5 +102,17 @@ def error2(html):
     if error:
         print("尝试更新统计信息时发生错误,简而言之就是网站挂了,具体啥时间恢复我也不知道")
         return "尝试更新统计信息时发生错误,简而言之就是网站挂了,具体啥时间恢复我也不知道"
+    else:
+        pass
+
+
+def error3(html):
+    # 查服务器、查武器
+    string2 = html.replace('\n', '').replace('\r', '').replace(' ', '')
+    patt = "Sorry,anerroroccurredwhileprocessingyourrequest.Anerrorreporthasbeensubmittedtotheadministratorandthey'llfixitimmediately!"
+    error = re.findall(string=string2, pattern=patt)
+    if error:
+        print("很抱歉,在执行您的要求时发生了一个错误,错误报告已提交给管理员,他们将立即修复该错误!,简而言之也是服务器挂了的一种,恢复时间俺也不知道")
+        return "很抱歉,在执行您的要求时发生了一个错误,错误报告已提交给管理员,他们将立即修复该错误!,简而言之也是服务器挂了的一种,恢复时间俺也不知道"
     else:
         pass

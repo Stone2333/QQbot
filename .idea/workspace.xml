@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a15535c6-4cef-4568-97ff-fa9054a69501" name="Default Changelist" comment="新最近">
+    <list default="true" id="a15535c6-4cef-4568-97ff-fa9054a69501" name="Default Changelist" comment="增加错误返回">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/awesome/plugins/new/Recent_Sessions_data_source.py" beforeDir="false" afterPath="$PROJECT_DIR$/awesome/plugins/new/Recent_Sessions_data_source.py" afterDir="false" />
     </list>
@@ -52,11 +52,12 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/awesome/plugins/new" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../python" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\QQbot" />
       <recent name="D:\QQbot\awesome\plugins\new" />
       <recent name="D:\QQbot\awesome\plugins" />
     </key>
@@ -107,42 +108,8 @@
       <workItem from="1604742388062" duration="3829000" />
       <workItem from="1604750980354" duration="6584000" />
       <workItem from="1604816735789" duration="6905000" />
-      <workItem from="1604834189138" duration="4983000" />
-    </task>
-    <task id="LOCAL-00001" summary="更新最近战绩">
-      <created>1604728345006</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1604728345006</updated>
-    </task>
-    <task id="LOCAL-00002" summary="更新最近战绩">
-      <created>1604728471694</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1604728471694</updated>
-    </task>
-    <task id="LOCAL-00003" summary="更新最近战绩">
-      <created>1604728533902</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1604728533902</updated>
-    </task>
-    <task id="LOCAL-00004" summary="更新最近战绩">
-      <created>1604728670427</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1604728670427</updated>
-    </task>
-    <task id="LOCAL-00005" summary="名称替换">
-      <created>1604729711352</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1604729711352</updated>
+      <workItem from="1604834189138" duration="7105000" />
+      <workItem from="1604928736404" duration="1418000" />
     </task>
     <task id="LOCAL-00006" summary="名称替换">
       <created>1604730225874</created>
@@ -452,7 +419,42 @@
       <option name="project" value="LOCAL" />
       <updated>1604839353299</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="新最近">
+      <created>1604839968126</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1604839968127</updated>
+    </task>
+    <task id="LOCAL-00051" summary="新最近">
+      <created>1604840021532</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1604840021532</updated>
+    </task>
+    <task id="LOCAL-00052" summary="新最近">
+      <created>1604840151283</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1604840151283</updated>
+    </task>
+    <task id="LOCAL-00053" summary="新最近">
+      <created>1604840301061</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1604840301061</updated>
+    </task>
+    <task id="LOCAL-00054" summary="增加错误返回">
+      <created>1604929923830</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1604929923831</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -485,13 +487,14 @@
     <MESSAGE value="语言测试" />
     <MESSAGE value="语音测试" />
     <MESSAGE value="新最近" />
-    <option name="LAST_COMMIT_MESSAGE" value="新最近" />
+    <MESSAGE value="增加错误返回" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加错误返回" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1604831422613">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1604928748471">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1604831422613" />
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1604928748471" />
     <state width="1493" height="236" key="GridCell.Tab.0.bottom" timestamp="1603697542160">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -516,10 +519,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="270" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1604834879177" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1604839354274">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1604929925339">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1604839354274" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1604929925339" />
     <state x="563" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604837322756">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
