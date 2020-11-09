@@ -13,6 +13,8 @@ async def recent_sessions_msg(Quer_Recent_Sessions):
         return msg
     elif msg == '近期未进行游戏,暂无最近战绩,若进行了游戏没有数据则是网站未更新':
         return msg
+    elif msg == '尝试更新统计信息时发生错误,简而言之就是网站挂了,具体啥时间恢复我也不知道':
+        return msg
     if not name:
         data_Mysql_Insert.insert_recent_sessions_data(Quer_Recent_Sessions, msg)
         msg = get_db_recent_sessions(Quer_Recent_Sessions)
@@ -32,6 +34,8 @@ def get_recent_sessions(Quer_Recent_Sessions):
     html = response.content.decode("utf-8")
     msg = error(html)
     if msg == '我们找不到您的统计信息，请确保您名称正确':
+        return msg
+    elif msg == '尝试更新统计信息时发生错误,简而言之就是网站挂了,具体啥时间恢复我也不知道':
         return msg
     string2 = html.replace('\n', '').replace('\r', '').replace(' ', '')
     # 游玩的日期
@@ -82,5 +86,17 @@ def error(html):
     if error:
         print("我们找不到您的统计信息，请确保您名称正确")
         return "我们找不到您的统计信息，请确保您名称正确"
+    else:
+        pass
+
+
+def error2(html):
+    # 战绩、最近、载具
+    string2 = html.replace('\n', '').replace('\r', '').replace(' ', '')
+    patt = 'Anerroroccuredwhiletryingtoupdateyourstats.'
+    error = re.findall(string=string2, pattern=patt)
+    if error:
+        print("尝试更新统计信息时发生错误,简而言之就是网站挂了,具体啥时间恢复我也不知道")
+        return "尝试更新统计信息时发生错误,简而言之就是网站挂了,具体啥时间恢复我也不知道"
     else:
         pass
