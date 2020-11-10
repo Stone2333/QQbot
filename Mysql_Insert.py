@@ -211,7 +211,7 @@ def insert_statistics_number(groupid, module, number=1):
         db="bf1")
     cursor = db.cursor()
     sql = '''
-          INSERT INTO `statistics` (groupid, module)
+          INSERT INTO `statistics` (groupid, module, number)
           VALUES ("{}","{}","{}")
           '''.format(groupid, module, number)
     cursor.execute(sql)
