@@ -200,3 +200,22 @@ def insert_recent_sessions(name, spm, kd, kpm, game_play_time, game_time):
     cursor.close()
     db.close()
     print(name, "最近战绩数据库插入成功")
+
+
+def insert_statistics_number(groupid, module, number=1):
+    """插入调用模块数量"""
+    db = pymysql.connect(
+        host="127.0.0.1",
+        user="root",
+        password="123456",
+        db="bf1")
+    cursor = db.cursor()
+    sql = '''
+          INSERT INTO `statistics` (groupid, module, number)
+          VALUES ("{}","{}","{}")
+          '''.format(groupid, module, module, number)
+    cursor.execute(sql)
+    db.commit()
+    cursor.close()
+    db.close()
+    print('数量插入成功')

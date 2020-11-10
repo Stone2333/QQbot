@@ -331,6 +331,26 @@ def get_recent_sessions_all(name):
     return Recent_Sessions_content
 
 
+def get_statistics_number(groupid, module):
+    """获得是否存在"""
+    db = pymysql.connect(
+        host="127.0.0.1",
+        user="root",
+        password="123456",
+        db="bf1")
+    cursor = db.cursor()
+    sql = '''
+         SELECT id
+         FROM  statistics
+         WHERE groupid = "{}" AND module = "{}"
+    '''.format(groupid, module)
+    cursor.execute(sql)
+    db.commit()
+    statistics_info = cursor.fetchall()
+    cursor.close()
+    db.close()
+    print(statistics_info)
+
 if __name__ == "__main__":
     # Select_Server("koi")
     # Select_Server_Id("koi")

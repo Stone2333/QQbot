@@ -1,10 +1,16 @@
 ﻿from nonebot import on_command, CommandSession
 from nonebot import on_natural_language, NLPSession, IntentCommand
 from .Servers_data_source import *
-
+import Mysql_Insert, Mysql_Update, Mysql_Select
 
 @on_command('Servers2', permission=0x0200, aliases=('.up', '.更新服务器'), only_to_me=False)
 async def Servers2(session: CommandSession):
+    group_id = session.event['group_id']
+    number = Mysql_Select.get_statistics_number(group_id, '更新服务器')
+    if number:
+        Mysql_Update.update_statistics_number(group_id, '更新服务器')
+    else:
+        Mysql_Insert.insert_statistics_number(group_id, '更新服务器')
     Quer_Servers = session.get('Quer_Servers', prompt='你想更新服务器名称和id？')
     Servers_report = await get_Servers(Quer_Servers)
     await session.send(Servers_report, at_sender=True)

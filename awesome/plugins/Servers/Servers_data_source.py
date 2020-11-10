@@ -19,7 +19,15 @@ async def get_Servers(Quer_Servers: str) -> str:
             # }
             response = requests.get(url_join, headers=headers,timeout=60)
             htmlContent = response.content.decode("utf-8")
-
+            msg1 = error1(htmlContent)
+            msg2 = error2(htmlContent)
+            msg3 = error3(htmlContent)
+            if msg1 == '我们找不到您的统计信息，请确保您名称正确':
+                return msg1
+            elif msg2 == '尝试更新统计信息时发生错误,简而言之就是网站挂了,具体啥时间恢复我也不知道':
+                return msg2
+            elif msg3 == '很抱歉,在执行您的要求时发生了一个错误,错误报告已提交给管理员,他们将立即修复该错误!,简而言之也是服务器挂了的一种,恢复时间俺也不知道':
+                return msg3
             pattern = '<div class="quick-info">.*?<span class="value">(.*?)<small>(.*?)</small>'
             # 服务器人数
             html = re.findall(pattern, htmlContent, re.S)
@@ -52,4 +60,38 @@ async def get_Servers(Quer_Servers: str) -> str:
         Servers_null = "服务器未注册,请联系管理员"
         return Servers_null
 
+
+def error1(html):
+    string2 = html.replace('\n', '').replace('\r', '').replace(' ', '')
+    patt = 'Wecouldnotfindyourstats,pleaseensureyourplatformandnamearecorrect'
+    error = re.findall(string=string2, pattern=patt)
+    if error:
+        print("我们找不到您的统计信息，请确保您名称正确")
+        return "我们找不到您的统计信息，请确保您名称正确"
+    else:
+        pass
+
+
+def error2(html):
+    # 战绩、最近、载具
+    string2 = html.replace('\n', '').replace('\r', '').replace(' ', '')
+    patt = 'Anerroroccuredwhiletryingtoupdateyourstats.'
+    error = re.findall(string=string2, pattern=patt)
+    if error:
+        print("尝试更新统计信息时发生错误,简而言之就是网站挂了,具体啥时间恢复我也不知道")
+        return "尝试更新统计信息时发生错误,简而言之就是网站挂了,具体啥时间恢复我也不知道"
+    else:
+        pass
+
+
+def error3(html):
+    # 查服务器、查武器
+    string2 = html.replace('\n', '').replace('\r', '').replace(' ', '')
+    patt = "Sorry,anerroroccurredwhileprocessingyourrequest.Anerrorreporthasbeensubmittedtotheadministratorandthey'llfixitimmediately!"
+    error = re.findall(string=string2, pattern=patt)
+    if error:
+        print("很抱歉,在执行您的要求时发生了一个错误,错误报告已提交给管理员,他们将立即修复该错误!,简而言之也是服务器挂了的一种,恢复时间俺也不知道")
+        return "很抱歉,在执行您的要求时发生了一个错误,错误报告已提交给管理员,他们将立即修复该错误!,简而言之也是服务器挂了的一种,恢复时间俺也不知道"
+    else:
+        pass
 

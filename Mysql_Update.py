@@ -187,6 +187,25 @@ def update_recent_sessions(name, id, spm, kd, kpm, game_play_time, game_time):
     db.close()
     print(name, "最近战绩数据库更新成功")
 
+
+
+def update_statistics_number(groupid, module):
+    """增加调用数量"""
+    db = pymysql.connect(
+        host="127.0.0.1",
+        user="root",
+        password="123456",
+        db="bf1")
+    cursor = db.cursor()
+    sql = '''
+         UPDATE statistics 
+         SET number = number + 1 
+         WHERE groupid = "{}" AND module = "{}"
+          '''.format(groupid, module)
+    cursor.execute(sql)
+    db.commit()
+    cursor.close()
+    db.close()
 #
 # if __name__ == '__main__':
 #     Update_User('bf_stonegogogo')

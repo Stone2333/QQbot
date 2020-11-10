@@ -1,13 +1,19 @@
 from nonebot import on_command, CommandSession
 from nonebot import on_natural_language, NLPSession, IntentCommand
 from .Overview_data_source import *
-
+import Mysql_Select, Mysql_Update, Mysql_Insert
 
 
 
 # 当用户输入关键字没有输入值时则提示
 @on_command('Overview', aliases=('战绩', '查战绩'), only_to_me=False)
 async def Overview(session: CommandSession):
+    group_id = session.event['group_id']
+    number = Mysql_Select.get_statistics_number(group_id, '战绩')
+    if number:
+        Mysql_Update.update_statistics_number(group_id, '战绩')
+    else:
+        Mysql_Insert.insert_statistics_number(group_id, '战绩')
     Query_Overview = session.get('Query_Overview', prompt='你想查询战绩的ID是多少？')
     prompt = "查询中请稍候"
     await session.send(prompt)

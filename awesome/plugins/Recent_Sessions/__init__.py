@@ -1,11 +1,17 @@
 from nonebot import on_command, CommandSession
 from nonebot import on_natural_language, NLPSession, IntentCommand
 from .Recent_Sessions_data_source import *
-
+import Mysql_Insert, Mysql_Update, Mysql_Select
 
 
 @on_command('Recent_Sessions', aliases=('最近', '最近战绩', '查最近战绩'), only_to_me=False)
 async def Recent_Sessions(session: CommandSession):
+    group_id = session.event['group_id']
+    number = Mysql_Select.get_statistics_number(group_id, '最近战绩')
+    if number:
+        Mysql_Update.update_statistics_number(group_id, '最近战绩')
+    else:
+        Mysql_Insert.insert_statistics_number(group_id, '最近战绩')
     Quer_Recent_Sessions = session.get('Quer_Recent_Sessions', prompt='你想查询最近战绩的ID是多少？')
     prompt = "查询中稍等片刻"
     await session.send(prompt)
