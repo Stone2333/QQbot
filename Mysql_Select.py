@@ -349,7 +349,7 @@ def get_statistics_number(groupid, module):
     statistics_info = cursor.fetchall()
     cursor.close()
     db.close()
-    print(statistics_info)
+    return statistics_info
 
 if __name__ == "__main__":
     # Select_Server("koi")
