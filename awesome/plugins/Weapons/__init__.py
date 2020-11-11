@@ -8,11 +8,11 @@ import Mysql_Insert, Mysql_Update, Mysql_Select
 @on_command('Weapons', aliases=('武器', '查武器'),only_to_me=False)
 async def Weapons(session: CommandSession):
     group_id = session.event['group_id']
-    number = Mysql_Select.get_statistics_number(group_id, '快速查询')
+    number = Mysql_Select.get_statistics_number(group_id, '武器')
     if number:
-        Mysql_Update.update_statistics_number(group_id, '快速查询')
+        Mysql_Update.update_statistics_number(group_id, '武器')
     else:
-        Mysql_Insert.insert_statistics_number(group_id, '快速查询')
+        Mysql_Insert.insert_statistics_number(group_id, '武器')
     Query_Weapons = session.get('Query_Weapons', prompt='你想查询武器的ID是多少？')
     prompt = "查询中请稍候"
     await session.send(prompt)
