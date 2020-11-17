@@ -14,38 +14,41 @@ async def get_img(qq, Query_Login: str, session) -> str:
         if relevance == ():
             return 'qq号暂未绑定游戏ID,请使用绑定关键字绑定游戏ID 绑定 XXX'
         else:
-            relevance = Mysql_Select.Select_Id(qq)
-            name = Mysql_Select.get_recent_sessions_all(relevance[0])
-            msg = get_recent_sessions(relevance[0])
+            prompt = "查询中请稍候"
+            await session.send(prompt)
+            url = "https://battlefieldtracker.com/bf1/profile/pc/{}".format(relevance[0][0])
+            name = Mysql_Select.get_recent_sessions_all(relevance[0][0])
+            msg = get_recent_sessions(relevance[0][0])
             if msg == '我们找不到您的统计信息，请确保您名称正确':
-                name = Mysql_Select.get_recent_sessions_all(relevance[0])
+                name = Mysql_Select.get_recent_sessions_all(relevance[0][0])
                 if not name:
                     return '\n' + msg + '\n' + '由于没有查询过最近战绩所以没有历史数据'
-                msg1 = get_db_recent_sessions(relevance[0])
+                msg1 = get_db_recent_sessions(relevance[0][0])
                 return '\n' + msg + '\n' + '以下数据是历史数据仅供参考:' + '\n' + msg1
             elif msg == '近期未进行游戏,暂无最近战绩,若进行了游戏没有数据则是网站未更新':
                 if not name:
                     return '\n' + msg + '\n' + '由于没有查询过最近战绩所以没有历史数据'
-                msg1 = get_db_recent_sessions(relevance[0])
+                msg1 = get_db_recent_sessions(relevance[0][0])
                 return '\n' + msg + '\n' + '以下数据是历史数据仅供参考:' + '\n' + msg1
             elif msg == '尝试更新统计信息时发生错误,简而言之就是网站挂了,具体啥时间恢复我也不知道':
                 if not name:
                     return '\n' + msg + '\n' + '由于没有查询过最近战绩所以没有历史数据'
-                msg1 = get_db_recent_sessions(relevance[0])
+                msg1 = get_db_recent_sessions(relevance[0][0])
                 return '\n' + msg + '\n' + '以下数据是历史数据仅供参考:' + '\n' + msg1
             elif msg == '战绩网数据库维护,请稍后再试':
                 if not name:
                     return '\n' + msg + '\n' + '由于没有查询过最近战绩所以没有历史数据'
-                msg1 = get_db_recent_sessions(relevance[0])
+                msg1 = get_db_recent_sessions(relevance[0][0])
                 return '\n' + msg + '\n' + '以下数据是历史数据仅供参考:' + '\n' + msg1
             if not name:
-                data_Mysql_Insert.insert_recent_sessions_data(relevance[0], msg)
-                msg = get_db_recent_sessions(relevance[0])
+                data_Mysql_Insert.insert_recent_sessions_data(relevance[0][0], msg)
+                msg = get_db_recent_sessions(relevance[0][0])
                 return '\n' + msg
             else:
-                data_Mysql_Update.update_recent_sessions_data(relevance[0], msg)
-                msg = get_db_recent_sessions(relevance[0])
+                data_Mysql_Update.update_recent_sessions_data(relevance[0][0], msg)
+                msg = get_db_recent_sessions(relevance[0][0])
                 return '\n' + msg
+
     elif Query_Login == '.战绩':
         if relevance == ():
             return 'qq号暂未绑定游戏ID,请使用绑定关键字绑定游戏ID 绑定 XXX'
@@ -217,6 +220,7 @@ async def get_img(qq, Query_Login: str, session) -> str:
     else:
         s = '原有快速查询已废弃,输入关键字".最近"，".战绩"，".武器"，".载具"，即可快速查询更为简便'
         return s
+
 
 
 def get_recent_sessions(Quer_Recent_Sessions):
