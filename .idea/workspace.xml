@@ -19,16 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a15535c6-4cef-4568-97ff-fa9054a69501" name="Default Changelist" comment="修改战绩模板">
-      <change afterPath="$PROJECT_DIR$/DB.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Mysql_Insert.py" beforeDir="false" afterPath="$PROJECT_DIR$/Mysql_Insert.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesome/plugins/Login/Login_data_source.py" beforeDir="false" afterPath="$PROJECT_DIR$/awesome/plugins/Login/Login_data_source.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesome/plugins/Servers/Servers_data_source.py" beforeDir="false" afterPath="$PROJECT_DIR$/awesome/plugins/Servers/Servers_data_source.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesome/plugins/in_Servers/Servers_data_source.py" beforeDir="false" afterPath="$PROJECT_DIR$/awesome/plugins/in_Servers/Servers_data_source.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesome/plugins/new/Recent_Sessions_data_source.py" beforeDir="false" afterPath="$PROJECT_DIR$/awesome/plugins/new/Recent_Sessions_data_source.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_Mysql_Insert.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_Mysql_Insert.py" afterDir="false" />
-    </list>
+    <list default="true" id="a15535c6-4cef-4568-97ff-fa9054a69501" name="Default Changelist" comment="增加错误" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -147,14 +138,7 @@
       <workItem from="1605284612658" duration="436000" />
       <workItem from="1605420258494" duration="1243000" />
       <workItem from="1605424327693" duration="359000" />
-      <workItem from="1605600990723" duration="578000" />
-    </task>
-    <task id="LOCAL-00014" summary="去除">
-      <created>1604735945636</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1604735945636</updated>
+      <workItem from="1605600990723" duration="881000" />
     </task>
     <task id="LOCAL-00015" summary="去除">
       <created>1604736425040</created>
@@ -492,7 +476,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605191578440</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="增加错误">
+      <created>1605601703047</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1605601703048</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -528,7 +519,8 @@
     <MESSAGE value="增加错误返回" />
     <MESSAGE value="增加模块调用统计" />
     <MESSAGE value="修改战绩模板" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改战绩模板" />
+    <MESSAGE value="增加错误" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加错误" />
   </component>
   <component name="WindowStateProjectService">
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1605184782916">
