@@ -11,16 +11,16 @@ async def recent_sessions_msg(Quer_Recent_Sessions):
     msg = get_recent_sessions(Quer_Recent_Sessions)
     if msg == '我们找不到您的统计信息，请确保您名称正确':
         msg1 = get_db_recent_sessions(Quer_Recent_Sessions)
-        return msg + '\n' + '以下数据是历史数据仅供参考:' + '\n' + msg1
+        return '\n' + msg + '\n' + '以下数据是历史数据仅供参考:' + '\n' + msg1
     elif msg == '近期未进行游戏,暂无最近战绩,若进行了游戏没有数据则是网站未更新':
         msg1 = get_db_recent_sessions(Quer_Recent_Sessions)
-        return msg + '\n' + '以下数据是历史数据仅供参考:' + '\n' + msg1
+        return '\n' + msg + '\n' + '以下数据是历史数据仅供参考:' + '\n' + msg1
     elif msg == '尝试更新统计信息时发生错误,简而言之就是网站挂了,具体啥时间恢复我也不知道':
         msg1 = get_db_recent_sessions(Quer_Recent_Sessions)
-        return msg + '\n' + '以下数据是历史数据仅供参考:' + '\n' + msg1
+        return '\n' + msg + '\n' + '以下数据是历史数据仅供参考:' + '\n' + msg1
     elif msg == '战绩网数据库维护,请稍后再试':
         msg1 = get_db_recent_sessions(Quer_Recent_Sessions)
-        return msg + '\n' + '以下数据是历史数据仅供参考:' + '\n' + msg1
+        return '\n' + msg + '\n' + '以下数据是历史数据仅供参考:' + '\n' + msg1
     if not name:
         data_Mysql_Insert.insert_recent_sessions_data(Quer_Recent_Sessions, msg)
         msg = get_db_recent_sessions(Quer_Recent_Sessions)
