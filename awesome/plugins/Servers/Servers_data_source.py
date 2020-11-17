@@ -22,12 +22,15 @@ async def get_Servers(Quer_Servers: str) -> str:
             msg1 = error1(htmlContent)
             msg2 = error2(htmlContent)
             msg3 = error3(htmlContent)
+            msg4 = error4(htmlContent)
             if msg1 == '我们找不到您的统计信息，请确保您名称正确':
                 return msg1
             elif msg2 == '尝试更新统计信息时发生错误,简而言之就是网站挂了,具体啥时间恢复我也不知道':
                 return msg2
             elif msg3 == '很抱歉,在执行您的要求时发生了一个错误,错误报告已提交给管理员,他们将立即修复该错误!,简而言之也是服务器挂了的一种,恢复时间俺也不知道':
                 return msg3
+            elif msg4 == '战绩网数据库维护,请稍后再试':
+                return msg4
             pattern = '<div class="quick-info">.*?<span class="value">(.*?)<small>(.*?)</small>'
             # 服务器人数
             html = re.findall(pattern, htmlContent, re.S)
@@ -95,3 +98,9 @@ def error3(html):
     else:
         pass
 
+def error4(html):
+    patt = "We're very sorry for the inconvenience but we&rsquo;re performing database maintenance. Doing this improves the speed and stability of the site.  We do this from time to time to keep things working smoothly."
+    error = re.findall(string=html, pattern=patt)
+    if error:
+        print('战绩网数据库维护,请稍后再试')
+        return '战绩网数据库维护,请稍后再试'

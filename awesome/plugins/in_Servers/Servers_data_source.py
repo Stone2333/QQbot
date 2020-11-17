@@ -13,7 +13,7 @@ async def get_Servers(Quer_Servers: str) -> str:
     address = re.findall(pattern1, Servers)
     insert_id = address[0]
     try:
-        Mysql_Insert.Insert_Server_Id(insert_name, insert_id)
+        Mysql_Insert.insert_server_id(insert_name, insert_id)
         prompt = insert_name + '服务器信息入库成功'
         return prompt
     except:

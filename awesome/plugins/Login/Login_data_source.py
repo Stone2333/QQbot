@@ -6,7 +6,7 @@ async def get_Login(Query_Login: str) -> str:
         if '\u4e00' <= ch <= '\u9fff':
             return 'nmsl输nm中文'
     try:
-        Mysql_Insert.Insert_User(Query_Login)
+        Mysql_Insert.insert_user(Query_Login)
         prompt = "注册成功"
         return prompt
     except:

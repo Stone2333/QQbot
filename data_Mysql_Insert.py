@@ -101,10 +101,11 @@ def get_Vehicles(Query_Vehicles: str) -> str:
         name1 = Namelist[name1_2]
         name2 = Namelist[name2_2]
         try:
-            Mysql_Insert.Insert_Vehicles(Query_Vehicles, name, kills, kpm, Destroyed, name1, kills1, kpm1, Destroyed1, name2, kills2, kpm2, Destroyed2)
+            Mysql_Insert.insert_vehicles(Query_Vehicles, name, kills, kpm, Destroyed, name1, kills1, kpm1, Destroyed1, name2, kills2, kpm2, Destroyed2)
+            print(Query_Vehicles, "爬虫插入载具成功")
         except:
             print(Query_Vehicles, "爬虫插入载具失败")
-        print(Query_Vehicles, "爬虫插入载具成功")
+
 
     except:
         error = 'ID错误或网络问题，请稍后重试'
@@ -166,9 +167,9 @@ def get_Recent_Sessions(Quer_Recent_Sessions: str) -> str:
             TimePlayed3 = ''
         try:
             Mysql_Insert.Insert_Recent_Sessions(Quer_Recent_Sessions, SPM1, Kd1, KPM1, TimePlayed1, SPM2, Kd2, KPM2, TimePlayed2, SPM3, Kd3, KPM3, TimePlayed3)
+            print(Quer_Recent_Sessions, '爬虫插入最近战绩成功')
         except:
             print(Quer_Recent_Sessions, '爬虫插入最近战绩失败')
-        print(Quer_Recent_Sessions, '爬虫插入最近战绩成功')
     except:
         error = '无法查询到最近战绩'
         return error
@@ -206,10 +207,11 @@ def get_Overview(Query_Overview: str) -> str:
         SKILL = res[11]
         ACCURACY = res[15]
         try:
-            Mysql_Insert.Insert_Overview(Query_Overview, SCORE_MIN, KD_RATIO, WIN_PERCENT, KILLS_GAME, KILLS_MIN, INFANTRY_KPM, INFANTRY_KD, VEHICLE_KILLS, VEHICLE_KPM, SKILL, ACCURACY)
+            Mysql_Insert.insert_overview(Query_Overview, SCORE_MIN, KD_RATIO, WIN_PERCENT, KILLS_GAME, KILLS_MIN, INFANTRY_KPM, INFANTRY_KD, VEHICLE_KILLS, VEHICLE_KPM, SKILL, ACCURACY)
+            print(Query_Overview, '爬虫插入战绩成功')
         except:
             print(Query_Overview, '爬虫插入战绩失败')
-        print(Query_Overview, '爬虫插入战绩成功')
+
 
     except:
         error = 'ID错误或网络问题，请稍后重试'
@@ -255,9 +257,10 @@ def get_Servers(Quer_Servers: str) -> str:
                        'Nivelle Nights': '尼维尔之夜', "Giant's Shadow": '庞然暗影'}
             try:
                 Mysql_Insert.Insert_Servers(Quer_Servers, Name, Maplist[Map], Prayers)
+                print(Quer_Servers, '爬虫插入服务器信息成功')
             except:
                 print(Quer_Servers, '爬虫插入服务器信息失败')
-            print(Quer_Servers, '爬虫插入服务器信息成功')
+
         except:
             # b = '\n服务器未注册、服务器不存在或网络问题\n可查询服务器列表：\nZBW，711，FAZE，XD233-1#，XD233-2#，FRM5-1#，FRM5-2#，FRM5-3#，QWQ，QVQ,0V0，404-1#，404-2#，404-3#，CDN,KGB-1#,KGB-2#\n查询格式：\n【查服务器】+空格+列表'
             error = '网络问题，未查询到服务器信息，请稍后重试'
@@ -284,9 +287,9 @@ def insert_recent_sessions_data(name, msg):
         else:
             break
 
-if __name__=="__main__":
-    # get_Servers("ZBW")
-    get_Overview("LEONID_47")
-    # get_Weapons("BF_StoneGOGOGO")
-    # get_Vehicles("BF_StoneGOGOGO")
-    # get_Recent_Sessions("BF_StoneGOGOGO")
+# if __name__=="__main__":
+#     # get_Servers("ZBW")
+#     get_Overview("LEONID_47")
+#     # get_Weapons("BF_StoneGOGOGO")
+#     # get_Vehicles("BF_StoneGOGOGO")
+#     # get_Recent_Sessions("BF_StoneGOGOGO")

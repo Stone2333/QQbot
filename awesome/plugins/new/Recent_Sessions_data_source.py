@@ -15,6 +15,9 @@ async def recent_sessions_msg(Quer_Recent_Sessions):
         return msg
     elif msg == '尝试更新统计信息时发生错误,简而言之就是网站挂了,具体啥时间恢复我也不知道':
         return msg
+    elif msg == '战绩网数据库维护,请稍后再试':
+        return msg
+
     if not name:
         data_Mysql_Insert.insert_recent_sessions_data(Quer_Recent_Sessions, msg)
         msg = get_db_recent_sessions(Quer_Recent_Sessions)
@@ -35,12 +38,15 @@ def get_recent_sessions(Quer_Recent_Sessions):
     msg = error(html)
     msg2 = error2(html)
     msg3 = error3(html)
+    msg4 = error4(html)
     if msg == '我们找不到您的统计信息，请确保您名称正确':
         return msg
     elif msg2 == '尝试更新统计信息时发生错误,简而言之就是网站挂了,具体啥时间恢复我也不知道':
         return msg2
     elif msg3 == '很抱歉,在执行您的要求时发生了一个错误,错误报告已提交给管理员,他们将立即修复该错误!,简而言之也是服务器挂了的一种,恢复时间俺也不知道':
         return msg3
+    elif msg4 == '战绩网数据库维护,请稍后再试':
+        return msg4
     string2 = html.replace('\n', '').replace('\r', '').replace(' ', '')
     # 游玩的日期
     patt = '<spandata-livestamp="(.*?)T'
@@ -116,3 +122,11 @@ def error3(html):
         return "很抱歉,在执行您的要求时发生了一个错误,错误报告已提交给管理员,他们将立即修复该错误!,简而言之也是服务器挂了的一种,恢复时间俺也不知道"
     else:
         pass
+
+
+def error4(html):
+    patt = "We're very sorry for the inconvenience but we&rsquo;re performing database maintenance. Doing this improves the speed and stability of the site.  We do this from time to time to keep things working smoothly."
+    error = re.findall(string=html, pattern=patt)
+    if error:
+        print('战绩网数据库维护,请稍后再试')
+        return '战绩网数据库维护,请稍后再试'
