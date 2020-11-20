@@ -169,9 +169,9 @@ def error4(html):
 
 def server_error(html):
     string2 = html.replace('\n', '').replace('\r', '').replace(' ', '')
-    patt = '<h4>(.*?)</h4><h6>(.*?)</h6>'
+    patt = 'Cannotfindanyinfoforthisserver'
     c = re.findall(pattern=patt, string=string2)
-    if c[0] == 'Cannotfindanyinfoforthisserver':
+    if c:
         return '找不到此服务器的任何信息,服务器可能已被删除或已被赋予新的服务器ID,请及时更新服务器ID'
     else:
         pass
