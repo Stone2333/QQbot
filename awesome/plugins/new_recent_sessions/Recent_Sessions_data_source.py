@@ -25,7 +25,17 @@ async def recent_sessions_msg(Quer_Recent_Sessions):
             return '\n' + msg + '\n' + '由于没有查询过最近战绩所以没有历史数据'
         msg1 = get_db_recent_sessions(Quer_Recent_Sessions)
         return '\n' + msg + '\n' + '以下数据是历史数据仅供参考:' + '\n' + msg1
+    elif msg == '很抱歉,在执行您的要求时发生了一个错误,错误报告已提交给管理员,他们将立即修复该错误!,简而言之也是服务器挂了的一种,恢复时间俺也不知道':
+        if not name:
+            return '\n' + msg + '\n' + '由于没有查询过最近战绩所以没有历史数据'
+        msg1 = get_db_recent_sessions(Quer_Recent_Sessions)
+        return '\n' + msg + '\n' + '以下数据是历史数据仅供参考:' + '\n' + msg1
     elif msg == '战绩网数据库维护,请稍后再试':
+        if not name:
+            return '\n' + msg + '\n' + '由于没有查询过最近战绩所以没有历史数据'
+        msg1 = get_db_recent_sessions(Quer_Recent_Sessions)
+        return '\n' + msg + '\n' + '以下数据是历史数据仅供参考:' + '\n' + msg1
+    elif msg == '网络问题,请稍后再试':
         if not name:
             return '\n' + msg + '\n' + '由于没有查询过最近战绩所以没有历史数据'
         msg1 = get_db_recent_sessions(Quer_Recent_Sessions)
@@ -41,12 +51,15 @@ async def recent_sessions_msg(Quer_Recent_Sessions):
 
 
 def get_recent_sessions(Quer_Recent_Sessions):
-    url = "https://battlefieldtracker.com/bf1/profile/pc/{}".format(Quer_Recent_Sessions)
-    headers = {
-        "User-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
-    }
-    response = requests.get(url, headers=headers, timeout=60)
-    html = response.content.decode("utf-8")
+    try:
+        url = "https://battlefieldtracker.com/bf1/profile/pc/{}".format(Quer_Recent_Sessions)
+        headers = {
+            "User-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
+        }
+        response = requests.get(url, headers=headers, timeout=60)
+        html = response.content.decode("utf-8")
+    except:
+        return '网络问题,请稍后再试'
     msg = error(html)
     msg2 = error2(html)
     msg3 = error3(html)
