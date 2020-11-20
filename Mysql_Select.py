@@ -331,6 +331,7 @@ def get_recent_sessions_all(name):
     return Recent_Sessions_content
 
 
+
 def get_statistics_number(groupid, module):
     """获得是否存在"""
     db = pymysql.connect(

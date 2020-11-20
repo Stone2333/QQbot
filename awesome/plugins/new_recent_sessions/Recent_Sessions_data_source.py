@@ -4,6 +4,7 @@ import re
 import Mysql_Select
 import data_Mysql_Insert
 import data_Mysql_Update
+import delete
 
 
 async def recent_sessions_msg(Quer_Recent_Sessions):
@@ -40,7 +41,8 @@ async def recent_sessions_msg(Quer_Recent_Sessions):
             return '\n' + msg + '\n' + '由于没有查询过最近战绩所以没有历史数据'
         msg1 = get_db_recent_sessions(Quer_Recent_Sessions)
         return '\n' + msg + '\n' + '以下数据是历史数据仅供参考:' + '\n' + msg1
-    if not name:
+    if not name or len(name) < 3:
+        delete.delete_recent_sessions(Quer_Recent_Sessions)
         data_Mysql_Insert.insert_recent_sessions_data(Quer_Recent_Sessions, msg)
         msg = get_db_recent_sessions(Quer_Recent_Sessions)
         return '\n'+msg
