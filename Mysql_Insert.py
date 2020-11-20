@@ -230,3 +230,21 @@ def insert_statistics_number(groupid, module, number=1):
     cursor.close()
     db.close()
     print('数量插入成功')
+
+
+def insert_server(server_id, server_name, maplist, mode, prayers):
+    """插入服务器信息"""
+    db = pymysql.connect(
+        host="127.0.0.1",
+        user="root",
+        password="123456",
+        db="bf1")
+    cursor = db.cursor()
+    sql = '''
+          INSERT INTO `server` (server_id, server_name , maplist, mode, prayers)
+          VALUES ("{}","{}","{}","{}","{}")
+          '''.format(server_id, server_name, maplist, mode, prayers)
+    cursor.execute(sql)
+    db.commit()
+    cursor.close()
+    db.close()

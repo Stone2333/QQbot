@@ -55,13 +55,16 @@ CREATE TABLE `server_id` (
 `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 PRIMARY KEY (`server_id`, `server_as_name`)
 );
+
 CREATE TABLE `server` (
-`server_id` int(15) NOT NULL COMMENT '服务器ID',
+`id` int(10) NOT NULL AUTO_INCREMENT COMMENT '自增ID',
+`server_id` char(15) NOT NULL COMMENT '服务器ID',
 `server_name` char(70) NULL COMMENT '服务器名称',
 `maplist` char(10) NULL COMMENT '地图',
+`mode` char(10) NULL COMMENT '地图',
 `prayers` char(6) NULL COMMENT '游戏人数',
 `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-PRIMARY KEY (`server_id`)
+PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `proposal` (

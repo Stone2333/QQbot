@@ -206,6 +206,38 @@ def update_statistics_number(groupid, module):
     db.commit()
     cursor.close()
     db.close()
+
+
+def update_server(server_id, server_name, maplist, mode, prayers):
+    """
+    更新服务器信息
+
+    :param server_id: 服务器简称
+    :param server_name: 服务器名字
+    :param maplist: 地铁
+    :param mode: 模式
+    :param prayers: 人数
+    :return: 元组
+    """
+    db = pymysql.connect(
+        host="127.0.0.1",
+        user="root",
+        password="123456",
+        db="bf1")
+    cursor = db.cursor()
+    sql = '''
+          UPDATE `server`
+          SET server_name = "{}", maplist = "{}", mode = "{}", prayers = "{}"
+          WHERE server_id = "{}"
+          '''.format(server_name, maplist, mode, prayers, server_id)
+    cursor.execute(sql)
+    db.commit()
+    cursor.close()
+    db.close()
+    print(server_id, "服务器数据更新成功")
+
+
+
 #
 # if __name__ == '__main__':
 #     Update_User('bf_stonegogogo')

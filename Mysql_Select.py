@@ -351,6 +351,59 @@ def get_statistics_number(groupid, module):
     db.close()
     return statistics_info
 
+
+
+def get_server_info(name):
+    """
+    获取服务器信息
+
+    :param name: 服务器简称
+    :return:
+    """
+    db = pymysql.connect(
+        host="127.0.0.1",
+        user="root",
+        password="123456",
+        db="bf1")
+    cursor = db.cursor()
+    sql = '''
+          SELECT server_name, maplist, mode, prayers
+          FROM `server`
+          WHERE server_id = "{}"
+          '''.format(name)
+    cursor.execute(sql)
+    db.commit()
+    server_info = cursor.fetchall()
+    cursor.close()
+    db.close()
+    return server_info
+
+
+def get_server_name(name):
+    """
+    查询服务器是否存在
+
+    :param name:
+    :return:
+    """
+    db = pymysql.connect(
+        host="127.0.0.1",
+        user="root",
+        password="123456",
+        db="bf1")
+    cursor = db.cursor()
+    sql = '''
+          SELECT server_id
+          FROM `server`
+          WHERE server_id = "{}"
+          '''.format(name)
+    cursor.execute(sql)
+    db.commit()
+    server_id = cursor.fetchall()
+    cursor.close()
+    db.close()
+    return server_id
+
 if __name__ == "__main__":
     # Select_Server("koi")
     # Select_Server_Id("koi")

@@ -20,8 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a15535c6-4cef-4568-97ff-fa9054a69501" name="Default Changelist" comment="修改最近战绩逻辑,最近战绩">
+      <change afterPath="$PROJECT_DIR$/awesome/plugins/new_servers/Servers_data_source.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/awesome/plugins/new_servers/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesome/plugins/test/Login_data_source.py" beforeDir="false" afterPath="$PROJECT_DIR$/awesome/plugins/test/Login_data_source.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mysql_Insert.py" beforeDir="false" afterPath="$PROJECT_DIR$/Mysql_Insert.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mysql_Select.py" beforeDir="false" afterPath="$PROJECT_DIR$/Mysql_Select.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mysql_Update.py" beforeDir="false" afterPath="$PROJECT_DIR$/Mysql_Update.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/awesome/plugins/new/Recent_Sessions_data_source.py" beforeDir="false" afterPath="$PROJECT_DIR$/awesome/plugins/new_recent_sessions/Recent_Sessions_data_source.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/awesome/plugins/new/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/awesome/plugins/new_recent_sessions/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/new_database_design.sql" beforeDir="false" afterPath="$PROJECT_DIR$/new_database_design.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,14 +59,14 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../automated_testing" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\QQbot\awesome\plugins" />
       <recent name="D:\QQbot" />
       <recent name="D:\QQbot\awesome\plugins\new" />
-      <recent name="D:\QQbot\awesome\plugins" />
     </key>
   </component>
   <component name="RunManager" selected="Python.DB">
@@ -141,14 +148,11 @@
       <workItem from="1605284612658" duration="436000" />
       <workItem from="1605420258494" duration="1243000" />
       <workItem from="1605424327693" duration="359000" />
-      <workItem from="1605600990723" duration="2777000" />
-    </task>
-    <task id="LOCAL-00021" summary="修改快查">
-      <created>1604737582903</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1604737582904</updated>
+      <workItem from="1605600990723" duration="4477000" />
+      <workItem from="1605619964043" duration="425000" />
+      <workItem from="1605704788695" duration="1852000" />
+      <workItem from="1605786517142" duration="1622000" />
+      <workItem from="1605875649294" duration="3809000" />
     </task>
     <task id="LOCAL-00022" summary="修改快查">
       <created>1604737743689</created>
@@ -486,7 +490,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605603455405</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="修改最近战绩逻辑,最近战绩">
+      <created>1605603774288</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1605603774288</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -529,10 +540,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="修改最近战绩逻辑,最近战绩" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1605184782916">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1605878338893">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1605184782916" />
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1605878338893" />
     <state width="1493" height="270" key="GridCell.Tab.0.bottom" timestamp="1605194191432">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -557,18 +568,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="270" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1604834879177" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1605603456404">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1605603788686">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1605603456404" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1605603788686" />
     <state x="563" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604837322756">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="563" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1604837322756" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1604745035446">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1605786656448">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1604745035446" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1605786656448" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/QQbot$test_select.coverage" NAME="test_select Coverage Results" MODIFIED="1603692940695" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
