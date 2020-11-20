@@ -30,7 +30,15 @@ async def get_Servers(server_name: str) -> str:
                 return '\n' + server_name_info + '\n' + '由于没有查询过服务器所以没有历史数据'
             server_info = get_db_server_info(server_name)
             return '\n' + request_server + '\n' + '以下数据是历史数据仅供参考:' + '\n' + server_info
+
         elif request_server == '网络问题,请稍后再试':
+            server_name_info = Mysql_Select.get_server_name(server_name)
+            if not server_name_info:
+                return '\n' + server_name_info + '\n' + '由于没有查询过服务器所以没有历史数据'
+            server_info = get_db_server_info(server_name)
+            return '\n' + request_server + '\n' + '以下数据是历史数据仅供参考:' + '\n' + server_info
+
+        elif request_server == '很抱歉,在执行您的要求时发生了一个错误,错误报告已提交给管理员,他们将立即修复该错误!,简而言之也是服务器挂了的一种,恢复时间俺也不知道':
             server_name_info = Mysql_Select.get_server_name(server_name)
             if not server_name_info:
                 return '\n' + server_name_info + '\n' + '由于没有查询过服务器所以没有历史数据'

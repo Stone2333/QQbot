@@ -19,16 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a15535c6-4cef-4568-97ff-fa9054a69501" name="Default Changelist" comment="修改最近战绩逻辑,最近战绩">
-      <change afterPath="$PROJECT_DIR$/awesome/plugins/new_servers/Servers_data_source.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/awesome/plugins/new_servers/__init__.py" afterDir="false" />
+    <list default="true" id="a15535c6-4cef-4568-97ff-fa9054a69501" name="Default Changelist" comment="服务器新查询">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Mysql_Insert.py" beforeDir="false" afterPath="$PROJECT_DIR$/Mysql_Insert.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Mysql_Select.py" beforeDir="false" afterPath="$PROJECT_DIR$/Mysql_Select.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Mysql_Update.py" beforeDir="false" afterPath="$PROJECT_DIR$/Mysql_Update.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesome/plugins/new/Recent_Sessions_data_source.py" beforeDir="false" afterPath="$PROJECT_DIR$/awesome/plugins/new_recent_sessions/Recent_Sessions_data_source.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesome/plugins/new/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/awesome/plugins/new_recent_sessions/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/new_database_design.sql" beforeDir="false" afterPath="$PROJECT_DIR$/new_database_design.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/awesome/plugins/new_servers/Servers_data_source.py" beforeDir="false" afterPath="$PROJECT_DIR$/awesome/plugins/new_servers/Servers_data_source.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,21 +145,7 @@
       <workItem from="1605619964043" duration="425000" />
       <workItem from="1605704788695" duration="1852000" />
       <workItem from="1605786517142" duration="1622000" />
-      <workItem from="1605875649294" duration="3809000" />
-    </task>
-    <task id="LOCAL-00022" summary="修改快查">
-      <created>1604737743689</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1604737743689</updated>
-    </task>
-    <task id="LOCAL-00023" summary="修改快查">
-      <created>1604737841655</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1604737841655</updated>
+      <workItem from="1605875649294" duration="4910000" />
     </task>
     <task id="LOCAL-00024" summary="修改快查">
       <created>1604738019321</created>
@@ -497,7 +476,21 @@
       <option name="project" value="LOCAL" />
       <updated>1605603774288</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="服务器新查询">
+      <created>1605892318473</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1605892318474</updated>
+    </task>
+    <task id="LOCAL-00072" summary="服务器新查询">
+      <created>1605892765200</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1605892765200</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -537,7 +530,8 @@
     <MESSAGE value="替换旧的最近战绩" />
     <MESSAGE value="修改最近战绩逻辑" />
     <MESSAGE value="修改最近战绩逻辑,最近战绩" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改最近战绩逻辑,最近战绩" />
+    <MESSAGE value="服务器新查询" />
+    <option name="LAST_COMMIT_MESSAGE" value="服务器新查询" />
   </component>
   <component name="WindowStateProjectService">
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1605878338893">
@@ -568,10 +562,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="270" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1604834879177" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1605603788686">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1605892770220">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1605603788686" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1605892770220" />
     <state x="563" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604837322756">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
