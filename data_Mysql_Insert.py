@@ -271,7 +271,7 @@ def get_Servers(Quer_Servers: str) -> str:
 
 
 def insert_recent_sessions_data(name, msg):
-    print(name,msg)
+    print(name, msg)
     game_play_time = msg[0]
     spm = msg[1]
     kd = msg[2]

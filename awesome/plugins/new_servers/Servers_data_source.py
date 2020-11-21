@@ -194,13 +194,11 @@ def get_db_server_info(name):
     """
     db_server_info = Mysql_Select.get_server_info(name)
     server_name = db_server_info[0][0]
-    map = db_server_info[0][1]
-    mode = db_server_info[0][2]
-    play_number = db_server_info[0][3]
-    string = f"""
-服务器名称:{server_name}
+    map = db_server_info[0][2]
+    mode = db_server_info[0][3]
+    play_number = db_server_info[0][1]
+    string = f"""服务器名称:{server_name}
 地图:{map}
 模式:{mode}
-人数:{play_number}    
-    """
+人数:{play_number}"""
     return string
