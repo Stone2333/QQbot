@@ -203,8 +203,8 @@ def get_db_server_info(name):
     map = db_server_info[0][1]
     mode = db_server_info[0][2]
     play_number = db_server_info[0][3]
-    string = f"""服务器名称:{server_name}
+    string = f"""服名称:{server_name}
 地图:{map}
 模式:{mode}
-服务器人数:{play_number}"""
+服人数:{play_number}"""
     return string
