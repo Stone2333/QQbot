@@ -34,6 +34,7 @@ async def Select_Overview(Query_Overview: str) -> str:
             error = 'ID错误/橘子信息设置为隐私,无法查询到数据'
             return error
     else:
+
         SCORE_MIN = "每分钟得分:" + Overview[0]
         KD_RATIO = "KD:" + Overview[1]
         WIN_PERCENT = "胜率:" + Overview[2]
