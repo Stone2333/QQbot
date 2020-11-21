@@ -3,7 +3,7 @@ from nonebot import on_natural_language, NLPSession, IntentCommand
 from .Servers_data_source import *
 import Mysql_Select, Mysql_Update, Mysql_Insert
 
-@on_command('Servers', aliases=('服务器', '查服务器'),only_to_me=False)
+@on_command('Servers', aliases=('.旧服务器', '.旧查服务器'),only_to_me=False)
 async def Servers(session: CommandSession):
     group_id = session.event['group_id']
     number = Mysql_Select.get_statistics_number(group_id, '服务器')

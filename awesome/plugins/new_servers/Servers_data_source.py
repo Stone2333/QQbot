@@ -200,5 +200,5 @@ def get_db_server_info(name):
     string = f"""服务器名称:{server_name}
 地图:{map}
 模式:{mode}
-人数:{play_number}"""
+服务器人数:{play_number}"""
     return string
