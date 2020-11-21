@@ -43,15 +43,15 @@ async def recent_sessions_msg(Quer_Recent_Sessions):
         return '\n' + msg + '\n' + '以下数据是历史数据仅供参考:' + '\n' + msg1
 
     if not name or len(name) < 3:
-        # if len(name) == 0:
-        #     data_Mysql_Insert.insert_recent_sessions_data(Quer_Recent_Sessions, msg)
-        #     msg = get_db_recent_sessions(Quer_Recent_Sessions)
-        #     return '\n' + msg
-        # else:
-        delete.delete_recent_sessions(Quer_Recent_Sessions)
-        data_Mysql_Insert.insert_recent_sessions_data(Quer_Recent_Sessions, msg)
-        msg = get_db_recent_sessions(Quer_Recent_Sessions)
-        return '\n'+msg
+        if len(name) == 0:
+            data_Mysql_Insert.insert_recent_sessions_data(Quer_Recent_Sessions, msg)
+            msg = get_db_recent_sessions(Quer_Recent_Sessions)
+            return '\n' + msg
+        else:
+            delete.delete_recent_sessions(Quer_Recent_Sessions)
+            data_Mysql_Insert.insert_recent_sessions_data(Quer_Recent_Sessions, msg)
+            msg = get_db_recent_sessions(Quer_Recent_Sessions)
+            return '\n'+msg
     else:
         data_Mysql_Update.update_recent_sessions_data(Quer_Recent_Sessions, msg)
         msg = get_db_recent_sessions(Quer_Recent_Sessions)

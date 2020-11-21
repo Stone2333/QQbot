@@ -19,3 +19,4 @@ def delete_recent_sessions(name):
     db.commit()
     cursor.close()
     db.close()
+    print(sql)
