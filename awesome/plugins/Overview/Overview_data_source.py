@@ -20,12 +20,11 @@ async def Select_Overview(Query_Overview: str) -> str:
             INFANTRY_KD = "步兵KD:" + Overview[6]
             VEHICLE_KILLS = "载具击毙:" + Overview[7]
             VEHICLE_KPM = "载具KPM:" + Overview[8]
-            SKILL = "技巧值:" + Overview[9]
             ACCURACY = "准度:" + Overview[10]
             Overview_list = ["\n游戏ID:" + Query_Overview, SCORE_MIN, KD_RATIO, WIN_PERCENT, KILLS_GAME, KILLS_MIN,
                              INFANTRY_KPM,
                              INFANTRY_KD,
-                             VEHICLE_KILLS, VEHICLE_KPM, SKILL, ACCURACY]
+                             VEHICLE_KILLS, VEHICLE_KPM, ACCURACY]
             # 去逗号
             Overview_str = (' \n'.join(Overview_list))
             print('这是爬虫爬取完成后查到的战绩数据')
@@ -44,9 +43,8 @@ async def Select_Overview(Query_Overview: str) -> str:
         INFANTRY_KD = "步兵KD:" + Overview[6]
         VEHICLE_KILLS = "载具击毙:" + Overview[7]
         VEHICLE_KPM = "载具KPM:" + Overview[8]
-        SKILL = "技巧值:" + Overview[9]
         ACCURACY = "准度:" + Overview[10]
-        Overview_list = ["\n游戏ID:" + Query_Overview, SCORE_MIN, KD_RATIO, WIN_PERCENT, KILLS_GAME, KILLS_MIN, INFANTRY_KPM,INFANTRY_KD,VEHICLE_KILLS, VEHICLE_KPM, SKILL, ACCURACY]
+        Overview_list = ["\n游戏ID:" + Query_Overview, SCORE_MIN, KD_RATIO, WIN_PERCENT, KILLS_GAME, KILLS_MIN, INFANTRY_KPM,INFANTRY_KD,VEHICLE_KILLS, VEHICLE_KPM, ACCURACY]
         Overview_str = (' \n'.join(Overview_list))
         print('这是直接查数据库查到的战绩数据')
         return Overview_str
