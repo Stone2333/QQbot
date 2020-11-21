@@ -45,6 +45,12 @@ async def get_Servers(server_name: str) -> str:
             server_info = get_db_server_info(server_name)
             return '\n' + request_server + '\n' + '以下数据是历史数据仅供参考:' + '\n' + server_info
 
+        elif request_server == '找不到此服务器的任何信息,服务器可能已被删除或已被赋予新的服务器ID,请及时更新服务器ID':
+            server_name_info = Mysql_Select.get_server_name(server_name)
+            if not server_name_info:
+                return '\n' + request_server + '\n' + '由于没有查询过服务器所以没有历史数据'
+            server_info = get_db_server_info(server_name)
+            return '\n' + request_server + '\n' + '以下数据是历史数据仅供参考:' + '\n' + server_info
         if not server_db_name:
             name = request_server[0]
             map = request_server[2]
