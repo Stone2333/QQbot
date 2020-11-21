@@ -47,17 +47,17 @@ async def get_Servers(server_name: str) -> str:
 
         if not server_db_name:
             name = request_server[0]
-            map = request_server[1]
-            mode = request_server[2]
-            play_number = request_server[3]
+            map = request_server[2]
+            mode = request_server[3]
+            play_number = request_server[1]
             Mysql_Insert.insert_server(server_name, name, map, mode, play_number)
             msg = get_db_server_info(server_name)
             return '\n' + msg
         else:
             name = request_server[0]
-            map = request_server[1]
-            mode = request_server[2]
-            play_number = request_server[3]
+            map = request_server[2]
+            mode = request_server[3]
+            play_number = request_server[1]
             Mysql_Update.update_server(server_name, name, map, mode, play_number)
             msg = get_db_server_info(server_name)
             return '\n' + msg
@@ -194,9 +194,9 @@ def get_db_server_info(name):
     """
     db_server_info = Mysql_Select.get_server_info(name)
     server_name = db_server_info[0][0]
-    map = db_server_info[0][2]
-    mode = db_server_info[0][3]
-    play_number = db_server_info[0][1]
+    map = db_server_info[0][1]
+    mode = db_server_info[0][2]
+    play_number = db_server_info[0][3]
     string = f"""服务器名称:{server_name}
 地图:{map}
 模式:{mode}
