@@ -19,10 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a15535c6-4cef-4568-97ff-fa9054a69501" name="Default Changelist" comment="服务器新查询">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesome/plugins/new_recent_sessions/Recent_Sessions_data_source.py" beforeDir="false" afterPath="$PROJECT_DIR$/awesome/plugins/new_recent_sessions/Recent_Sessions_data_source.py" afterDir="false" />
-    </list>
+    <list default="true" id="a15535c6-4cef-4568-97ff-fa9054a69501" name="Default Changelist" comment="服务器新查询" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -169,21 +166,7 @@
       <workItem from="1605704788695" duration="1852000" />
       <workItem from="1605786517142" duration="1622000" />
       <workItem from="1605875649294" duration="7132000" />
-      <workItem from="1605926723546" duration="1010000" />
-    </task>
-    <task id="LOCAL-00028" summary="删除旧快查">
-      <created>1604738917285</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1604738917285</updated>
-    </task>
-    <task id="LOCAL-00029" summary="删除旧快查">
-      <created>1604739546166</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1604739546166</updated>
+      <workItem from="1605926723546" duration="1252000" />
     </task>
     <task id="LOCAL-00030" summary="删除旧快查">
       <created>1604739726100</created>
@@ -514,7 +497,21 @@
       <option name="project" value="LOCAL" />
       <updated>1605894996792</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="服务器新查询">
+      <created>1605927739066</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1605927739067</updated>
+    </task>
+    <task id="LOCAL-00078" summary="服务器新查询">
+      <created>1605927757229</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1605927757229</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -598,14 +595,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="147" y="65" key="MergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1604728119713" />
+    <state x="653" y="279" width="428" height="266" key="MultipleFileMergeDialog" timestamp="1605927779173">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="653" y="279" width="428" height="266" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1605927779173" />
     <state x="270" y="57" key="SettingsEditor" timestamp="1604834879177">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="270" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1604834879177" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1605894998157">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1605927761895">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1605894998157" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1605927761895" />
     <state x="563" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604837322756">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

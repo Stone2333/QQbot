@@ -1,14 +1,21 @@
-import DB
+import pymysql
 
-db = DB.MysqlDB('127.0.0.1', 'root', '123456', 'bf1')
 
 
 def delete_recent_sessions(name):
+    db = pymysql.connect(
+        host="127.0.0.1",
+        user="root",
+        password="123456",
+        db="bf1")
+    cursor = db.cursor()
     sql = """
     DELETE
     FROM `recent_sessions`
     WHERE name = "{}"
     
     """.format(name)
-    db.execute(sql)
+    cursor.execute(sql)
+    db.commit()
+    cursor.close()
     db.close()
