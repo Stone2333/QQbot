@@ -1,6 +1,7 @@
 ﻿import Mysql_Select
 import requests
 from lxml import etree
+import delete
 import re
 import data_Mysql_Insert
 import data_Mysql_Update
@@ -16,7 +17,6 @@ async def get_img(qq, Query_Login: str, session) -> str:
         else:
             prompt = "查询中请稍候"
             await session.send(prompt)
-            url = "https://battlefieldtracker.com/bf1/profile/pc/{}".format(relevance[0][0])
             name = Mysql_Select.get_recent_sessions_all(relevance[0][0])
             msg = get_recent_sessions(relevance[0][0])
             if msg == '我们找不到您的统计信息，请确保您名称正确':
@@ -35,15 +35,32 @@ async def get_img(qq, Query_Login: str, session) -> str:
                     return '\n' + msg + '\n' + '由于没有查询过最近战绩所以没有历史数据'
                 msg1 = get_db_recent_sessions(relevance[0][0])
                 return '\n' + msg + '\n' + '以下数据是历史数据仅供参考:' + '\n' + msg1
+            elif msg == '很抱歉,在执行您的要求时发生了一个错误,错误报告已提交给管理员,他们将立即修复该错误!,简而言之也是服务器挂了的一种,恢复时间俺也不知道':
+                if not name:
+                    return '\n' + msg + '\n' + '由于没有查询过最近战绩所以没有历史数据'
+                msg1 = get_db_recent_sessions(relevance[0][0])
+                return '\n' + msg + '\n' + '以下数据是历史数据仅供参考:' + '\n' + msg1
             elif msg == '战绩网数据库维护,请稍后再试':
                 if not name:
                     return '\n' + msg + '\n' + '由于没有查询过最近战绩所以没有历史数据'
                 msg1 = get_db_recent_sessions(relevance[0][0])
                 return '\n' + msg + '\n' + '以下数据是历史数据仅供参考:' + '\n' + msg1
-            if not name:
-                data_Mysql_Insert.insert_recent_sessions_data(relevance[0][0], msg)
-                msg = get_db_recent_sessions(relevance[0][0])
-                return '\n' + msg
+            elif msg == '网络问题,请稍后再试':
+                if not name:
+                    return '\n' + msg + '\n' + '由于没有查询过最近战绩所以没有历史数据'
+                msg1 = get_db_recent_sessions(relevance[0][0])
+                return '\n' + msg + '\n' + '以下数据是历史数据仅供参考:' + '\n' + msg1
+
+            if not name or len(name) < 3:
+                if len(name) == 0:
+                    data_Mysql_Insert.insert_recent_sessions_data(relevance[0][0], msg)
+                    msg = get_db_recent_sessions(relevance[0][0])
+                    return '\n' + msg
+                else:
+                    delete.delete_recent_sessions(relevance[0][0])
+                    data_Mysql_Insert.insert_recent_sessions_data(relevance[0][0], msg)
+                    msg = get_db_recent_sessions(relevance[0][0])
+                    return '\n' + msg
             else:
                 data_Mysql_Update.update_recent_sessions_data(relevance[0][0], msg)
                 msg = get_db_recent_sessions(relevance[0][0])
