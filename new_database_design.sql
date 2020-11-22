@@ -25,13 +25,15 @@ CREATE TABLE `recent_sesions` (
 PRIMARY KEY (`id`, `name`)
 );
 CREATE TABLE `vehicles` (
+`id` int(10) NOT NULL AUTO_INCREMENT COMMENT '自增ID',
 `name` char(20) NOT NULL COMMENT '游戏ID',
 `vehicles_name` char(20) NOT NULL COMMENT '载具名称',
 `vehicles_kills` char(10) NULL COMMENT '载具击杀数',
 `vehicles_kpm` char(5) NULL COMMENT '载具每分钟击杀数',
 `vehicles_destroyed` char(7) NULL COMMENT '击毁载具数量',
+`vehicles_time` char(7) NULL COMMENT '击毁载具数量',
 `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-PRIMARY KEY (`name`, `vehicles_name`)
+PRIMARY KEY (`id`)
 );
 CREATE TABLE `overview` (
 `name` char(50) NOT NULL COMMENT '游戏ID',
