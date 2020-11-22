@@ -19,11 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a15535c6-4cef-4568-97ff-fa9054a69501" name="Default Changelist" comment="战绩">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesome/plugins/Weapons/Weapons_data_source.py" beforeDir="false" afterPath="$PROJECT_DIR$/awesome/plugins/Weapons/Weapons_data_source.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/new_database_design.sql" beforeDir="false" afterPath="$PROJECT_DIR$/new_database_design.sql" afterDir="false" />
-    </list>
+    <list default="true" id="a15535c6-4cef-4568-97ff-fa9054a69501" name="Default Changelist" comment="战绩" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -172,14 +168,7 @@
       <workItem from="1605875649294" duration="7132000" />
       <workItem from="1605926723546" duration="1252000" />
       <workItem from="1605927989638" duration="6848000" />
-      <workItem from="1606026351594" duration="2511000" />
-    </task>
-    <task id="LOCAL-00042" summary="新最近">
-      <created>1604837976757</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1604837976757</updated>
+      <workItem from="1606026351594" duration="2735000" />
     </task>
     <task id="LOCAL-00043" summary="新最近">
       <created>1604838107410</created>
@@ -517,7 +506,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605960846384</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="战绩">
+      <created>1606036359617</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1606036359618</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -611,10 +607,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="270" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1604834879177" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1605960847495">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1606036379079">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1605960847495" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1606036379079" />
     <state x="563" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604837322756">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
