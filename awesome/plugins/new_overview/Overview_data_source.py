@@ -195,8 +195,7 @@ def get_db_overview(name):
         infantry_kpm = m['infantry_kpm']
         vehicle_kills = m['vehicle_kills']
         vehicle_kpm = m['vehicle_kpm']
-        string2 += f"""
-等级:{rank}
+        string2 += f"""等级:{rank}
 胜率:{win_percent}%
 击毙/去世:{kd}
 每分钟击毙:{kpm}
