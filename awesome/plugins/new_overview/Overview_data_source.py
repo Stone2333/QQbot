@@ -9,6 +9,7 @@ import json
 async def Select_Overview(Query_Overview: str) -> str:
     name = Mysql_Select.get_overview_name(Query_Overview)
     msg = overview(Query_Overview)
+    print(msg)
     if msg == '我们找不到您的统计信息，请确保您名称正确':
         if not name:
             return '\n' + msg + '\n' + '由于没有查询过战绩所以没有历史数据'
