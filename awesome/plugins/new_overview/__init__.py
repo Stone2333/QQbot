@@ -7,7 +7,7 @@ import Mysql_Select, Mysql_Update, Mysql_Insert
 
 # 当用户输入关键字没有输入值时则提示
 @on_command('new_overview', aliases=('新战绩', '新查战绩'), only_to_me=False)
-async def overview(session: CommandSession):
+async def new_overview(session: CommandSession):
     group_id = session.event['group_id']
     number = Mysql_Select.get_statistics_number(group_id, '战绩')
     if number:
@@ -22,7 +22,7 @@ async def overview(session: CommandSession):
 
 
 #  当用户输入关键字和值时直接运行
-@overview.args_parser
+@new_overview.args_parser
 async def _(session: CommandSession):
     stripped_arg = session.current_arg_text.strip()
 
