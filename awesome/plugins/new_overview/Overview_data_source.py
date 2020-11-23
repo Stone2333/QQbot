@@ -207,6 +207,3 @@ def get_db_overview(name):
 载具击毙:{vehicle_kills}
 载具每分钟击毙:{vehicle_kpm}"""
     return string2
-
-
-print(Select_Overview('bf_stonegogogo'))
