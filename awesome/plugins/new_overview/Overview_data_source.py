@@ -197,13 +197,13 @@ def get_db_overview(name):
         vehicle_kpm = m['vehicle_kpm']
         string2 += f"""等级:{rank}
 胜率:{win_percent}%
-击毙/去世:{kd}
-每分钟击毙:{kpm}
+kd:{kd}
+kpm:{kpm}
 总击毙:{all_kills}
 爆头率:{head_shots_odds}%
 准度:{accuracy_ratio}%
-步兵击毙/去世:{infantry_kd}
-步兵每分钟击毙:{infantry_kpm}
+步兵kd:{infantry_kd}
+步兵kpm:{infantry_kpm}
 载具击毙:{vehicle_kills}
-载具每分钟击毙:{vehicle_kpm}"""
+载具kpm:{vehicle_kpm}"""
     return string2
