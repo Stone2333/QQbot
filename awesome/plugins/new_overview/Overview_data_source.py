@@ -193,13 +193,13 @@ def get_db_overview(name):
         string2 += f"""
 等级:{rank}
 胜率:{win_percent}%
-击杀/死亡:{kd}
-每分钟击杀:{kpm}
-总击杀:{all_kills}
+击毙/去世:{kd}
+每分钟击毙:{kpm}
+总击毙:{all_kills}
 爆头率:{head_shots_odds}%
 准度:{accuracy_ratio}%
-步兵击杀/死亡:{infantry_kd}
-步兵每分钟击杀:{infantry_kpm}
-载具击杀:{vehicle_kills}
-载具每分钟击杀:{vehicle_kpm}"""
+步兵击毙/去世:{infantry_kd}
+步兵每分钟击毙:{infantry_kpm}
+载具击毙:{vehicle_kills}
+载具每分钟击毙:{vehicle_kpm}"""
     return string2
