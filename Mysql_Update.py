@@ -237,7 +237,22 @@ def update_server(server_id, server_name, maplist, mode, prayers):
     print(server_id, "服务器数据更新成功")
 
 
-
+def update_overview_info(name, rank, win_percent, kd, kpm, all_kills, head_shots_odds, accuracy_ratio, infantry_kd, infantry_kpm, vehicle_kills, vehicle_kpm):
+    db = pymysql.connect(
+        host="127.0.0.1",
+        user="root",
+        password="123456",
+        db="bf1")
+    cursor = db.cursor()
+    sql = f'''
+          UPDATE `new_overview`
+          SET rank = "{rank}", win_percent = "{win_percent}", kd = "{kd}", kpm = "{kpm}", all_kills = "{all_kills}", head_shots_odds = "{head_shots_odds}", accuracy_ratio = "{accuracy_ratio}", infantry_kd = "{infantry_kd}", infantry_kpm = "{infantry_kpm}", vehicle_kills = "{vehicle_kills}", vehicle_kpm = "{vehicle_kpm}"
+          WHERE name = "{name}"
+          '''
+    cursor.execute(sql)
+    db.commit()
+    cursor.close()
+    db.close()
 #
 # if __name__ == '__main__':
 #     Update_User('bf_stonegogogo')

@@ -35,21 +35,21 @@ CREATE TABLE `vehicles` (
 `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 PRIMARY KEY (`id`)
 );
-CREATE TABLE `overview` (
+CREATE TABLE `new_overview` (
+`id` int(10) NOT NULL AUTO_INCREMENT COMMENT '自增ID',
 `name` char(50) NOT NULL COMMENT '游戏ID',
-`score_min` char(5) NULL COMMENT '每分钟得分数',
-`kd_ratio` char(5) NULL COMMENT '击杀/死亡比',
-`win_percent` char(5) NULL COMMENT '胜率',
-`kills_game` char(5) NULL COMMENT '场均击杀',
-`kills_min` char(5) NULL COMMENT '每分钟击杀数',
-`infantry_kpm` char(5) NULL COMMENT '步兵每分钟击杀数',
-`infantry_kd` char(5) NULL COMMENT '步兵击杀/死亡比',
-`vehicle_kills` char(7) NULL COMMENT '载具击杀数',
+`rank` char(5) NULL COMMENT '等级',
+`kd` char(6) NULL COMMENT 'kd',
+`kpm` char(5) NULL COMMENT '每分钟击杀',
+`all_kills` char(5) NULL COMMENT '总击杀',
+`head_shots_odds` char(5) NULL COMMENT '爆头率',
+`accuracy_ratio` char(5) NULL COMMENT '准度',
+`infantry_kd` char(5) NULL COMMENT '步兵kd',
+`infantry_kpm` char(5) NULL COMMENT '步兵kpm',
+`vehicle_kills` char(7) NULL COMMENT '载具击杀',
 `vehicle_kpm` char(5) NULL COMMENT '载具每分钟击杀数',
-`skill` char(5) NULL COMMENT '技巧值',
-`accuracy` char(5) NULL COMMENT '准度',
 `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-PRIMARY KEY (`name`)
+PRIMARY KEY (`id`)
 );
 CREATE TABLE `server_id` (
 `server_id` int(30) NOT NULL COMMENT '服务器ID',

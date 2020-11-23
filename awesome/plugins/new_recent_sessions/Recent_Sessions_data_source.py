@@ -11,7 +11,6 @@ async def recent_sessions_msg(Quer_Recent_Sessions):
     name = Mysql_Select.get_recent_sessions_all(Quer_Recent_Sessions)
     msg = get_recent_sessions(Quer_Recent_Sessions)
     if msg == '我们找不到您的统计信息，请确保您名称正确':
-        name = Mysql_Select.get_recent_sessions_all(Quer_Recent_Sessions)
         if not name:
             return '\n' + msg + '\n' + '由于没有查询过最近战绩所以没有历史数据'
         msg1 = get_db_recent_sessions(Quer_Recent_Sessions)

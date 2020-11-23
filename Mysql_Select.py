@@ -405,6 +405,56 @@ def get_server_name(name):
     db.close()
     return server_id
 
+
+def get_db_overview_all(name):
+    """
+    获取所有战绩信息
+
+    """
+    db = pymysql.connect(
+        host="127.0.0.1",
+        user="root",
+        password="123456",
+        db="bf1",
+        cursorclass=pymysql.cursors.DictCursor)
+    cursor = db.cursor()
+    sql = f'''
+          SELECT rank, win_percent, kd, kpm, all_kills, head_shots_odds, accuracy_ratio, infantry_kd, infantry_kpm, vehicle_kills, vehicle_kpm
+          FROM `new_overview`
+          WHERE name = "{name}"
+          '''
+    cursor.execute(sql)
+    db.commit()
+    server_info = cursor.fetchall()
+    cursor.close()
+    db.close()
+    return server_info
+
+
+def get_overview_name(name):
+    """
+    获取战绩是否存在
+
+    """
+    db = pymysql.connect(
+        host="127.0.0.1",
+        user="root",
+        password="123456",
+        db="bf1")
+    cursor = db.cursor()
+    sql = f'''
+          SELECT id
+          FROM `new_overview`
+          WHERE name = "{name}"
+          '''
+    cursor.execute(sql)
+    db.commit()
+    server_id = cursor.fetchall()
+    cursor.close()
+    db.close()
+    return server_id
+
+
 if __name__ == "__main__":
     # Select_Server("koi")
     # Select_Server_Id("koi")

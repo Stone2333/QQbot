@@ -248,3 +248,35 @@ def insert_server(server_id, server_name, maplist, mode, prayers):
     db.commit()
     cursor.close()
     db.close()
+
+
+def insert_overview_info(name, rank, win_percent, kd, kpm, all_kills, head_shots_odds, accuracy_ratio, infantry_kd, infantry_kpm, vehicle_kills, vehicle_kpm):
+    """
+    插入战绩信息
+
+    :param name:
+    :param rank:
+    :param kpm:
+    :param all_kills:
+    :param head_shots_odds:
+    :param accuracy_ratio:
+    :param infantry_kd:
+    :param infantry_kpm:
+    :param vehicle_kills:
+    :param vehicle_kpm:
+    :return:
+    """
+    db = pymysql.connect(
+        host="127.0.0.1",
+        user="root",
+        password="123456",
+        db="bf1")
+    cursor = db.cursor()
+    sql = F'''
+          INSERT INTO `new_overview` (name, rank, win_percent, kd, kpm, all_kills, head_shots_odds, accuracy_ratio, infantry_kd, infantry_kpm, vehicle_kills, vehicle_kpm)
+          VALUES ("{name}","{rank}","{win_percent}","{kd}","{kpm}","{all_kills}","{head_shots_odds}","{accuracy_ratio}","{infantry_kd}","{infantry_kpm}","{vehicle_kills}","{vehicle_kpm}")
+          '''
+    cursor.execute(sql)
+    db.commit()
+    cursor.close()
+    db.close()
