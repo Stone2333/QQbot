@@ -112,9 +112,9 @@ def get_db_recent_sessions(name):
         game_time = m['game_time']
         string2 += \
 f"""游玩日期:{game_play_time}
-每分钟得分:{spm}
-击毙/去世比:{kd}
-每分钟击毙数:{kpm}
+spm:{spm}
+kd:{kd}
+kpm:{kpm}
 游玩时间:{game_time}
 ===============
 """
