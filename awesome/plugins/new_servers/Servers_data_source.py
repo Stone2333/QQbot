@@ -127,7 +127,7 @@ def server(name):
                 'CapeHelles': '海丽丝岬', 'Achi Baba': '阿奇巴巴', 'ŁupkówPass': '武普库夫山口', 'BrusilovKeep': '勃鲁西洛夫关口',
                 'Galicia': '加利西亚', 'Albion': '阿尔比恩', 'Tsaritsyn': '察里津', 'VolgaRiver': '窝瓦河', 'Rupture': '决裂',
                 'Soissons': '苏瓦松', 'VerdunHeights': '凡尔登高地', 'FortDeVaux': '法乌克斯要塞', 'PrisedeTahure': '攻占托尔',
-                'NivelleNights': '尼维尔之夜', "Giant'sShadow": '庞然暗影'}
+                'NivelleNights': '尼维尔之夜', "Giant&#39;sShadow": '庞然暗影'}
     new_map = map_list[map[0]]
     # 模式
     patt4 = 'Mode</span><spanclass="value">(.*?)</span></div>'
