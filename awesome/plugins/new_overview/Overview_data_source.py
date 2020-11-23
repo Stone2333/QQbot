@@ -47,7 +47,7 @@ async def Select_Overview(Query_Overview: str) -> str:
         infantry_kpm = msg[8]
         vehicle_kills = msg[9]
         vehicle_kpm = msg[10]
-        Mysql_Insert.insert_overview(Query_Overview, rank, win_percent, kd, kpm, all_kills, head_shots_odds, accuracy_ratio, infantry_kd, infantry_kpm, vehicle_kills, vehicle_kpm)
+        Mysql_Insert.insert_overview_info(Query_Overview, rank, win_percent, kd, kpm, all_kills, head_shots_odds, accuracy_ratio, infantry_kd, infantry_kpm, vehicle_kills, vehicle_kpm)
         msg = get_db_overview(Query_Overview)
         return '\n' + msg
     else:
@@ -66,6 +66,9 @@ async def Select_Overview(Query_Overview: str) -> str:
         msg = get_db_overview(Query_Overview)
         return '\n' + msg
 
+
+
+
 def overview(name):
     """
     获取服务器信息
@@ -73,7 +76,7 @@ def overview(name):
     :param name:
     :return:
     """
-    url_join = "https://battlefieldtracker.com/bf1/search?platform=pc&name=" + name
+    url_join = "https://battlefieldtracker.com/bf1/profile/pc/" + name
     # url = base_url.format(url1)
     try:
         headers = {
@@ -104,8 +107,9 @@ def overview(name):
     rank = re.findall(pattern=patt4, string=string2)
     # 总击杀
     patt7 = 'data-stat="Kills">(.*?)</div>'
-    all_kills = re.findall(pattern=patt7, string=string2)
-    int_all_kills = int(all_kills[0].replace(',', ''))
+    all_kills1 = re.findall(pattern=patt7, string=string2)
+    all_kills = all_kills1[0]
+    int_all_kills = int(all_kills1[0].replace(',', ''))
     # 爆头击杀
     patt8 = 'data-stat="HeadShots">(.*?)</div>'
     head_shots_kills = re.findall(pattern=patt8, string=string2)
@@ -130,7 +134,8 @@ def overview(name):
     vehicle_kpm = all_dict['VehicleKPM']
     # 准度
     accuracy_ratio = all_dict['AccuracyRatio']
-    return rank[0], win_percent, kd, kpm, all_kills[0], head_shots_odds, float(accuracy_ratio) * 100, infantry_kd, infantry_kpm, vehicle_kills, vehicle_kpm
+    return rank[0], win_percent, kd, kpm, all_kills, head_shots_odds, float(accuracy_ratio) * 100, infantry_kd, infantry_kpm, vehicle_kills, vehicle_kpm
+
 
 
 def error(html):
@@ -142,7 +147,6 @@ def error(html):
         return "我们找不到您的统计信息，请确保您名称正确"
     else:
         pass
-
 
 def error2(html):
     # 战绩、最近、载具
@@ -204,3 +208,6 @@ def get_db_overview(name):
 载具击毙:{vehicle_kills}
 载具每分钟击毙:{vehicle_kpm}"""
     return string2
+
+
+print(Select_Overview('bf_stonegogogo'))

@@ -39,6 +39,7 @@ CREATE TABLE `new_overview` (
 `id` int(10) NOT NULL AUTO_INCREMENT COMMENT '自增ID',
 `name` char(50) NOT NULL COMMENT '游戏ID',
 `rank` char(5) NULL COMMENT '等级',
+`win_percent` char(6) NULL COMMENT '胜率',
 `kd` char(6) NULL COMMENT 'kd',
 `kpm` char(5) NULL COMMENT '每分钟击杀',
 `all_kills` char(5) NULL COMMENT '总击杀',
