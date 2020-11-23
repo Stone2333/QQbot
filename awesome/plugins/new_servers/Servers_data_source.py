@@ -122,9 +122,9 @@ def server(name):
     map = re.findall(pattern=patt3, string=string2)
     map_list = {'BallroomBlitz': '流血宴厅', 'ArgonneForest': '阿尔贡森林', 'FaoFortress': '法欧堡', 'Suez': '苏伊士',
                 'StQuentinScar': '圣康坦的伤痕', 'SinaiDesert': '西奈沙漠', 'Amiens': '亚眠', 'MonteGrappa': '格拉巴山',
-                "Empire'sEdge": '帝国边境', 'Passchendaele': '帕斯尚尔', 'Caporetto': '波雷托', 'RiverSomme': '索姆河',
-                "Razor'sEdge": '剃刀边缘', 'London Calling': '伦敦的呼唤', 'HeligolandBight': '黑尔戈兰湾', 'Zeebrugge': '泽布吕赫',
-                'CapeHelles': '海丽丝岬', 'Achi Baba': '阿奇巴巴', 'Łupków Pass': '武普库夫山口', 'BrusilovKeep': '勃鲁西洛夫关口',
+                "Empire&#39;sEdge": '帝国边境', 'Passchendaele': '帕斯尚尔', 'Caporetto': '波雷托', 'RiverSomme': '索姆河',
+                "Razor&#39;sEdge": '剃刀边缘', 'London Calling': '伦敦的呼唤', 'HeligolandBight': '黑尔戈兰湾', 'Zeebrugge': '泽布吕赫',
+                'CapeHelles': '海丽丝岬', 'Achi Baba': '阿奇巴巴', 'ŁupkówPass': '武普库夫山口', 'BrusilovKeep': '勃鲁西洛夫关口',
                 'Galicia': '加利西亚', 'Albion': '阿尔比恩', 'Tsaritsyn': '察里津', 'VolgaRiver': '窝瓦河', 'Rupture': '决裂',
                 'Soissons': '苏瓦松', 'VerdunHeights': '凡尔登高地', 'FortDeVaux': '法乌克斯要塞', 'PrisedeTahure': '攻占托尔',
                 'NivelleNights': '尼维尔之夜', "Giant'sShadow": '庞然暗影'}

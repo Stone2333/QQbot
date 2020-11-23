@@ -172,10 +172,10 @@ async def get_img(qq, Query_Login: str, session) -> str:
                 kpm2 = Weapons[12]
                 Accuracy2 = Weapons[13]
                 Headshots2 = Weapons[14]
-                Weapons_list = ["\n烧火棍名称:" + name, "击毙:" + kills, "每分钟得分:" + kpm, "准度:" + Accuracy, "爆头击毙:" + Headshots,
-                                "烧火棍名称:" + name1, "击毙:" + kills1, "每分钟得分:" + kpm1, "准度:" + Accuracy1,
+                Weapons_list = ["\n烧火棍名称:" + name, "击毙:" + kills, "每分钟干人:" + kpm, "准度:" + Accuracy, "爆头击毙:" + Headshots,
+                                "烧火棍名称:" + name1, "击毙:" + kills1, "每分钟干人:" + kpm1, "准度:" + Accuracy1,
                                 "爆头击毙:" + Headshots1,
-                                "烧火棍名称:" + name2, "击毙:" + kills2, "每分钟得分:" + kpm2, "准度:" + Accuracy2,
+                                "烧火棍名称:" + name2, "击毙:" + kills2, "每分钟干人:" + kpm2, "准度:" + Accuracy2,
                                 "爆头击毙:" + Headshots2]
                 Weapons_str = (' \n'.join(Weapons_list))
                 print('这是直接查数据库查到的武器数据')
