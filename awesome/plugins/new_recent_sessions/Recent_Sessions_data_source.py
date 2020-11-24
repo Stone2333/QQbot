@@ -115,8 +115,7 @@ def get_db_recent_sessions(name):
 干与被干比:{kd}
 每分钟干几个:{kpm}
 玩耍时间:{game_time}
-*=============*
-"""
+*=============*"""
     return string2
 
 

@@ -114,8 +114,7 @@ f"""载具名称:{vehicles_name}
 KPM:{vehicles_kpm}
 击毁载具:{vehicles_destroyed}
 使用时间:{vehicles_time}
-===============
-"""
+==============="""
     return string2
 
 def insert_vehicles_data(name, msg):
