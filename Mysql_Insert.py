@@ -280,3 +280,31 @@ def insert_overview_info(name, rank, win_percent, kd, kpm, all_kills, head_shots
     db.commit()
     cursor.close()
     db.close()
+
+
+def insert_vehicles_info(name, vehicles_name, vehicles_kills, vehicles_kpm, vehicles_destroyed, vehicles_time):
+    """
+    插入载具信息
+
+    :param name:
+    :param vehicles_name:
+    :param vehicles_kills:
+    :param vehicles_kpm:
+    :param vehicles_destroyed:
+    :param vehicles_time:
+    :return:
+    """
+    db = pymysql.connect(
+        host="127.0.0.1",
+        user="root",
+        password="123456",
+        db="bf1")
+    cursor = db.cursor()
+    sql = '''
+          INSERT INTO `new_vehicles` (name, vehicles_name, vehicles_kills, vehicles_kpm, vehicles_destroyed, vehicles_time)
+          VALUES ("{}","{}","{}","{}","{}","{}")
+          '''.format(name, vehicles_name, vehicles_kills, vehicles_kpm, vehicles_destroyed, vehicles_time)
+    cursor.execute(sql)
+    db.commit()
+    cursor.close()
+    db.close()

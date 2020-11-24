@@ -455,6 +455,55 @@ def get_overview_name(name):
     return server_id
 
 
+def get_db_vehicles_all(name):
+    """
+    查询载具信息
+
+    """
+    db = pymysql.connect(
+        host="127.0.0.1",
+        user="root",
+        password="123456",
+        db="bf1",
+        cursorclass=pymysql.cursors.DictCursor)
+    cursor = db.cursor()
+    sql = '''
+          SELECT vehicles_name, vehicles_kills, vehicles_kpm, vehicles_destroyed, vehicles_time
+          FROM `new_vehicles`
+          WHERE name = "{}"
+          '''.format(name)
+    cursor.execute(sql)
+    db.commit()
+    server_info = cursor.fetchall()
+    cursor.close()
+    db.close()
+    return server_info
+
+def get_vehicles_name(name):
+    """
+    查询游戏名对应的id
+
+    """
+    db = pymysql.connect(
+        host="127.0.0.1",
+        user="root",
+        password="123456",
+        db="bf1")
+    cursor = db.cursor()
+    sql = '''
+          SELECT id 
+          FROM `new_vehicles`
+          WHERE name = "{}"
+          '''.format(name)
+    cursor.execute(sql)
+    db.commit()
+    server_id = cursor.fetchall()
+    cursor.close()
+    db.close()
+    return server_id
+
+
+
 if __name__ == "__main__":
     # Select_Server("koi")
     # Select_Server_Id("koi")

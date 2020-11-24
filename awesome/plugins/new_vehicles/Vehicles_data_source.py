@@ -1,68 +1,71 @@
-import requests
-import re
-
 import Mysql_Select
 import data_Mysql_Insert
-import data_Mysql_Update
+import Mysql_Update
+import Mysql_Insert
+import re
+import requests
 import delete
-
-
-async def recent_sessions_msg(Quer_Recent_Sessions):
-    name = Mysql_Select.get_recent_sessions_all(Quer_Recent_Sessions)
-    msg = get_recent_sessions(Quer_Recent_Sessions)
+#
+async def Select_Vehicles(Query_Vehicles: str) -> str:
+    name = Mysql_Select.get_db_vehicles_all(Query_Vehicles)
+    msg = vehicles(Query_Vehicles)
     if msg == '我们找不到您的统计信息，请确保您名称正确':
         if not name:
             return '\n' + msg + '\n' + '由于没有查询过最近战绩所以没有历史数据'
-        msg1 = get_db_recent_sessions(Quer_Recent_Sessions)
+        msg1 = get_db_vehicles(Query_Vehicles)
         return '\n' + msg + '\n' + '以下数据是历史数据仅供参考:' + '\n' + msg1
     elif msg == '近期未进行游戏,暂无最近战绩,若进行了游戏没有数据则是网站未更新':
         if not name:
             return '\n' + msg + '\n' + '由于没有查询过最近战绩所以没有历史数据'
-        msg1 = get_db_recent_sessions(Quer_Recent_Sessions)
+        msg1 = get_db_vehicles(Query_Vehicles)
         return '\n' + msg + '\n' + '以下数据是历史数据仅供参考:' + '\n' + msg1
     elif msg == '尝试更新统计信息时发生错误,简而言之就是网站挂了,具体啥时间恢复我也不知道':
         if not name:
             return '\n' + msg + '\n' + '由于没有查询过最近战绩所以没有历史数据'
-        msg1 = get_db_recent_sessions(Quer_Recent_Sessions)
+        msg1 = get_db_vehicles(Query_Vehicles)
         return '\n' + msg + '\n' + '以下数据是历史数据仅供参考:' + '\n' + msg1
     elif msg == '很抱歉,在执行您的要求时发生了一个错误,错误报告已提交给管理员,他们将立即修复该错误!,简而言之也是服务器挂了的一种,恢复时间俺也不知道':
         if not name:
             return '\n' + msg + '\n' + '由于没有查询过最近战绩所以没有历史数据'
-        msg1 = get_db_recent_sessions(Quer_Recent_Sessions)
+        msg1 = get_db_vehicles(Query_Vehicles)
         return '\n' + msg + '\n' + '以下数据是历史数据仅供参考:' + '\n' + msg1
     elif msg == '战绩网数据库维护,请稍后再试':
         if not name:
             return '\n' + msg + '\n' + '由于没有查询过最近战绩所以没有历史数据'
-        msg1 = get_db_recent_sessions(Quer_Recent_Sessions)
+        msg1 = get_db_vehicles(Query_Vehicles)
         return '\n' + msg + '\n' + '以下数据是历史数据仅供参考:' + '\n' + msg1
     elif msg == '网络问题,请稍后再试':
         if not name:
             return '\n' + msg + '\n' + '由于没有查询过最近战绩所以没有历史数据'
-        msg1 = get_db_recent_sessions(Quer_Recent_Sessions)
+        msg1 = get_db_vehicles(Query_Vehicles)
         return '\n' + msg + '\n' + '以下数据是历史数据仅供参考:' + '\n' + msg1
 
     if not name or len(name) < 3:
         if len(name) == 0:
-            data_Mysql_Insert.insert_recent_sessions_data(Quer_Recent_Sessions, msg)
-            msg = get_db_recent_sessions(Quer_Recent_Sessions)
+            insert_vehicles_data(Query_Vehicles, msg)
+            msg = get_db_vehicles(Query_Vehicles)
             return '\n' + msg
         else:
-            delete.delete_recent_sessions(Quer_Recent_Sessions)
-            data_Mysql_Insert.insert_recent_sessions_data(Quer_Recent_Sessions, msg)
-            msg = get_db_recent_sessions(Quer_Recent_Sessions)
-            return '\n'+msg
+            delete.delete_vehicles(Query_Vehicles)
+            insert_vehicles_data(Query_Vehicles, msg)
+            msg = get_db_vehicles(Query_Vehicles)
+            return '\n' + msg
     else:
-        data_Mysql_Update.update_recent_sessions_data(Quer_Recent_Sessions, msg)
-        msg = get_db_recent_sessions(Quer_Recent_Sessions)
-        return '\n'+msg
+        update_vehicles_data(Query_Vehicles, msg)
+        msg = get_db_vehicles(Query_Vehicles)
+        return '\n' + msg
 
 
-def get_recent_sessions(Quer_Recent_Sessions):
+
+def vehicles(name):
     try:
-        url = "https://battlefieldtracker.com/bf1/profile/pc/{}".format(Quer_Recent_Sessions)
+        url = f"https://battlefieldtracker.com/bf1/profile/pc/{name}/vehicles"
         headers = {
             "User-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
         }
+        # proxies = {
+        #     'http': 'username:password@222.89.32.173:9999'
+        # }
         response = requests.get(url, headers=headers, timeout=60)
         html = response.content.decode("utf-8")
     except:
@@ -80,44 +83,79 @@ def get_recent_sessions(Quer_Recent_Sessions):
     elif msg4 == '战绩网数据库维护,请稍后再试':
         return msg4
     string2 = html.replace('\n', '').replace('\r', '').replace(' ', '')
-    # 游玩的日期
-    patt = '<spandata-livestamp="(.*?)T'
-    game_play_time = re.findall(string=string2, pattern=patt)
-    if not game_play_time:
-        return '近期未进行游戏,暂无最近战绩,若进行了游戏没有数据则是网站未更新'
-    # spm
-    patt = '<divclass="session-stats">.*?<div>(.*?)</div>'
-    spm = re.findall(string=string2, pattern=patt)
-    # spm
-    patt = 'Score/Min</div>.*?<div>(.*?)</div><divstyle="min-height:10px;">'
-    kd = re.findall(string=string2, pattern=patt)
+    # 名字
+    patt = '<trclass=""><tdclass="details"><divclass="title">(.*?)<ahref="'
+    vehicles_name_list = re.findall(pattern=patt, string=string2)
+    # 载具击杀
+    patt2 = '</a></div></td><tdclass="statdetailed"><divclass="value">(.*?)</div><divclass="rank">'
+    vehicles_kills_all_list = re.findall(pattern=patt2, string=string2)
+    vehicles_kills_list = vehicles_kills_all_list[0:3]
     # kpm
-    patt = 'K/DRatio</div>.*?<div>(.*?)</div><divstyle='
-    kpm = re.findall(string=string2, pattern=patt)
-    # 游戏时间
-    patt = '9b">GameScore</div>.*?<div>(.*?)</div><divstyle='
-    game_time = re.findall(string=string2, pattern=patt)
-    return game_play_time, spm, kd, kpm, game_time
+    patt3 = '</div></div></div></div></td><tdclass="statdetailed"><divclass="value">(.*?)</div><divclass="rank">'
+    vehicles_kpm_all_list = re.findall(pattern=patt3, string=string2)
+    vehicles_kpm_list = vehicles_kpm_all_list[0:3]
+    # 击毁
+    patt4 = '"></div></div></div></div></td><tdclass="stat">(.*?)</td>'
+    vehicles_destroyed_all_list = re.findall(pattern=patt4, string=string2)
+    vehicles_destroyed_list = vehicles_destroyed_all_list[0:3]
+    # 时间
+    patt5 = '\d</td><tdclass="stat">(.*?)</td></tr>'
+    vehicles_time_all_list = re.findall(pattern=patt5, string=string2)
+    vehicles_time_list = vehicles_time_all_list[0:3]
+    return vehicles_name_list, vehicles_kills_list, vehicles_kpm_list, vehicles_destroyed_list, vehicles_time_list
 
-
-
-def get_db_recent_sessions(name):
-    msg = Mysql_Select.get_recent_sessions_all(name)
+def get_db_vehicles(name):
+    msg = Mysql_Select.get_db_vehicles_all(name)
     string2 = ""
     for m in msg:
-        spm = m['spm']
-        kd = m['kd']
-        kpm = m['kpm']
-        game_play_time = m['game_play_time']
-        game_time = m['game_time']
-        string2 +=f"""玩耍日期:{game_play_time}
-每分钟干多少分:{spm}
-干与被干比:{kd}
-每分钟干几个:{kpm}
-玩耍时间:{game_time}
-*=============*
+        vehicles_name = m['vehicles_name']
+        vehicles_kills = m['vehicles_kills']
+        vehicles_kpm = m['vehicles_kpm']
+        vehicles_destroyed = m['vehicles_destroyed']
+        vehicles_time = m['vehicles_time']
+        string2 += \
+f"""载具名称:{vehicles_name}
+击毙:{vehicles_kills}
+KPM:{vehicles_kpm}
+击毁载具:{vehicles_destroyed}
+使用时间:{vehicles_time}
+===============
 """
     return string2
+
+def insert_vehicles_data(name, msg):
+    vehicles_name_list = msg[0]
+    vehicles_kills_list = msg[1]
+    vehicles_kpm_list = msg[2]
+    vehicles_destroyed_list = msg[3]
+    vehicles_time_list = msg[4]
+    for vehicles_name, vehicles_kills, vehicles_kpm_list, vehicles_destroyed, vehicles_time_list in zip(
+            vehicles_name_list, vehicles_kills_list, vehicles_kpm_list, vehicles_destroyed_list,
+            vehicles_time_list):
+        map_dict = {'ASSAULTTANK': '圣沙蒙', 'ASSAULTTRUCK': '菊花车', 'AttackPlane': '攻击机', 'Horse': '马',
+                    'Landship': '巡航坦克', 'HEAVYBOMBER': '重型轰炸机', 'LightTank': '轻型坦克', 'HeavyTank': '重型坦克',
+                     'StationaryWeapon': '固定武器', 'ArtilleryTruck': '火炮车', 'Behemoth': '巨兽', 'Bomber': '轰炸机'
+                      , 'Boat': '船', 'Fighter': '战斗机'}
+        Mysql_Insert.insert_vehicles_info(
+                name, map_dict[vehicles_name], vehicles_kills, vehicles_kpm_list, vehicles_destroyed, vehicles_time_list)
+
+
+def update_vehicles_data(name, msg):
+    id_tuple = Mysql_Select.get_vehicles_name(name)
+    vehicles_name_list = msg[0]
+    vehicles_kills_list = msg[1]
+    vehicles_kpm_list = msg[2]
+    vehicles_destroyed_list = msg[3]
+    vehicles_time_list = msg[4]
+    for id, vehicles_name, vehicles_kills, vehicles_kpm_list, vehicles_destroyed, vehicles_time_list in zip(
+            id_tuple, vehicles_name_list, vehicles_kills_list, vehicles_kpm_list, vehicles_destroyed_list,
+            vehicles_time_list):
+            map_dict = {'ASSAULTTANK': '圣沙蒙', 'ASSAULTTRUCK': '菊花车', 'AttackPlane': '攻击机', 'Horse': '马',
+                    'Landship': '巡航坦克', 'HEAVYBOMBER': '重型轰炸机', 'LightTank': '轻型坦克', 'HeavyTank': '重型坦克',
+                    'StationaryWeapon': '固定武器', 'ArtilleryTruck': '火炮车', 'Behemoth': '巨兽', 'Bomber': '轰炸机'
+            , 'Boat': '船', 'Fighter': '战斗机'}
+            Mysql_Update.update_vehicles_info(
+                name, id[0], map_dict[vehicles_name], vehicles_kills, vehicles_kpm_list, vehicles_destroyed, vehicles_time_list)
 
 
 def error(html):
@@ -161,3 +199,6 @@ def error4(html):
     if error:
         print('战绩网数据库维护,请稍后再试')
         return '战绩网数据库维护,请稍后再试'
+
+
+

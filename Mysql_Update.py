@@ -238,6 +238,10 @@ def update_server(server_id, server_name, maplist, mode, prayers):
 
 
 def update_overview_info(name, rank, win_percent, kd, kpm, all_kills, head_shots_odds, accuracy_ratio, infantry_kd, infantry_kpm, vehicle_kills, vehicle_kpm):
+    """
+    更新战绩信息
+
+    """
     db = pymysql.connect(
         host="127.0.0.1",
         user="root",
@@ -249,6 +253,28 @@ def update_overview_info(name, rank, win_percent, kd, kpm, all_kills, head_shots
           SET rank = "{rank}", win_percent = "{win_percent}", kd = "{kd}", kpm = "{kpm}", all_kills = "{all_kills}", head_shots_odds = "{head_shots_odds}", accuracy_ratio = "{accuracy_ratio}", infantry_kd = "{infantry_kd}", infantry_kpm = "{infantry_kpm}", vehicle_kills = "{vehicle_kills}", vehicle_kpm = "{vehicle_kpm}"
           WHERE name = "{name}"
           '''
+    cursor.execute(sql)
+    db.commit()
+    cursor.close()
+    db.close()
+
+def update_vehicles_info(name, id, vehicles_name, vehicles_kills, vehicles_kpm, vehicles_destroyed, vehicles_time):
+    """
+    更新载具信息
+
+
+    """
+    db = pymysql.connect(
+        host="127.0.0.1",
+        user="root",
+        password="123456",
+        db="bf1")
+    cursor = db.cursor()
+    sql = '''
+          UPDATE `new_vehicles`
+          SET vehicles_name = "{}", vehicles_kills = "{}", vehicles_kpm = "{}", vehicles_destroyed = "{}", vehicles_time = "{}"
+          WHERE name = "{}" AND id = "{}"
+          '''.format(vehicles_name, vehicles_kills, vehicles_kpm, vehicles_destroyed, vehicles_time, name, id)
     cursor.execute(sql)
     db.commit()
     cursor.close()

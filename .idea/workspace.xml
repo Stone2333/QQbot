@@ -19,7 +19,17 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a15535c6-4cef-4568-97ff-fa9054a69501" name="Default Changelist" comment="战绩修改" />
+    <list default="true" id="a15535c6-4cef-4568-97ff-fa9054a69501" name="Default Changelist" comment="战绩修改">
+      <change afterPath="$PROJECT_DIR$/awesome/plugins/new_vehicles/Vehicles_data_source.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/awesome/plugins/new_vehicles/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mysql_Insert.py" beforeDir="false" afterPath="$PROJECT_DIR$/Mysql_Insert.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mysql_Select.py" beforeDir="false" afterPath="$PROJECT_DIR$/Mysql_Select.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mysql_Update.py" beforeDir="false" afterPath="$PROJECT_DIR$/Mysql_Update.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/awesome/plugins/new_recent_sessions/Recent_Sessions_data_source.py" beforeDir="false" afterPath="$PROJECT_DIR$/awesome/plugins/new_recent_sessions/Recent_Sessions_data_source.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_Mysql_Insert.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_Mysql_Insert.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/delete.py" beforeDir="false" afterPath="$PROJECT_DIR$/delete.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,7 +59,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/awesome/plugins" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -59,7 +69,7 @@
       <recent name="D:\QQbot\awesome\plugins\new" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Overview_data_source">
+  <component name="RunManager" selected="Python.Vehicles_data_source">
     <configuration name="DB" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="QQbot" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -126,7 +136,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test_select" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Recent_Sessions_data_source" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="QQbot" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -134,12 +144,34 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/awesome/plugins/new_recent_sessions" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_select.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/awesome/plugins/new_recent_sessions/Recent_Sessions_data_source.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Vehicles_data_source" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="QQbot" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/awesome/plugins/new_vehicles" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/awesome/plugins/new_vehicles/Vehicles_data_source.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -150,10 +182,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Vehicles_data_source" />
+        <item itemvalue="Python.Recent_Sessions_data_source" />
         <item itemvalue="Python.Overview_data_source" />
         <item itemvalue="Python.Mysql_Select" />
         <item itemvalue="Python.DB" />
-        <item itemvalue="Python.test_select" />
       </list>
     </recent_temporary>
   </component>
@@ -195,13 +228,8 @@
       <workItem from="1606105792101" duration="1364000" />
       <workItem from="1606133632119" duration="5790000" />
       <workItem from="1606148735632" duration="3538000" />
-    </task>
-    <task id="LOCAL-00057" summary="增加模块调用统计">
-      <created>1605018270895</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1605018270895</updated>
+      <workItem from="1606183711744" duration="4413000" />
+      <workItem from="1606219721086" duration="3561000" />
     </task>
     <task id="LOCAL-00058" summary="增加模块调用统计">
       <created>1605018294138</created>
@@ -539,7 +567,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606151665478</updated>
     </task>
-    <option name="localTasksCounter" value="106" />
+    <task id="LOCAL-00106" summary="战绩修改">
+      <created>1606183776841</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1606183776842</updated>
+    </task>
+    <option name="localTasksCounter" value="107" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -586,26 +621,26 @@
     <option name="LAST_COMMIT_MESSAGE" value="战绩修改" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1606133693631">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1606219744883">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1606133693631" />
-    <state width="1493" height="224" key="GridCell.Tab.0.bottom" timestamp="1606151032839">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1606219744883" />
+    <state width="1493" height="228" key="GridCell.Tab.0.bottom" timestamp="1606223421341">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="224" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606151032839" />
-    <state width="1493" height="224" key="GridCell.Tab.0.center" timestamp="1606151032839">
+    <state width="1493" height="228" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606223421341" />
+    <state width="1493" height="228" key="GridCell.Tab.0.center" timestamp="1606223421340">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="224" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1606151032839" />
-    <state width="1493" height="224" key="GridCell.Tab.0.left" timestamp="1606151032839">
+    <state width="1493" height="228" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1606223421340" />
+    <state width="1493" height="228" key="GridCell.Tab.0.left" timestamp="1606223421340">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="224" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1606151032839" />
-    <state width="1493" height="224" key="GridCell.Tab.0.right" timestamp="1606151032839">
+    <state width="1493" height="228" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1606223421340" />
+    <state width="1493" height="228" key="GridCell.Tab.0.right" timestamp="1606223421340">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="224" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1606151032839" />
+    <state width="1493" height="228" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1606223421340" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1605895764845">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -634,10 +669,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="270" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1604834879177" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1606151666777">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1606183778643">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1606151666777" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1606183778643" />
     <state x="563" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604837322756">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -649,7 +684,9 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/QQbot$Mysql_Select.coverage" NAME="Mysql_Select Coverage Results" MODIFIED="1605894501516" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/QQbot$Vehicles_data_source.coverage" NAME="Vehicles_data_source Coverage Results" MODIFIED="1606223421334" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/awesome/plugins/new_vehicles" />
     <SUITE FILE_PATH="coverage/QQbot$Overview_data_source.coverage" NAME="Overview_data_source Coverage Results" MODIFIED="1606150578765" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/awesome/plugins/new_overview" />
+    <SUITE FILE_PATH="coverage/QQbot$Recent_Sessions_data_source.coverage" NAME="Recent_Sessions_data_source Coverage Results" MODIFIED="1606221214575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/awesome/plugins/new_recent_sessions" />
     <SUITE FILE_PATH="coverage/QQbot$test_select.coverage" NAME="test_select Coverage Results" MODIFIED="1603692940695" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/QQbot$DB.coverage" NAME="DB Coverage Results" MODIFIED="1605285166092" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
