@@ -4,7 +4,7 @@ from .Vehicles_data_source import *
 import Mysql_Select, Mysql_Update, Mysql_Insert
 
 
-@on_command('new_vehicles', aliases=('.新载具', '新查载具'), only_to_me=False)
+@on_command('new_vehicles', aliases=('新载具', '新查载具'), only_to_me=False)
 async def new_vehicles(session: CommandSession):
     group_id = session.event['group_id']
     number = Mysql_Select.get_statistics_number(group_id, '载具')
