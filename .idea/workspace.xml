@@ -19,16 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a15535c6-4cef-4568-97ff-fa9054a69501" name="Default Changelist" comment="战绩修改">
-      <change afterPath="$PROJECT_DIR$/awesome/plugins/new_vehicles/Vehicles_data_source.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/awesome/plugins/new_vehicles/__init__.py" afterDir="false" />
+    <list default="true" id="a15535c6-4cef-4568-97ff-fa9054a69501" name="Default Changelist" comment="载具修改">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Mysql_Insert.py" beforeDir="false" afterPath="$PROJECT_DIR$/Mysql_Insert.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Mysql_Select.py" beforeDir="false" afterPath="$PROJECT_DIR$/Mysql_Select.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Mysql_Update.py" beforeDir="false" afterPath="$PROJECT_DIR$/Mysql_Update.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/awesome/plugins/new_overview/Overview_data_source.py" beforeDir="false" afterPath="$PROJECT_DIR$/awesome/plugins/new_overview/Overview_data_source.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/awesome/plugins/new_recent_sessions/Recent_Sessions_data_source.py" beforeDir="false" afterPath="$PROJECT_DIR$/awesome/plugins/new_recent_sessions/Recent_Sessions_data_source.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_Mysql_Insert.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_Mysql_Insert.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delete.py" beforeDir="false" afterPath="$PROJECT_DIR$/delete.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/awesome/plugins/new_servers/Servers_data_source.py" beforeDir="false" afterPath="$PROJECT_DIR$/awesome/plugins/new_servers/Servers_data_source.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/awesome/plugins/new_vehicles/Vehicles_data_source.py" beforeDir="false" afterPath="$PROJECT_DIR$/awesome/plugins/new_vehicles/Vehicles_data_source.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -229,21 +225,7 @@
       <workItem from="1606133632119" duration="5790000" />
       <workItem from="1606148735632" duration="3538000" />
       <workItem from="1606183711744" duration="4413000" />
-      <workItem from="1606219721086" duration="3561000" />
-    </task>
-    <task id="LOCAL-00058" summary="增加模块调用统计">
-      <created>1605018294138</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1605018294138</updated>
-    </task>
-    <task id="LOCAL-00059" summary="增加模块调用统计">
-      <created>1605018849734</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1605018849735</updated>
+      <workItem from="1606219721086" duration="5066000" />
     </task>
     <task id="LOCAL-00060" summary="增加模块调用统计">
       <created>1605086004671</created>
@@ -574,7 +556,21 @@
       <option name="project" value="LOCAL" />
       <updated>1606183776842</updated>
     </task>
-    <option name="localTasksCounter" value="107" />
+    <task id="LOCAL-00107" summary="载具修改">
+      <created>1606223548761</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1606223548762</updated>
+    </task>
+    <task id="LOCAL-00108" summary="载具修改">
+      <created>1606223965864</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1606223965864</updated>
+    </task>
+    <option name="localTasksCounter" value="109" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -593,7 +589,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="名称替换" />
     <MESSAGE value="正则" />
     <MESSAGE value="去除" />
     <MESSAGE value="去除空格" />
@@ -618,7 +613,8 @@
     <MESSAGE value="战绩" />
     <MESSAGE value="最近战绩文案修改" />
     <MESSAGE value="战绩修改" />
-    <option name="LAST_COMMIT_MESSAGE" value="战绩修改" />
+    <MESSAGE value="载具修改" />
+    <option name="LAST_COMMIT_MESSAGE" value="载具修改" />
   </component>
   <component name="WindowStateProjectService">
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1606219744883">
@@ -669,10 +665,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="270" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1604834879177" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1606183778643">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1606223966923">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1606183778643" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1606223966923" />
     <state x="563" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604837322756">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

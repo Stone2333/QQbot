@@ -11,32 +11,27 @@ async def Select_Vehicles(Query_Vehicles: str) -> str:
     msg = vehicles(Query_Vehicles)
     if msg == '我们找不到您的统计信息，请确保您名称正确':
         if not name:
-            return '\n' + msg + '\n' + '由于没有查询过最近战绩所以没有历史数据'
-        msg1 = get_db_vehicles(Query_Vehicles)
-        return '\n' + msg + '\n' + '以下数据是历史数据仅供参考:' + '\n' + msg1
-    elif msg == '近期未进行游戏,暂无最近战绩,若进行了游戏没有数据则是网站未更新':
-        if not name:
-            return '\n' + msg + '\n' + '由于没有查询过最近战绩所以没有历史数据'
+            return '\n' + msg + '\n' + '由于没有查询过载具所以没有历史数据'
         msg1 = get_db_vehicles(Query_Vehicles)
         return '\n' + msg + '\n' + '以下数据是历史数据仅供参考:' + '\n' + msg1
     elif msg == '尝试更新统计信息时发生错误,简而言之就是网站挂了,具体啥时间恢复我也不知道':
         if not name:
-            return '\n' + msg + '\n' + '由于没有查询过最近战绩所以没有历史数据'
+            return '\n' + msg + '\n' + '由于没有查询过载具所以没有历史数据'
         msg1 = get_db_vehicles(Query_Vehicles)
         return '\n' + msg + '\n' + '以下数据是历史数据仅供参考:' + '\n' + msg1
     elif msg == '很抱歉,在执行您的要求时发生了一个错误,错误报告已提交给管理员,他们将立即修复该错误!,简而言之也是服务器挂了的一种,恢复时间俺也不知道':
         if not name:
-            return '\n' + msg + '\n' + '由于没有查询过最近战绩所以没有历史数据'
+            return '\n' + msg + '\n' + '由于没有查询过载具所以没有历史数据'
         msg1 = get_db_vehicles(Query_Vehicles)
         return '\n' + msg + '\n' + '以下数据是历史数据仅供参考:' + '\n' + msg1
     elif msg == '战绩网数据库维护,请稍后再试':
         if not name:
-            return '\n' + msg + '\n' + '由于没有查询过最近战绩所以没有历史数据'
+            return '\n' + msg + '\n' + '由于没有查询过载具所以没有历史数据'
         msg1 = get_db_vehicles(Query_Vehicles)
         return '\n' + msg + '\n' + '以下数据是历史数据仅供参考:' + '\n' + msg1
     elif msg == '网络问题,请稍后再试':
         if not name:
-            return '\n' + msg + '\n' + '由于没有查询过最近战绩所以没有历史数据'
+            return '\n' + msg + '\n' + '由于没有查询过载具所以没有历史数据'
         msg1 = get_db_vehicles(Query_Vehicles)
         return '\n' + msg + '\n' + '以下数据是历史数据仅供参考:' + '\n' + msg1
 
@@ -66,7 +61,7 @@ def vehicles(name):
         # proxies = {
         #     'http': 'username:password@222.89.32.173:9999'
         # }
-        response = requests.get(url, headers=headers, timeout=60)
+        response = requests.get(url, headers=headers, timeout=15)
         html = response.content.decode("utf-8")
     except:
         return '网络问题,请稍后再试'

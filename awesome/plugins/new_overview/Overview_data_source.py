@@ -85,7 +85,7 @@ def overview(name):
         # proxies = {
         #     'http': 'username:password@125.123.122.178:9999',
         # }
-        response = requests.get(url_join, headers=headers, timeout=60)
+        response = requests.get(url_join, headers=headers, timeout=15)
         htmlContent = response.content.decode("utf-8")
     except:
         return '网络问题,请稍后再试'
