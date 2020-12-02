@@ -5,12 +5,15 @@ import Mysql_Select,Mysql_Update,Mysql_Insert
 
 @on_command('yijian', aliases=('.yijian', '意见'), only_to_me=False)
 async def yijian(session: CommandSession):
-    group_id = session.event['group_id']
-    number = Mysql_Select.get_statistics_number(group_id, '意见')
-    if number:
-        Mysql_Update.update_statistics_number(group_id, '意见')
-    else:
-        Mysql_Insert.insert_statistics_number(group_id, '意见')
+    try:
+        group_id = session.event['group_id']
+        number = Mysql_Select.get_statistics_number(group_id, '意见')
+        if number:
+            Mysql_Update.update_statistics_number(group_id, '意见')
+        else:
+            Mysql_Insert.insert_statistics_number(group_id, '意见')
+    except:
+        pass
     Yijian = session.get('Yijian', prompt='你想提的意见？')
     # prompt = "查询中稍等片刻"
     # await session.send(prompt)

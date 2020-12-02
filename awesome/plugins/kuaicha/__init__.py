@@ -5,14 +5,17 @@ import Mysql_Insert, Mysql_Update, Mysql_Select
 
 
 # 当用户输入关键字没有输入值时则提示
-@on_command('test', patterns=('^.最近$','^.武器$','^.载具$','^.战绩$','^帮助$','快速链接'), only_to_me=False)
-async def test(session: CommandSession):
-    group_id = session.event['group_id']
-    number = Mysql_Select.get_statistics_number(group_id, '快速查询')
-    if number:
-        Mysql_Update.update_statistics_number(group_id, '快速查询')
-    else:
-        Mysql_Insert.insert_statistics_number(group_id, '快速查询')
+@on_command('kuaicha', patterns=('^.最近$','^.武器$','^.载具$','^.战绩$','^帮助$','快速链接'), only_to_me=False)
+async def kuaicha(session: CommandSession):
+    try:
+        group_id = session.event['group_id']
+        number = Mysql_Select.get_statistics_number(group_id, '快速查询')
+        if number:
+            Mysql_Update.update_statistics_number(group_id, '快速查询')
+        else:
+            Mysql_Insert.insert_statistics_number(group_id, '快速查询')
+    except:
+        pass
     test1 = session.get('test1', prompt='你想？')
     qq = session.event['sender']['user_id']
     img = await get_img(qq, test1, session)
@@ -20,7 +23,7 @@ async def test(session: CommandSession):
 
 
 #  当用户输入关键字和值时直接运行
-@test.args_parser
+@kuaicha.args_parser
 async def _(session: CommandSession):
     stripped_arg = session.current_arg_text.strip()
 

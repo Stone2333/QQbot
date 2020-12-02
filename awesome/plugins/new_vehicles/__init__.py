@@ -4,14 +4,17 @@ from .Vehicles_data_source import *
 import Mysql_Select, Mysql_Update, Mysql_Insert
 
 
-@on_command('new_vehicles', aliases=('新载具', '新查载具'), only_to_me=False)
+@on_command('new_vehicles', aliases=('载具', '查载具'), only_to_me=False)
 async def new_vehicles(session: CommandSession):
-    group_id = session.event['group_id']
-    number = Mysql_Select.get_statistics_number(group_id, '载具')
-    if number:
-        Mysql_Update.update_statistics_number(group_id, '载具')
-    else:
-        Mysql_Insert.insert_statistics_number(group_id, '载具')
+    try:
+        group_id = session.event['group_id']
+        number = Mysql_Select.get_statistics_number(group_id, '载具')
+        if number:
+            Mysql_Update.update_statistics_number(group_id, '载具')
+        else:
+            Mysql_Insert.insert_statistics_number(group_id, '载具')
+    except:
+        pass
     Query_Vehicles = session.get('Query_Vehicles', prompt='你想查询载具的ID是多少？')
     prompt = "查询中稍等片刻"
     await session.send(prompt)

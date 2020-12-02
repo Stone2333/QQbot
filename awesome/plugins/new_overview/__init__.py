@@ -8,12 +8,15 @@ import Mysql_Select, Mysql_Update, Mysql_Insert
 # 当用户输入关键字没有输入值时则提示
 @on_command('new_overview', aliases=('战绩', '查战绩'), only_to_me=False)
 async def new_overview(session: CommandSession):
-    group_id = session.event['group_id']
-    number = Mysql_Select.get_statistics_number(group_id, '战绩')
-    if number:
-        Mysql_Update.update_statistics_number(group_id, '战绩')
-    else:
-        Mysql_Insert.insert_statistics_number(group_id, '战绩')
+    try:
+        group_id = session.event['group_id']
+        number = Mysql_Select.get_statistics_number(group_id, '战绩')
+        if number:
+            Mysql_Update.update_statistics_number(group_id, '战绩')
+        else:
+            Mysql_Insert.insert_statistics_number(group_id, '战绩')
+    except:
+        pass
     Query_Overview = session.get('Query_Overview', prompt='你想查询战绩的ID是多少？')
     prompt = "查询中请稍候"
     await session.send(prompt)

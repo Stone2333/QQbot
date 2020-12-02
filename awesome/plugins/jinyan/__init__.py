@@ -9,12 +9,15 @@ import Mysql_Select, Mysql_Insert, Mysql_Update
 @on_command('Jin', permission=0x0200, aliases=('禁言', 'jin'), only_to_me=False)
 async def Jin(session: CommandSession):
     bot = nonebot.get_bot()
-    group_id = session.event['group_id']
-    number = Mysql_Select.get_statistics_number(group_id, '禁言')
-    if number:
-        Mysql_Update.update_statistics_number(group_id, '禁言')
-    else:
-        Mysql_Insert.insert_statistics_number(group_id, '禁言')
+    try:
+        group_id = session.event['group_id']
+        number = Mysql_Select.get_statistics_number(group_id, '禁言')
+        if number:
+            Mysql_Update.update_statistics_number(group_id, '禁言')
+        else:
+            Mysql_Insert.insert_statistics_number(group_id, '禁言')
+    except:
+        pass
     msg = session.ctx["message"]
     patt = 'qq=(.*)]'
     b = re.findall(pattern=patt, string=str(msg))

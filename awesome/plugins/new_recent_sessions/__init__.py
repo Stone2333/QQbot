@@ -6,12 +6,15 @@ import Mysql_Insert, Mysql_Update, Mysql_Select
 
 @on_command('recent_sessions', aliases=('最近', '最近战绩', '查最近战绩'), only_to_me=False)
 async def recent_sessions(session: CommandSession):
-    group_id = session.event['group_id']
-    number = Mysql_Select.get_statistics_number(group_id, '最近战绩')
-    if number:
-        Mysql_Update.update_statistics_number(group_id, '最近战绩')
-    else:
-        Mysql_Insert.insert_statistics_number(group_id, '最近战绩')
+    try:
+        group_id = session.event['group_id']
+        number = Mysql_Select.get_statistics_number(group_id, '最近战绩')
+        if number:
+            Mysql_Update.update_statistics_number(group_id, '最近战绩')
+        else:
+            Mysql_Insert.insert_statistics_number(group_id, '最近战绩')
+    except:
+        pass
     quer_Recent_Sessions = session.get('quer_Recent_Sessions', prompt='你想查询最近战绩的ID是多少？')
     prompt = "查询中稍等片刻"
     await session.send(prompt)

@@ -6,12 +6,15 @@ import Mysql_Insert, Mysql_Update, Mysql_Select
 
 @on_command('Servers1', permission=0x0200, aliases=('.in', '.新增服务器'), only_to_me=False)
 async def Servers1(session: CommandSession):
-    group_id = session.event['group_id']
-    number = Mysql_Select.get_statistics_number(group_id, '新增服务器')
-    if number:
-        Mysql_Update.update_statistics_number(group_id, '新增服务器')
-    else:
-        Mysql_Insert.insert_statistics_number(group_id, '新增服务器')
+    try:
+        group_id = session.event['group_id']
+        number = Mysql_Select.get_statistics_number(group_id, '新增服务器')
+        if number:
+            Mysql_Update.update_statistics_number(group_id, '新增服务器')
+        else:
+            Mysql_Insert.insert_statistics_number(group_id, '新增服务器')
+    except:
+        pass
     Quer_Servers = session.get('Quer_Servers', prompt='你想查询服务器名称是多少？')
     Servers_report = await get_Servers(Quer_Servers)
     await session.send(Servers_report, at_sender=True)

@@ -7,12 +7,15 @@ import Mysql_Select, Mysql_Update, Mysql_Insert
 # 当用户输入关键字没有输入值时则提示
 @on_command('Login', aliases=('注册','注册ID'), only_to_me=False)
 async def Login(session: CommandSession):
-    group_id = session.event['group_id']
-    number = Mysql_Select.get_statistics_number(group_id, '注册')
-    if number:
-        Mysql_Update.update_statistics_number(group_id, '注册')
-    else:
-        Mysql_Insert.insert_statistics_number(group_id, '注册')
+    try:
+        group_id = session.event['group_id']
+        number = Mysql_Select.get_statistics_number(group_id, '注册')
+        if number:
+            Mysql_Update.update_statistics_number(group_id, '注册')
+        else:
+            Mysql_Insert.insert_statistics_number(group_id, '注册')
+    except:
+        pass
     Query_Login = session.get('Query_Login', prompt='你想注册ID是多少？')
     Login_report = await get_Login(Query_Login)
     await session.send(Login_report, at_sender=True)

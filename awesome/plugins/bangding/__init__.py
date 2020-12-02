@@ -6,12 +6,15 @@ import Mysql_Insert, Mysql_Update, Mysql_Select
 
 @on_command('bangding', aliases=('.bangding', '绑定'), only_to_me=False)
 async def bangding(session: CommandSession):
-    group_id = session.event['group_id']
-    number = Mysql_Select.get_statistics_number(group_id, '绑定')
-    if number:
-        Mysql_Update.update_statistics_number(group_id, '绑定')
-    else:
-        Mysql_Insert.insert_statistics_number(group_id, '绑定')
+    try:
+        group_id = session.event['group_id']
+        number = Mysql_Select.get_statistics_number(group_id, '绑定')
+        if number:
+            Mysql_Update.update_statistics_number(group_id, '绑定')
+        else:
+            Mysql_Insert.insert_statistics_number(group_id, '绑定')
+    except:
+        pass
     Bangding = session.get('Bangding', prompt='想要绑定的游戏ID？')
     # prompt = "查询中稍等片刻"
     # await session.send(prompt)
