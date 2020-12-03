@@ -6,7 +6,7 @@ import Mysql_Insert
 import requests
 import json
 
-def Select_Overview(Query_Overview: str) -> str:
+async def Select_Overview(Query_Overview: str) -> str:
     name = Mysql_Select.get_overview_name(Query_Overview)
     msg = overview(Query_Overview)
     if msg == '我们找不到您的统计信息，请确保您名称正确':
