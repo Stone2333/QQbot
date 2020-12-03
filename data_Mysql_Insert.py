@@ -1,5 +1,5 @@
 import requests
-from lxml import etree
+# from lxml import etree
 import re
 import Mysql_Insert
 

@@ -6,7 +6,7 @@ import Mysql_Insert
 import requests
 import json
 
-async def Select_Overview(Query_Overview: str) -> str:
+def Select_Overview(Query_Overview: str) -> str:
     name = Mysql_Select.get_overview_name(Query_Overview)
     msg = overview(Query_Overview)
     if msg == '我们找不到您的统计信息，请确保您名称正确':
@@ -109,12 +109,15 @@ def overview(name):
     all_kills1 = re.findall(pattern=patt7, string=string2)
     all_kills = all_kills1[0]
     int_all_kills = int(all_kills1[0].replace(',', ''))
+    print(int_all_kills)
     # 爆头击杀
     patt8 = 'data-stat="HeadShots">(.*?)</div>'
     head_shots_kills = re.findall(pattern=patt8, string=string2)
     int_head_shots_kills = int(head_shots_kills[0].replace(',', ''))
+    print(int_head_shots_kills)
     # 爆头率
-    head_shots_odds = round(int_head_shots_kills / int_all_kills, 1) * 100
+    head_shots_odds = float(int_head_shots_kills / int_all_kills) * float(100)
+    head_shots_odds = '%.2f' % head_shots_odds
 
     patt6 = "varcurrentStatsJson='(.*?)';trnDeltas."
     all = re.findall(pattern=patt6, string=string2)
@@ -207,3 +210,5 @@ kpm:{kpm}
 载具击毙:{vehicle_kills}
 载具kpm:{vehicle_kpm}"""
     return string2
+
+Select_Overview('BF_STONEGOGOGO')
