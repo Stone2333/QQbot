@@ -77,7 +77,6 @@ async def get_img(qq, Query_Login: str, session) -> str:
             await session.send(prompt)
             name = Mysql_Select.get_overview_name(relevance[0][0])
             msg = overview(relevance[0][0])
-            print(msg)
             if msg == '我们找不到您的统计信息，请确保您名称正确':
                 if not name:
                     return '\n' + msg + '\n' + '由于没有查询过战绩所以没有历史数据'
@@ -342,7 +341,8 @@ def overview(name):
     head_shots_kills = re.findall(pattern=patt8, string=string2)
     int_head_shots_kills = int(head_shots_kills[0].replace(',', ''))
     # 爆头率
-    head_shots_odds = round(int_all_kills / int_head_shots_kills, 1)
+    head_shots_odds = float(int_head_shots_kills / int_all_kills) * float(100)
+    head_shots_odds = '%.2f' % head_shots_odds
     patt6 = "varcurrentStatsJson='(.*?)';trnDeltas."
     all = re.findall(pattern=patt6, string=string2)
     all_list = json.loads(all[0])
