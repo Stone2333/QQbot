@@ -4,7 +4,7 @@ from .Recent_Sessions_data_source import *
 import Mysql_Insert, Mysql_Update, Mysql_Select
 
 
-@on_command('Recent_Sessions', aliases=('.旧最近'), only_to_me=False)
+@on_command('old_Recent_Sessions', aliases=('.旧最近'), only_to_me=False)
 async def Recent_Sessions(session: CommandSession):
     group_id = session.event['group_id']
     number = Mysql_Select.get_statistics_number(group_id, '旧最近战绩')

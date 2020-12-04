@@ -5,7 +5,7 @@ import Mysql_Insert, Mysql_Update, Mysql_Select
 
 
 
-@on_command('Weapons', aliases=('.旧武器', '.旧查武器'),only_to_me=False)
+@on_command('old_Weapons', aliases=('.旧武器', '.旧查武器'),only_to_me=False)
 async def Weapons(session: CommandSession):
     group_id = session.event['group_id']
     number = Mysql_Select.get_statistics_number(group_id, '武器')

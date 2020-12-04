@@ -5,7 +5,7 @@ import Mysql_Select, Mysql_Update, Mysql_Insert
 
 
 # 当用户输入关键字没有输入值时则提示
-@on_command('Login', aliases=('注册','注册ID'), only_to_me=False)
+@on_command('old_Login', aliases=('.旧注册', '.旧注册ID'), only_to_me=False)
 async def Login(session: CommandSession):
     try:
         group_id = session.event['group_id']

@@ -6,7 +6,7 @@ import Mysql_Select, Mysql_Update, Mysql_Insert
 
 
 # 当用户输入关键字没有输入值时则提示
-@on_command('Overview', aliases=('.旧战绩', '.旧查战绩'), only_to_me=False)
+@on_command('old_Overview', aliases=('.旧战绩', '.旧查战绩'), only_to_me=False)
 async def Overview(session: CommandSession):
     group_id = session.event['group_id']
     number = Mysql_Select.get_statistics_number(group_id, '战绩')

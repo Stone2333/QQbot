@@ -187,4 +187,3 @@ def update_weapons_data(name, msg):
             Mysql_Update.update_weapons(name, id[0], weapons_name, weapons_kills, weapons_kpm, weapons_accuracy, weapons_head_shots)
 
 
-Select_Weapons('bf_stonegogogo')
