@@ -19,23 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a15535c6-4cef-4568-97ff-fa9054a69501" name="Default Changelist" comment="武器查询方式修改">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesome/plugins/Login/Login_data_source.py" beforeDir="false" afterPath="$PROJECT_DIR$/awesome/plugins/old_Login/Login_data_source.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesome/plugins/Login/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/awesome/plugins/old_Login/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesome/plugins/Overview/Overview_data_source.py" beforeDir="false" afterPath="$PROJECT_DIR$/awesome/plugins/old_Overview/Overview_data_source.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesome/plugins/Overview/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/awesome/plugins/old_Overview/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesome/plugins/Recent_Sessions/Recent_Sessions_data_source.py" beforeDir="false" afterPath="$PROJECT_DIR$/awesome/plugins/old_Recent_Sessions/Recent_Sessions_data_source.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesome/plugins/Recent_Sessions/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/awesome/plugins/old_Recent_Sessions/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesome/plugins/Servers/Servers_data_source.py" beforeDir="false" afterPath="$PROJECT_DIR$/awesome/plugins/old_Servers/Servers_data_source.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesome/plugins/Servers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/awesome/plugins/old_Servers/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesome/plugins/Vehicles/Vehicles_data_source.py" beforeDir="false" afterPath="$PROJECT_DIR$/awesome/plugins/old_Vehicles/Vehicles_data_source.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesome/plugins/Vehicles/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/awesome/plugins/old_Vehicles/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesome/plugins/Weapons/Weapons_data_source.py" beforeDir="false" afterPath="$PROJECT_DIR$/awesome/plugins/old_Weapons/Weapons_data_source.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesome/plugins/Weapons/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/awesome/plugins/old_Weapons/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesome/plugins/kuaicha/Login_data_source.py" beforeDir="false" afterPath="$PROJECT_DIR$/awesome/plugins/kuaicha/Login_data_source.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesome/plugins/new_weapons/Weapons_data_source.py" beforeDir="false" afterPath="$PROJECT_DIR$/awesome/plugins/new_weapons/Weapons_data_source.py" afterDir="false" />
-    </list>
+    <list default="true" id="a15535c6-4cef-4568-97ff-fa9054a69501" name="Default Changelist" comment="屏蔽旧模块" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -248,14 +232,7 @@
       <workItem from="1606920375254" duration="1146000" />
       <workItem from="1606988812498" duration="801000" />
       <workItem from="1607011443473" duration="706000" />
-      <workItem from="1607051254619" duration="4173000" />
-    </task>
-    <task id="LOCAL-00070" summary="修改最近战绩逻辑,最近战绩">
-      <created>1605603774288</created>
-      <option name="number" value="00070" />
-      <option name="presentableId" value="LOCAL-00070" />
-      <option name="project" value="LOCAL" />
-      <updated>1605603774288</updated>
+      <workItem from="1607051254619" duration="4477000" />
     </task>
     <task id="LOCAL-00071" summary="服务器新查询">
       <created>1605892318473</created>
@@ -593,7 +570,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607072322500</updated>
     </task>
-    <option name="localTasksCounter" value="119" />
+    <task id="LOCAL-00119" summary="屏蔽旧模块">
+      <created>1607073412848</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1607073412848</updated>
+    </task>
+    <option name="localTasksCounter" value="120" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -612,7 +596,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="帮助" />
     <MESSAGE value="去除自带帮助" />
     <MESSAGE value="找回疫情查询模块" />
     <MESSAGE value="语言测试" />
@@ -637,7 +620,8 @@
     <MESSAGE value="修正私聊报错问题" />
     <MESSAGE value="修正爆头率计算错误" />
     <MESSAGE value="武器查询方式修改" />
-    <option name="LAST_COMMIT_MESSAGE" value="武器查询方式修改" />
+    <MESSAGE value="屏蔽旧模块" />
+    <option name="LAST_COMMIT_MESSAGE" value="屏蔽旧模块" />
   </component>
   <component name="WindowStateProjectService">
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1606398817106">
@@ -688,10 +672,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="270" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1604834879177" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1607072323987">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1607073414081">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1607072323987" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1607073414081" />
     <state x="563" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604837322756">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
