@@ -5,14 +5,17 @@ import Mysql_Insert, Mysql_Update, Mysql_Select
 
 
 
-@on_command('Weapons', aliases=('.旧武器', '.旧查武器'),only_to_me=False)
-async def Weapons(session: CommandSession):
-    group_id = session.event['group_id']
-    number = Mysql_Select.get_statistics_number(group_id, '武器')
-    if number:
-        Mysql_Update.update_statistics_number(group_id, '武器')
-    else:
-        Mysql_Insert.insert_statistics_number(group_id, '武器')
+@on_command('new_weapons', aliases=('武器', '查武器'),only_to_me=False)
+async def new_weapons(session: CommandSession):
+    try:
+        group_id = session.event['group_id']
+        number = Mysql_Select.get_statistics_number(group_id, '武器')
+        if number:
+            Mysql_Update.update_statistics_number(group_id, '武器')
+        else:
+            Mysql_Insert.insert_statistics_number(group_id, '武器')
+    except:
+        pass
     Query_Weapons = session.get('Query_Weapons', prompt='你想查询武器的ID是多少？')
     prompt = "查询中请稍候"
     await session.send(prompt)
@@ -20,7 +23,7 @@ async def Weapons(session: CommandSession):
     await session.send(Weapons_report, at_sender=True)
 
 
-@Weapons.args_parser
+@new_weapons.args_parser
 async def _(session: CommandSession):
     stripped_arg = session.current_arg_text.strip()
     if session.is_first_run:

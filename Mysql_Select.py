@@ -502,7 +502,52 @@ def get_vehicles_name(name):
     db.close()
     return server_id
 
+def get_weapons_all(name):
+    """
+    获取所有武器信息
 
+    """
+    db = pymysql.connect(
+        host="127.0.0.1",
+        user="root",
+        password="123456",
+        db="bf1",
+        cursorclass=pymysql.cursors.DictCursor)
+    cursor = db.cursor()
+    sql = f'''
+              SELECT weapons_name, weapons_kills, weapons_kpm, weapons_accuracy, weapons_head_shots_odds
+              FROM `new_weapons`
+              WHERE name = "{name}"
+              '''
+    cursor.execute(sql)
+    db.commit()
+    server_info = cursor.fetchall()
+    cursor.close()
+    db.close()
+    return server_info
+
+
+def get_weapons_id(name):
+    """
+    获取武器id
+    """
+    db = pymysql.connect(
+        host="127.0.0.1",
+        user="root",
+        password="123456",
+        db="bf1")
+    cursor = db.cursor()
+    sql = '''
+          SELECT id
+          FROM `new_weapons`
+          WHERE name = "{}"
+          '''.format(name)
+    cursor.execute(sql)
+    db.commit()
+    Recent_Sessions_content = cursor.fetchall()
+    cursor.close()
+    db.close()
+    return Recent_Sessions_content
 
 if __name__ == "__main__":
     # Select_Server("koi")

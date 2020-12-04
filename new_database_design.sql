@@ -4,16 +4,17 @@ CREATE TABLE `user` (
 `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 PRIMARY KEY (`id`, `name`)
 );
-CREATE TABLE `weapons` (
-`name` char(20) NOT NULL COMMENT '游戏ID',
-`weapons_name` char(20) NOT NULL COMMENT '武器名称',
-`weapons_kills` char(10) NULL COMMENT '武器击杀数',
-`weapons_kpm` char(5) NULL COMMENT '武器每分钟击杀数',
-`weapons_accuracy` char(5) NULL COMMENT '武器准度',
-`weapons_headshots` char(7) NULL COMMENT '武器爆头数',
-`update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-PRIMARY KEY (`name`, `weapons_name`)
-);
+CREATE TABLE `new_weapons`  (
+  `id` int(10) NOT NULL AUTO_INCREMENT COMMENT '自增ID',
+  `name` char(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '游戏ID',
+  `weapons_name` char(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '武器名称',
+  `weapons_kills` char(10) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '武器击杀数',
+  `weapons_kpm` char(5) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '武器每分钟击杀数',
+  `weapons_accuracy` char(5) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '武器准度',
+  `weapons_head_shots_odds` char(7) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '武器爆头率',
+  `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+)
 CREATE TABLE `recent_sesions` (
 `id` int(10) NOT NULL AUTO_INCREMENT COMMENT '自增ID',
 `name` char(20) NOT NULL COMMENT '游戏ID',

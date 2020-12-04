@@ -20,9 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a15535c6-4cef-4568-97ff-fa9054a69501" name="Default Changelist" comment="修正爆头率计算错误">
+      <change afterPath="$PROJECT_DIR$/awesome/plugins/new_weapons/Weapons_data_source.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/awesome/plugins/new_weapons/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesome/plugins/new_overview/Overview_data_source.py" beforeDir="false" afterPath="$PROJECT_DIR$/awesome/plugins/new_overview/Overview_data_source.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_Mysql_Insert.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_Mysql_Insert.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mysql_Insert.py" beforeDir="false" afterPath="$PROJECT_DIR$/Mysql_Insert.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mysql_Select.py" beforeDir="false" afterPath="$PROJECT_DIR$/Mysql_Select.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mysql_Update.py" beforeDir="false" afterPath="$PROJECT_DIR$/Mysql_Update.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/delete.py" beforeDir="false" afterPath="$PROJECT_DIR$/delete.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +57,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/awesome/plugins" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -63,29 +67,7 @@
       <recent name="D:\QQbot\awesome\plugins\new" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Overview_data_source">
-    <configuration name="DB" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="QQbot" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DB.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.Weapons_data_source">
     <configuration name="Mysql_Select" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="QQbot" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -174,13 +156,35 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Weapons_data_source" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="QQbot" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/awesome/plugins/new_weapons" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/awesome/plugins/new_weapons/Weapons_data_source.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Weapons_data_source" />
         <item itemvalue="Python.Overview_data_source" />
         <item itemvalue="Python.Vehicles_data_source" />
         <item itemvalue="Python.Recent_Sessions_data_source" />
         <item itemvalue="Python.Mysql_Select" />
-        <item itemvalue="Python.DB" />
       </list>
     </recent_temporary>
   </component>
@@ -235,28 +239,8 @@
       <workItem from="1606668610092" duration="603000" />
       <workItem from="1606920375254" duration="1146000" />
       <workItem from="1606988812498" duration="801000" />
-      <workItem from="1607011443473" duration="301000" />
-    </task>
-    <task id="LOCAL-00066" summary="修改最近战绩逻辑">
-      <created>1605602897926</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1605602897926</updated>
-    </task>
-    <task id="LOCAL-00067" summary="修改最近战绩逻辑">
-      <created>1605603078730</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1605603078730</updated>
-    </task>
-    <task id="LOCAL-00068" summary="修改最近战绩逻辑">
-      <created>1605603134335</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1605603134335</updated>
+      <workItem from="1607011443473" duration="706000" />
+      <workItem from="1607051254619" duration="2825000" />
     </task>
     <task id="LOCAL-00069" summary="修改最近战绩逻辑,最近战绩">
       <created>1605603455405</created>
@@ -580,7 +564,28 @@
       <option name="project" value="LOCAL" />
       <updated>1606989212990</updated>
     </task>
-    <option name="localTasksCounter" value="115" />
+    <task id="LOCAL-00115" summary="修正爆头率计算错误">
+      <created>1607011779600</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1607011779605</updated>
+    </task>
+    <task id="LOCAL-00116" summary="修正爆头率计算错误">
+      <created>1607011959731</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1607011959731</updated>
+    </task>
+    <task id="LOCAL-00117" summary="修正爆头率计算错误">
+      <created>1607012002249</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1607012002249</updated>
+    </task>
+    <option name="localTasksCounter" value="118" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -694,6 +699,7 @@
     <SUITE FILE_PATH="coverage/QQbot$Overview_data_source.coverage" NAME="Overview_data_source Coverage Results" MODIFIED="1607011756855" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/awesome/plugins/new_overview" />
     <SUITE FILE_PATH="coverage/QQbot$Recent_Sessions_data_source.coverage" NAME="Recent_Sessions_data_source Coverage Results" MODIFIED="1606221214575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/awesome/plugins/new_recent_sessions" />
     <SUITE FILE_PATH="coverage/QQbot$test_select.coverage" NAME="test_select Coverage Results" MODIFIED="1603692940695" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/QQbot$Weapons_data_source.coverage" NAME="Weapons_data_source Coverage Results" MODIFIED="1607072210174" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/awesome/plugins/new_weapons" />
     <SUITE FILE_PATH="coverage/QQbot$DB.coverage" NAME="DB Coverage Results" MODIFIED="1605285166092" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

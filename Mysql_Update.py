@@ -279,6 +279,24 @@ def update_vehicles_info(name, id, vehicles_name, vehicles_kills, vehicles_kpm, 
     db.commit()
     cursor.close()
     db.close()
+
+
+def update_weapons(name, id, weapons_name, weapons_kills, weapons_kpm, weapons_accuracy, weapons_head_shots_odds):
+    db = pymysql.connect(
+        host="127.0.0.1",
+        user="root",
+        password="123456",
+        db="bf1")
+    cursor = db.cursor()
+    sql = '''
+          UPDATE `new_weapons`
+          SET weapons_name = "{}", weapons_kills = "{}", weapons_kpm = "{}", weapons_accuracy = "{}", weapons_head_shots_odds = "{}"
+          WHERE name = "{}" AND id = "{}"
+          '''.format(weapons_name, weapons_kills, weapons_kpm, weapons_accuracy, weapons_head_shots_odds, name, id)
+    cursor.execute(sql)
+    db.commit()
+    cursor.close()
+    db.close()
 #
 # if __name__ == '__main__':
 #     Update_User('bf_stonegogogo')

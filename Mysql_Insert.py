@@ -308,3 +308,23 @@ def insert_vehicles_info(name, vehicles_name, vehicles_kills, vehicles_kpm, vehi
     db.commit()
     cursor.close()
     db.close()
+
+
+def insert_weapon(name, weapons_name, weapons_kills, weapons_kpm, weapons_accuracy, weapons_head_shots_odds):
+    """
+    插入武器信息
+    """
+    db = pymysql.connect(
+        host="127.0.0.1",
+        user="root",
+        password="123456",
+        db="bf1")
+    cursor = db.cursor()
+    sql = f'''
+          INSERT INTO `new_weapons` (name, weapons_name, weapons_kills, weapons_kpm, weapons_accuracy, weapons_head_shots_odds)
+          VALUES ("{name}","{weapons_name}","{weapons_kills}","{weapons_kpm}","{weapons_accuracy}","{weapons_head_shots_odds}")
+          '''
+    cursor.execute(sql)
+    db.commit()
+    cursor.close()
+    db.close()
