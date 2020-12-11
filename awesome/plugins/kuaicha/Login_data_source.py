@@ -556,7 +556,7 @@ spm:{spm}
 kd:{kd}
 kpm:{kpm}
 play_time:{game_time}
-===============
+**===============**
 """
     return string2
 
