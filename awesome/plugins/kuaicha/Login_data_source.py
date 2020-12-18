@@ -247,7 +247,7 @@ def weapons(name):
         headers = {
             "User-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
         }
-        response = requests.get(url, headers=headers, timeout=15)
+        response = requests.get(url, headers=headers, timeout=10)
         html = response.content.decode("utf-8")
     except:
         return '网络问题,请稍后再试'
@@ -337,11 +337,14 @@ def update_weapons_data(name, msg):
 
 def get_recent_sessions(Quer_Recent_Sessions):
     url = "https://battlefieldtracker.com/bf1/profile/pc/{}".format(Quer_Recent_Sessions)
-    headers = {
-        "User-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
-    }
-    response = requests.get(url, headers=headers, timeout=60)
-    html = response.content.decode("utf-8")
+    try:
+        headers = {
+            "User-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
+        }
+        response = requests.get(url, headers=headers, timeout=10)
+        html = response.content.decode("utf-8")
+    except:
+        return '网络问题,请稍后再试'
     msg = error(html)
     msg2 = error2(html)
     msg3 = error3(html)
@@ -391,7 +394,7 @@ def overview(name):
         # proxies = {
         #     'http': 'username:password@125.123.122.178:9999',
         # }
-        response = requests.get(url_join, headers=headers, timeout=15)
+        response = requests.get(url_join, headers=headers, timeout=10)
         htmlContent = response.content.decode("utf-8")
     except:
         return '网络问题,请稍后再试'
@@ -453,7 +456,7 @@ def vehicles(name):
         # proxies = {
         #     'http': 'username:password@222.89.32.173:9999'
         # }
-        response = requests.get(url, headers=headers, timeout=15)
+        response = requests.get(url, headers=headers, timeout=10)
         html = response.content.decode("utf-8")
     except:
         return '网络问题,请稍后再试'

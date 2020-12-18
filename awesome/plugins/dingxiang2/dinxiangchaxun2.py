@@ -26,12 +26,15 @@ async def dingxiang(address):
 
 # 获取网页数据
 def getData() -> str:
-    headers = {
-        "User-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
-    }
-    res = requests.get("https://3g.dxy.cn/newh5/view/pneumonia", headers=headers)
-    content = res.content.decode(encoding="utf-8", errors="error")
-    return content
+    try:
+        headers = {
+            "User-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
+        }
+        res = requests.get("https://3g.dxy.cn/newh5/view/pneumonia", headers=headers, timeout=15)
+        content = res.content.decode(encoding="utf-8", errors="error",)
+        return content
+    except:
+        return '网络问题请稍后重试'
 
 
 # 根据地方查询

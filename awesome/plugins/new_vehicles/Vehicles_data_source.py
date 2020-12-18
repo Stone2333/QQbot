@@ -61,7 +61,7 @@ def vehicles(name):
         # proxies = {
         #     'http': 'username:password@222.89.32.173:9999'
         # }
-        response = requests.get(url, headers=headers, timeout=15)
+        response = requests.get(url, headers=headers, timeout=10)
         html = response.content.decode("utf-8")
     except:
         return '网络问题,请稍后再试'
