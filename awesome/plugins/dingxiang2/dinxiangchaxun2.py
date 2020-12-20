@@ -1,6 +1,5 @@
 import re
 import requests
-from lxml import etree
 import time
 
 # *-* coding:utf8 *-*

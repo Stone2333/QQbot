@@ -6,7 +6,7 @@ import requests
 import delete
 
 
-async def Select_Weapons(Test_Query_Weapons: str) -> str:
+def Select_Weapons(Test_Query_Weapons: str) -> str:
     name = Mysql_Select.get_weapons_all(Test_Query_Weapons)
     msg = weapons(Test_Query_Weapons)
     if msg == '我们找不到您的统计信息，请确保您名称正确':
@@ -50,7 +50,7 @@ async def Select_Weapons(Test_Query_Weapons: str) -> str:
         msg = get_db_weapons(Test_Query_Weapons)
         return '\n' + msg
 
-
+# Select_Weapons('ziyou_nahan')
 def weapons(name):
     try:
         url = "https://battlefieldtracker.com/bf1/profile/pc/{}/weapons".format(name)
@@ -94,6 +94,7 @@ def weapons(name):
     return weapon_name, weapon_kills, kpm, accuracy, head_shots
 
 
+
 def get_db_weapons(name):
     msg = Mysql_Select.get_weapons_all(name)
     string2 = ""
@@ -121,6 +122,7 @@ def error(html):
         print("我们找不到您的统计信息，请确保您名称正确")
         return "我们找不到您的统计信息，请确保您名称正确"
     else:
+        print(error)
         pass
 
 
@@ -188,3 +190,5 @@ def update_weapons_data(name, msg):
         Mysql_Update.update_weapons(name, id[0], weapons_name, weapons_kills, weapons_kpm, weapons_accuracy, head_shot)
 
 
+c = weapons('ziyou_nahan')
+print(c)

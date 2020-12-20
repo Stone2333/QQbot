@@ -210,5 +210,3 @@ kpm:{kpm}
 载具击毙:{vehicle_kills}
 载具kpm:{vehicle_kpm}"""
     return string2
-
-Select_Overview('BF_STONEGOGOGO')
