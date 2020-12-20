@@ -6,7 +6,7 @@ import requests
 import delete
 
 
-def Select_Weapons(Test_Query_Weapons: str) -> str:
+async def Select_Weapons(Test_Query_Weapons: str) -> str:
     name = Mysql_Select.get_weapons_all(Test_Query_Weapons)
     msg = weapons(Test_Query_Weapons)
     if msg == '我们找不到您的统计信息，请确保您名称正确':
