@@ -6,7 +6,7 @@ import requests
 import delete
 
 
-async def Select_Weapons(Test_Query_Weapons: str) -> str:
+def Select_Weapons(Test_Query_Weapons: str) -> str:
     name = Mysql_Select.get_weapons_all(Test_Query_Weapons)
     msg = weapons(Test_Query_Weapons)
     if msg == '我们找不到您的统计信息，请确保您名称正确':
@@ -186,10 +186,9 @@ def update_weapons_data(name, msg):
                                                                                               weapons_kpm,
                                                                                               weapons_accuracy,
                                                                                               weapons_head_shots_odds):
+        weapons_head_shots = weapons_head_shots.replace(',', '')
         head_shot = float(weapons_head_shots) / float(weapons_kills) * 100
         head_shot = '%.2f' % head_shot
         Mysql_Update.update_weapons(name, id[0], weapons_name, weapons_kills, weapons_kpm, weapons_accuracy, head_shot)
 
 
-
-print(Select_Weapons('aiiwey'))
