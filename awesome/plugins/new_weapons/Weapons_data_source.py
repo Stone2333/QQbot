@@ -167,6 +167,7 @@ def insert_weapons_data(name, msg):
     for weapons_name, weapons_kills, weapons_kpm, weapons_accuracy, weapons_head_shots in zip(weapons_name, weapons_kills,
                                                                                               weapons_kpm, weapons_accuracy,
                                                                                               weapons_head_shots_odds):
+        weapons_head_shots = weapons_head_shots.replace(',', '')
         head_shot = float(weapons_head_shots) / float(weapons_kills) * 100
         head_shot = '%.2f' % head_shot
         Mysql_Insert.insert_weapon(name, weapons_name, weapons_kills, weapons_kpm, weapons_accuracy, head_shot)
@@ -190,5 +191,5 @@ def update_weapons_data(name, msg):
         Mysql_Update.update_weapons(name, id[0], weapons_name, weapons_kills, weapons_kpm, weapons_accuracy, head_shot)
 
 
-c = weapons('ziyou_nahan')
-print(c)
+
+print(Select_Weapons('aiiwey'))
