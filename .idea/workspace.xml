@@ -4,10 +4,6 @@
     <expand>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
       </path>
       <path>
@@ -26,9 +22,10 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a15535c6-4cef-4568-97ff-fa9054a69501" name="Default Changelist" comment="修改武器错误">
+    <list default="true" id="a15535c6-4cef-4568-97ff-fa9054a69501" name="Default Changelist" comment="唯一码获取方式">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/awesome/plugins/new_servers/Servers_data_source.py" beforeDir="false" afterPath="$PROJECT_DIR$/awesome/plugins/new_servers/Servers_data_source.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/awesome/plugins/kuaicha/Login_data_source.py" beforeDir="false" afterPath="$PROJECT_DIR$/awesome/plugins/kuaicha/Login_data_source.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/awesome/plugins/kuaicha/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/awesome/plugins/kuaicha/__init__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,28 +67,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Python.Weapons_data_source">
-    <configuration name="Mysql_Select" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="QQbot" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Mysql_Select.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="Overview_data_source" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="QQbot" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -180,13 +155,35 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="scheduler" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="QQbot" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/awesome/plugins" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/awesome/plugins/scheduler.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.Weapons_data_source" />
+        <item itemvalue="Python.scheduler" />
         <item itemvalue="Python.Overview_data_source" />
         <item itemvalue="Python.Vehicles_data_source" />
         <item itemvalue="Python.Recent_Sessions_data_source" />
-        <item itemvalue="Python.Mysql_Select" />
       </list>
     </recent_temporary>
   </component>
@@ -249,63 +246,16 @@
       <workItem from="1608299828967" duration="1416000" />
       <workItem from="1608349003130" duration="1598000" />
       <workItem from="1608460606240" duration="481000" />
-      <workItem from="1608466736409" duration="89000" />
-    </task>
-    <task id="LOCAL-00080" summary="服务器新查询">
-      <created>1605928447524</created>
-      <option name="number" value="00080" />
-      <option name="presentableId" value="LOCAL-00080" />
-      <option name="project" value="LOCAL" />
-      <updated>1605928447524</updated>
-    </task>
-    <task id="LOCAL-00081" summary="服务器新查询">
-      <created>1605928952279</created>
-      <option name="number" value="00081" />
-      <option name="presentableId" value="LOCAL-00081" />
-      <option name="project" value="LOCAL" />
-      <updated>1605928952279</updated>
-    </task>
-    <task id="LOCAL-00082" summary="服务器新查询">
-      <created>1605929102683</created>
-      <option name="number" value="00082" />
-      <option name="presentableId" value="LOCAL-00082" />
-      <option name="project" value="LOCAL" />
-      <updated>1605929102683</updated>
-    </task>
-    <task id="LOCAL-00083" summary="服务器新查询">
-      <created>1605929268851</created>
-      <option name="number" value="00083" />
-      <option name="presentableId" value="LOCAL-00083" />
-      <option name="project" value="LOCAL" />
-      <updated>1605929268851</updated>
-    </task>
-    <task id="LOCAL-00084" summary="服务器新查询">
-      <created>1605929473361</created>
-      <option name="number" value="00084" />
-      <option name="presentableId" value="LOCAL-00084" />
-      <option name="project" value="LOCAL" />
-      <updated>1605929473361</updated>
-    </task>
-    <task id="LOCAL-00085" summary="快速查询 最近战绩更新">
-      <created>1605929745144</created>
-      <option name="number" value="00085" />
-      <option name="presentableId" value="LOCAL-00085" />
-      <option name="project" value="LOCAL" />
-      <updated>1605929745144</updated>
-    </task>
-    <task id="LOCAL-00086" summary="战绩">
-      <created>1605930201845</created>
-      <option name="number" value="00086" />
-      <option name="presentableId" value="LOCAL-00086" />
-      <option name="project" value="LOCAL" />
-      <updated>1605930201845</updated>
-    </task>
-    <task id="LOCAL-00087" summary="战绩">
-      <created>1605930223050</created>
-      <option name="number" value="00087" />
-      <option name="presentableId" value="LOCAL-00087" />
-      <option name="project" value="LOCAL" />
-      <updated>1605930223051</updated>
+      <workItem from="1608466736409" duration="200000" />
+      <workItem from="1608467095290" duration="361000" />
+      <workItem from="1608531288077" duration="1640000" />
+      <workItem from="1608800339523" duration="51000" />
+      <workItem from="1610602003785" duration="1895000" />
+      <workItem from="1610699788088" duration="708000" />
+      <workItem from="1611109563405" duration="3123000" />
+      <workItem from="1611555471917" duration="1284000" />
+      <workItem from="1611713518321" duration="5889000" />
+      <workItem from="1611798232952" duration="1493000" />
     </task>
     <task id="LOCAL-00088" summary="战绩">
       <created>1605932397578</created>
@@ -594,7 +544,63 @@
       <option name="project" value="LOCAL" />
       <updated>1608460912904</updated>
     </task>
-    <option name="localTasksCounter" value="129" />
+    <task id="LOCAL-00129" summary="服务器文案修改">
+      <created>1608466845651</created>
+      <option name="number" value="00129" />
+      <option name="presentableId" value="LOCAL-00129" />
+      <option name="project" value="LOCAL" />
+      <updated>1608466845651</updated>
+    </task>
+    <task id="LOCAL-00130" summary="服务器错误字典修改">
+      <created>1610602047070</created>
+      <option name="number" value="00130" />
+      <option name="presentableId" value="LOCAL-00130" />
+      <option name="project" value="LOCAL" />
+      <updated>1610602047071</updated>
+    </task>
+    <task id="LOCAL-00131" summary="修复爆头率计算的问题">
+      <created>1611714147769</created>
+      <option name="number" value="00131" />
+      <option name="presentableId" value="LOCAL-00131" />
+      <option name="project" value="LOCAL" />
+      <updated>1611714147770</updated>
+    </task>
+    <task id="LOCAL-00132" summary="修复爆头率计算的问题">
+      <created>1611726060460</created>
+      <option name="number" value="00132" />
+      <option name="presentableId" value="LOCAL-00132" />
+      <option name="project" value="LOCAL" />
+      <updated>1611726060460</updated>
+    </task>
+    <task id="LOCAL-00133" summary="修复爆头率计算的问题">
+      <created>1611726118347</created>
+      <option name="number" value="00133" />
+      <option name="presentableId" value="LOCAL-00133" />
+      <option name="project" value="LOCAL" />
+      <updated>1611726118347</updated>
+    </task>
+    <task id="LOCAL-00134" summary="修复爆头率计算的问题">
+      <created>1611726308470</created>
+      <option name="number" value="00134" />
+      <option name="presentableId" value="LOCAL-00134" />
+      <option name="project" value="LOCAL" />
+      <updated>1611726308471</updated>
+    </task>
+    <task id="LOCAL-00135" summary="唯一码获取方式">
+      <created>1611801267485</created>
+      <option name="number" value="00135" />
+      <option name="presentableId" value="LOCAL-00135" />
+      <option name="project" value="LOCAL" />
+      <updated>1611801267486</updated>
+    </task>
+    <task id="LOCAL-00136" summary="唯一码获取方式">
+      <created>1611801397156</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
+      <option name="project" value="LOCAL" />
+      <updated>1611801397156</updated>
+    </task>
+    <option name="localTasksCounter" value="137" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -625,10 +631,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="增加错误返回" />
-    <MESSAGE value="增加模块调用统计" />
-    <MESSAGE value="修改战绩模板" />
-    <MESSAGE value="增加错误" />
     <MESSAGE value="替换旧的最近战绩" />
     <MESSAGE value="修改最近战绩逻辑" />
     <MESSAGE value="修改最近战绩逻辑,最近战绩" />
@@ -650,49 +652,53 @@
     <MESSAGE value="注释旧模块,修改超时处理" />
     <MESSAGE value="注释旧模块,修改战绩报错" />
     <MESSAGE value="修改武器错误" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改武器错误" />
+    <MESSAGE value="服务器文案修改" />
+    <MESSAGE value="服务器错误字典修改" />
+    <MESSAGE value="修复爆头率计算的问题" />
+    <MESSAGE value="唯一码获取方式" />
+    <option name="LAST_COMMIT_MESSAGE" value="唯一码获取方式" />
   </component>
   <component name="WindowStateProjectService">
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1608460930191">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1608460930191" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1607132506719">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1608531727690">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1607132506719" />
-    <state width="1493" height="261" key="GridCell.Tab.0.bottom" timestamp="1608349403922">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1608531727690" />
+    <state width="1493" height="245" key="GridCell.Tab.0.bottom" timestamp="1611741632780">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1608349403922" />
-    <state width="1493" height="261" key="GridCell.Tab.0.center" timestamp="1608349403922">
+    <state width="1493" height="245" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1611741632780" />
+    <state width="1493" height="245" key="GridCell.Tab.0.center" timestamp="1611741632780">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1608349403922" />
-    <state width="1493" height="261" key="GridCell.Tab.0.left" timestamp="1608349403922">
+    <state width="1493" height="245" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1611741632780" />
+    <state width="1493" height="245" key="GridCell.Tab.0.left" timestamp="1611741632780">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1608349403922" />
-    <state width="1493" height="261" key="GridCell.Tab.0.right" timestamp="1608349403922">
+    <state width="1493" height="245" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1611741632780" />
+    <state width="1493" height="245" key="GridCell.Tab.0.right" timestamp="1611741632780">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1608349403922" />
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1608349403923">
+    <state width="1493" height="245" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1611741632780" />
+    <state width="1493" height="245" key="GridCell.Tab.1.bottom" timestamp="1611741632780">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1608349403923" />
-    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1608349403923">
+    <state width="1493" height="245" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1611741632780" />
+    <state width="1493" height="245" key="GridCell.Tab.1.center" timestamp="1611741632780">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1608349403923" />
-    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1608349403922">
+    <state width="1493" height="245" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1611741632780" />
+    <state width="1493" height="245" key="GridCell.Tab.1.left" timestamp="1611741632780">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1608349403922" />
-    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1608349403923">
+    <state width="1493" height="245" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1611741632780" />
+    <state width="1493" height="245" key="GridCell.Tab.1.right" timestamp="1611741632780">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1608349403923" />
+    <state width="1493" height="245" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1611741632780" />
     <state x="147" y="65" key="MergeDialog" timestamp="1604728119713">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -701,14 +707,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="653" y="279" width="428" height="266" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1605927779173" />
-    <state x="270" y="57" key="SettingsEditor" timestamp="1604834879177">
+    <state x="270" y="57" key="SettingsEditor" timestamp="1611109693309">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="270" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1604834879177" />
-    <state x="361" y="132" key="Vcs.Push.Dialog.v2" timestamp="1608460970279">
+    <state x="270" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1611109693309" />
+    <state x="361" y="132" key="Vcs.Push.Dialog.v2" timestamp="1611801405924">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="132" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1608460970279" />
+    <state x="361" y="132" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1611801405924" />
     <state x="563" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604837322756">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -723,8 +729,9 @@
     <SUITE FILE_PATH="coverage/QQbot$Vehicles_data_source.coverage" NAME="Vehicles_data_source Coverage Results" MODIFIED="1606223421334" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/awesome/plugins/new_vehicles" />
     <SUITE FILE_PATH="coverage/QQbot$Overview_data_source.coverage" NAME="Overview_data_source Coverage Results" MODIFIED="1607011756855" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/awesome/plugins/new_overview" />
     <SUITE FILE_PATH="coverage/QQbot$Recent_Sessions_data_source.coverage" NAME="Recent_Sessions_data_source Coverage Results" MODIFIED="1606221214575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/awesome/plugins/new_recent_sessions" />
+    <SUITE FILE_PATH="coverage/QQbot$scheduler.coverage" NAME="scheduler Coverage Results" MODIFIED="1611555544056" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/awesome/plugins" />
     <SUITE FILE_PATH="coverage/QQbot$test_select.coverage" NAME="test_select Coverage Results" MODIFIED="1603692940695" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/QQbot$Weapons_data_source.coverage" NAME="Weapons_data_source Coverage Results" MODIFIED="1608349403900" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/awesome/plugins/new_weapons" />
+    <SUITE FILE_PATH="coverage/QQbot$Weapons_data_source.coverage" NAME="Weapons_data_source Coverage Results" MODIFIED="1611725950252" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/awesome/plugins/new_weapons" />
     <SUITE FILE_PATH="coverage/QQbot$DB.coverage" NAME="DB Coverage Results" MODIFIED="1605285166092" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

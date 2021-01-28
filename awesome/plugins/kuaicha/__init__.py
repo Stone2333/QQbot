@@ -5,7 +5,7 @@ import Mysql_Insert, Mysql_Update, Mysql_Select
 
 
 # 当用户输入关键字没有输入值时则提示
-@on_command('kuaicha', patterns=('^.最近$','^.武器$','^.载具$','^.战绩$','^帮助$','^唯一码$''快速链接'), only_to_me=False)
+@on_command('kuaicha', patterns=('^.最近$','^.武器$','^.载具$','^.战绩$','^帮助$','^唯一码$','快速链接'), only_to_me=False)
 async def kuaicha(session: CommandSession):
     try:
         group_id = session.event['group_id']

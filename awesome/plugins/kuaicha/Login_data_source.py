@@ -238,7 +238,7 @@ async def get_img(qq, Query_Login: str, session) -> str:
         s = '[CQ:image,file=file:///C:\\1.png]'
         return s
     elif Query_Login == '唯一码':
-        s = '[CQ:image,file=file:///C:\\3.png]'
+        s = '[CQ:image,file=file:///C:\\3.png][CQ:image,file=file:///C:\\5.png][CQ:image,file=file:///C:\\4.jpg]'
         return s
     else:
         s = '原有快速查询已废弃,输入关键字".最近"，".战绩"，".武器"，".载具"，即可快速查询更为简便'
