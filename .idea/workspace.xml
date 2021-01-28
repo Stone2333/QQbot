@@ -22,8 +22,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a15535c6-4cef-4568-97ff-fa9054a69501" name="Default Changelist" comment="唯一码获取方式">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="a15535c6-4cef-4568-97ff-fa9054a69501" name="Default Changelist" comment="群号">
       <change beforePath="$PROJECT_DIR$/awesome/plugins/usage.py" beforeDir="false" afterPath="$PROJECT_DIR$/awesome/plugins/usage.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -255,14 +254,7 @@
       <workItem from="1611555471917" duration="1284000" />
       <workItem from="1611713518321" duration="5889000" />
       <workItem from="1611798232952" duration="1684000" />
-      <workItem from="1611804517847" duration="2520000" />
-    </task>
-    <task id="LOCAL-00090" summary="战绩">
-      <created>1605960846384</created>
-      <option name="number" value="00090" />
-      <option name="presentableId" value="LOCAL-00090" />
-      <option name="project" value="LOCAL" />
-      <updated>1605960846384</updated>
+      <workItem from="1611804517847" duration="2672000" />
     </task>
     <task id="LOCAL-00091" summary="战绩">
       <created>1606036359617</created>
@@ -600,7 +592,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611801628707</updated>
     </task>
-    <option name="localTasksCounter" value="139" />
+    <task id="LOCAL-00139" summary="群号">
+      <created>1611812039331</created>
+      <option name="number" value="00139" />
+      <option name="presentableId" value="LOCAL-00139" />
+      <option name="project" value="LOCAL" />
+      <updated>1611812039332</updated>
+    </task>
+    <option name="localTasksCounter" value="140" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -631,7 +630,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="替换旧的最近战绩" />
     <MESSAGE value="修改最近战绩逻辑" />
     <MESSAGE value="修改最近战绩逻辑,最近战绩" />
     <MESSAGE value="服务器新查询" />
@@ -656,7 +654,8 @@
     <MESSAGE value="服务器错误字典修改" />
     <MESSAGE value="修复爆头率计算的问题" />
     <MESSAGE value="唯一码获取方式" />
-    <option name="LAST_COMMIT_MESSAGE" value="唯一码获取方式" />
+    <MESSAGE value="群号" />
+    <option name="LAST_COMMIT_MESSAGE" value="群号" />
   </component>
   <component name="WindowStateProjectService">
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1608460930191">
@@ -711,10 +710,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="270" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1611109693309" />
-    <state x="361" y="132" key="Vcs.Push.Dialog.v2" timestamp="1611801629846">
+    <state x="361" y="132" key="Vcs.Push.Dialog.v2" timestamp="1611812059626">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="132" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1611801629846" />
+    <state x="361" y="132" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1611812059626" />
     <state x="563" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604837322756">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
