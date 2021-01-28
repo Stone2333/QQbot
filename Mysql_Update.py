@@ -180,7 +180,6 @@ def update_recent_sessions(name, id, spm, kd, kpm, game_play_time, game_time):
           SET spm = "{}", kd = "{}", kpm = "{}", game_play_time = "{}", game_time = "{}"
           WHERE name = "{}" AND id = "{}"
           '''.format(spm, kd, kpm, game_play_time, game_time, name, id)
-    print(sql)
     cursor.execute(sql)
     db.commit()
     cursor.close()
