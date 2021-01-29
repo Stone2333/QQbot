@@ -3,7 +3,7 @@ import nonebot
 from nonebot import on_command, CommandSession
 
 
-@on_command('usage', aliases=['使用帮助', '帮助', '使用方法'], only_to_me=False)
+@on_command('usage', aliases=['群列表', '群号'], only_to_me=False)
 async def _(session: CommandSession):
     # 获取设置了名称的插件列表
     bot = nonebot.get_bot()
