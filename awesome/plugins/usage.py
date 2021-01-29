@@ -9,7 +9,8 @@ async def _(session: CommandSession):
     bot = nonebot.get_bot()
     list = await bot.get_group_list()
     print(list)
-    await session.send(list)
+    str_list = str(list)
+    await session.send(str_list)
     # plugins = list(filter(lambda p: p.name, nonebot.get_loaded_plugins()))
     # arg = session.current_arg_text.strip().lower()
     # if not arg:
